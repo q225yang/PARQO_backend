@@ -1,0 +1,24 @@
+{
+  "0": [
+    "/*+\nSeqScan(k)\nIndexScan(mk)\nIndexScan(mc)\nIndexScan(cn)\nIndexScan(t)\nNestLoop ( k mk )\nNestLoop ( k mk mc )\nNestLoop ( k mk mc cn )\nNestLoop ( k mk mc cn t )\nLeading ( ( ( ( ( k mk ) mc ) cn ) t ) ) */",
+    "/*+\nSeqScan(k)\nIndexScan(mk)\nIndexScan(t)\nIndexScan(mc)\nIndexScan(cn)\nNestLoop ( k mk )\nNestLoop ( k mk t )\nNestLoop ( k mk t mc )\nNestLoop ( k mk t mc cn )\nLeading ( ( ( ( ( k mk ) t ) mc ) cn ) ) */"
+  ],
+  "1": [
+    "/*+\nSeqScan(k)\nIndexScan(mk)\nIndexScan(mc)\nIndexScan(cn)\nIndexScan(t)\nNestLoop ( k mk )\nNestLoop ( k mk mc )\nNestLoop ( k mk mc cn )\nNestLoop ( k mk mc cn t )\nLeading ( ( ( ( ( k mk ) mc ) cn ) t ) ) */",
+    "/*+\nSeqScan(mk)\nSeqScan(k)\nIndexScan(mc)\nSeqScan(cn)\nIndexScan(t)\nHashJoin ( mk k )\nNestLoop ( mk k mc )\nHashJoin ( mk k mc cn )\nNestLoop ( mk k mc cn t )\nLeading ( ( ( ( ( mk k ) mc ) cn ) t ) ) */",
+    "/*+\nSeqScan(mk)\nSeqScan(k)\nSeqScan(mc)\nSeqScan(cn)\nIndexScan(t)\nHashJoin ( mk k )\nHashJoin ( mc cn )\nHashJoin ( mk k mc cn )\nNestLoop ( mk k mc cn t )\nLeading ( ( ( ( mk k ) ( mc cn ) ) t ) ) */",
+    "/*+\nSeqScan(mk)\nSeqScan(k)\nSeqScan(mc)\nSeqScan(cn)\nIndexScan(t)\nHashJoin ( mk k )\nHashJoin ( mc cn )\nNestLoop ( mc cn t )\nHashJoin ( mk k mc cn t )\nLeading ( ( ( mk k ) ( ( mc cn ) t ) ) ) */",
+    "/*+\nSeqScan(mk)\nSeqScan(mc)\nSeqScan(cn)\nIndexScan(t)\nSeqScan(k)\nHashJoin ( mc cn )\nNestLoop ( mc cn t )\nHashJoin ( mk mc cn t )\nHashJoin ( mk mc cn t k )\nLeading ( ( ( mk ( ( mc cn ) t ) ) k ) ) */"
+  ],
+  "2": [
+    "/*+\nSeqScan(k)\nIndexScan(mk)\nIndexScan(mc)\nIndexScan(cn)\nIndexScan(t)\nNestLoop ( k mk )\nNestLoop ( k mk mc )\nNestLoop ( k mk mc cn )\nNestLoop ( k mk mc cn t )\nLeading ( ( ( ( ( k mk ) mc ) cn ) t ) ) */"
+  ],
+  "3": [
+    "/*+\nSeqScan(k)\nIndexScan(mk)\nIndexScan(t)\nIndexScan(mc)\nIndexScan(cn)\nNestLoop ( k mk )\nNestLoop ( k mk t )\nNestLoop ( k mk t mc )\nNestLoop ( k mk t mc cn )\nLeading ( ( ( ( ( k mk ) t ) mc ) cn ) ) */",
+    "/*+\nSeqScan(k)\nIndexScan(mk)\nIndexScan(mc)\nIndexScan(cn)\nIndexScan(t)\nNestLoop ( k mk )\nNestLoop ( k mk mc )\nNestLoop ( k mk mc cn )\nNestLoop ( k mk mc cn t )\nLeading ( ( ( ( ( k mk ) mc ) cn ) t ) ) */"
+  ],
+  "4": [
+    "/*+\nSeqScan(k)\nIndexScan(mk)\nIndexScan(t)\nIndexScan(mc)\nIndexScan(cn)\nNestLoop ( k mk )\nNestLoop ( k mk t )\nNestLoop ( k mk t mc )\nNestLoop ( k mk t mc cn )\nLeading ( ( ( ( ( k mk ) t ) mc ) cn ) ) */",
+    "/*+\nSeqScan(k)\nIndexScan(mk)\nIndexScan(mc)\nIndexScan(cn)\nIndexScan(t)\nNestLoop ( k mk )\nNestLoop ( k mk mc )\nNestLoop ( k mk mc cn )\nNestLoop ( k mk mc cn t )\nLeading ( ( ( ( ( k mk ) mc ) cn ) t ) ) */"
+  ]
+}

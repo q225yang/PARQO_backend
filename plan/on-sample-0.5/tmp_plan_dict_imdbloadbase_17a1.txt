@@ -1,0 +1,11 @@
+{
+  "2": [
+    "/*+\nSeqScan(k)\nIndexScan(mk)\nIndexOnlyScan(t)\nIndexScan(ci)\nIndexScan(n)\nIndexScan(mc)\nIndexScan(cn)\nNestLoop ( k mk )\nNestLoop ( k mk t )\nNestLoop ( k mk t ci )\nNestLoop ( k mk t ci n )\nNestLoop ( k mk t ci n mc )\nNestLoop ( k mk t ci n mc cn )\nLeading ( ( ( ( ( ( ( k mk ) t ) ci ) n ) mc ) cn ) ) */",
+    "/*+\nSeqScan(mk)\nSeqScan(k)\nIndexOnlyScan(t)\nIndexScan(mc)\nIndexScan(cn)\nIndexScan(ci)\nSeqScan(n)\nHashJoin ( mk k )\nNestLoop ( mk k t )\nNestLoop ( mk k t mc )\nNestLoop ( mk k t mc cn )\nNestLoop ( mk k t mc cn ci )\nHashJoin ( mk k t mc cn ci n )\nLeading ( ( ( ( ( ( ( mk k ) t ) mc ) cn ) ci ) n ) ) */",
+    "/*+\nSeqScan(mk)\nSeqScan(k)\nIndexOnlyScan(t)\nIndexScan(mc)\nSeqScan(cn)\nIndexScan(ci)\nSeqScan(n)\nHashJoin ( mk k )\nNestLoop ( mk k t )\nNestLoop ( mk k t mc )\nHashJoin ( mk k t mc cn )\nNestLoop ( mk k t mc cn ci )\nHashJoin ( mk k t mc cn ci n )\nLeading ( ( ( ( ( ( ( mk k ) t ) mc ) cn ) ci ) n ) ) */",
+    "/*+\nSeqScan(mc)\nSeqScan(cn)\nSeqScan(mk)\nSeqScan(k)\nIndexOnlyScan(t)\nIndexScan(ci)\nSeqScan(n)\nHashJoin ( mc cn )\nHashJoin ( mk k )\nNestLoop ( mk k t )\nNestLoop ( mk k t ci )\nHashJoin ( mk k t ci n )\nHashJoin ( mc cn mk k t ci n )\nLeading ( ( ( mc cn ) ( ( ( ( mk k ) t ) ci ) n ) ) ) */",
+    "/*+\nSeqScan(mk)\nSeqScan(k)\nIndexScan(ci)\nSeqScan(n)\nSeqScan(mc)\nSeqScan(cn)\nSeqScan(t)\nHashJoin ( mk k )\nNestLoop ( mk k ci )\nHashJoin ( mk k ci n )\nHashJoin ( mc cn )\nHashJoin ( mc cn t )\nHashJoin ( mk k ci n mc cn t )\nLeading ( ( ( ( ( mk k ) ci ) n ) ( ( mc cn ) t ) ) ) */",
+    "/*+\nSeqScan(ci)\nSeqScan(n)\nSeqScan(mc)\nSeqScan(cn)\nSeqScan(mk)\nSeqScan(k)\nIndexOnlyScan(t)\nHashJoin ( ci n )\nHashJoin ( mc cn )\nHashJoin ( mk k )\nNestLoop ( mk k t )\nHashJoin ( mc cn mk k t )\nHashJoin ( ci n mc cn mk k t )\nLeading ( ( ( ci n ) ( ( mc cn ) ( ( mk k ) t ) ) ) ) */",
+    "/*+\nSeqScan(ci)\nSeqScan(n)\nSeqScan(mc)\nSeqScan(cn)\nSeqScan(mk)\nSeqScan(k)\nSeqScan(t)\nHashJoin ( ci n )\nHashJoin ( mc cn )\nHashJoin ( mk k )\nHashJoin ( mk k t )\nHashJoin ( mc cn mk k t )\nHashJoin ( ci n mc cn mk k t )\nLeading ( ( ( ci n ) ( ( mc cn ) ( ( mk k ) t ) ) ) ) */"
+  ]
+}
