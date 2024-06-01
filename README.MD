@@ -3,7 +3,9 @@ https://github.com/Hap-Hugh/PG16
 
 
 ## Full Paper Link
-arxiv: 
+https://github.com/Hap-Hugh/PARQO/blob/main/PARQO-Full-Paper.pdf
+
+Arxiv: 
 
 
 ## Instructions to run PARQO
