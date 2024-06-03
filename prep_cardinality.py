@@ -57,7 +57,7 @@ execute the sql and read the result from xxx.txt which is output by psql
 def ori_cardest(db_name, sql):
     os.system("rm ~/imdb/single_tbl_est_record.txt")
     os.system("rm ~/imdb/join_est_record_job.txt")
-    conn = psycopg2.connect(host="/tmp", dbname=db_name, user="hx68")
+    conn = psycopg2.connect(host="/tmp", dbname=db_name, user="vcm")
     conn.set_session(autocommit=True)
     cursor = conn.cursor()
     cursor.execute('SET enable_material = off')
@@ -69,7 +69,7 @@ def ori_cardest(db_name, sql):
     cursor.execute("Explain " + sql)
     
 
-    with open('/winhomes/hx68/imdb/single_tbl_est_record.txt') as f:
+    with open('../imdb/single_tbl_est_record.txt') as f:
         single = f.readlines()
     estimate_single = []
     for line in single:
@@ -77,7 +77,7 @@ def ori_cardest(db_name, sql):
             l = line.split('rows=')[1].split('width')[0].strip()
             estimate_single.append(int(l))
     
-    with open('/winhomes/hx68/imdb/join_est_record_job.txt') as f:
+    with open('../imdb/join_est_record_job.txt') as f:
         join = f.readlines()
     estimate_join = [] # all info for join_rel, contains: leftrows, rightrows, estjoinrows
 
@@ -110,7 +110,7 @@ def ori_cardest(db_name, sql):
 def get_maps(db_name, sql, debug=False):
     os.system("rm ~/imdb/single_tbl_est_record.txt")
     os.system("rm ~/imdb/join_est_record_job.txt")
-    conn = psycopg2.connect(host="/tmp", dbname=db_name, user="hx68")
+    conn = psycopg2.connect(host="/tmp", dbname=db_name, user="vcm")
     conn.set_session(autocommit=True)
     cursor = conn.cursor()
     cursor.execute('SET enable_material = off')
@@ -121,7 +121,7 @@ def get_maps(db_name, sql, debug=False):
     cursor.execute("SET ml_joinest_enabled=false;")
     cursor.execute("EXPLAIN " + sql)
 
-    with open('/winhomes/hx68/imdb/single_tbl_est_record.txt') as f:
+    with open('../imdb/single_tbl_est_record.txt') as f:
         single = f.readlines()
     estimate_single = []
     tname_id_dict = {}
@@ -140,7 +140,7 @@ def get_maps(db_name, sql, debug=False):
     maps = [[-1] * single_table_num for _ in range(single_table_num)]
 
 
-    with open('/winhomes/hx68/imdb/join_est_record_job.txt') as f:
+    with open('../imdb/join_est_record_job.txt') as f:
         join = f.readlines()
     join_relation_list = []
     join_relation_counter = 0
