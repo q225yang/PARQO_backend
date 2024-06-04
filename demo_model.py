@@ -1,14 +1,16 @@
 import psycopg2
+import time
+import json
+from tqdm import tqdm
 
 from sensitive_dict import *
 from prep_error_list import *
 from cached_robust_plan_dict import *
 
 from prep_cardinality import get_maps, ori_cardest, write_to_file, write_pointers_to_file
-from postgres import get_all_plan_cost
+from postgres import get_all_plan_cost, get_real_latency, get_plan_cost
 from prep_cardinality import get_raw_table_size
-
-import json
+from prep_selectivity import prep_sel
 
 EXPLAIN = "EXPLAIN (SUMMARY, COSTS, FORMAT JSON)"
 EXPLAIN_ALL = "EXPLAIN (ANALYZE, SUMMARY, COSTS, FORMAT JSON)"
@@ -87,7 +89,9 @@ class Demo():
 
         ### Prepare the basic info
         ## Dimension info
-        table_name_id_dict, _, join_info, pair_rel_info = get_maps(self.db_name, self.sql)
+        table_name_id_dict, join_map, join_info, pair_rel_info = get_maps(self.db_name, self.sql)
+        self.join_map = join_map    # for prep_sel
+        self.join_info = join_info  # for prep_sel
         self.num_of_base = len(table_name_id_dict)
         self.num_of_pair = len(pair_rel_info)
         self.num_of_join = len(join_info)
@@ -102,6 +106,7 @@ class Demo():
             dim_id2name_dict[id] = name
         self.dim_name2id_dict = dim_name2id_dict
         self.dim_id2name_dict = dim_id2name_dict
+        self.sen_dims = self.sen_dict[get_pure_q_id(self.query_id, self.db_name)]
 
         ## Estimated cardinality
         est_base_card, est_join_card_info = ori_cardest(self.db_name, self.sql)
@@ -148,32 +153,8 @@ class Demo():
         cur_plan_list = list(sorted(set(cur_plan_list)))
         # if query_id == '17a':
         #     cur_plan_list = [cur_plan_list[7], cur_plan_list[8], cur_plan_list[10], cur_plan_list[44]]
-        self.cur_plan_list = cur_plan_list
-    
-    def get_plan_explanation(self, hint_id, cursor, cost=False, inject=False):
-        '''Given a hint id, fetch the full explian plan from postgres, for dalibo
-        '''
-        os.system("cp ./cardinality/new_single.txt ../imdb/")
-
-        if inject:
-            cursor.execute("SET ml_cardest_enabled=true;")
-            cursor.execute("SET query_no=0;")
-            cursor.execute("SET ml_cardest_fname='new_single.txt';")
-        cursor.execute("LOAD 'pg_hint_plan';")
-        cursor.execute('SET enable_material = off;')
-
-        if hint_id:
-            hint = self.cur_plan_list[hint_id]
-        else:
-            hint = ""
-        if cost:
-            explain = EXPLAIN_ALL
-        else:
-            explain = EXPLAIN
-        to_execute_ = explain + '\n' + hint + self.sql
-        cursor.execute(to_execute_)
-        query_plan = cursor.fetchall()
-        return query_plan[0][0]
+        self.cur_plan_list = cur_plan_list  # all current plan hints
+        self.plan_list = None   # the selected plan hints
 
     def get_error_data(self, dim):
         '''Prepare the error data for error distribution at a given dimension
@@ -198,7 +179,7 @@ class Demo():
         return plotable, data, error
 
     def get_basic_info(self, save=False):
-        '''Pack the information for each dimension
+        '''Pack the basic information for each dimension
         '''
         basic_info = {}
         for dim, dim_name in self.dim_id2name_dict.items():
@@ -226,8 +207,10 @@ class Demo():
         return json.dumps(basic_info, indent=1)
 
     def get_sensitive_dim(self, save=False):
+        '''Return all sensitive dimensions
+        '''
         sen_info = {}
-        for dim in self.sen_dict[get_pure_q_id(self.query_id, self.db_name)]:
+        for dim in self.sen_dims:
             dim_name = self.dim_id2name_dict[dim]
             isedge = dim>=self.num_of_base
             if not isedge:
@@ -245,19 +228,21 @@ class Demo():
                 json.dump(sen_info, file, indent=1)
         return json.dumps(sen_info, indent=1)
 
+    def rqo(self, inject=None, save=False):
+        '''Get plans under rqo algo. If user-input selectivity is provided, add an additional plan with input injected.
+        '''
+        t1 = time.perf_counter()
+        ### Connect ot postgres server
+        conn = psycopg2.connect(host="/tmp", dbname=self.db_name, user="lsh") # what database should be used
+        conn.set_session(autocommit=True)
+        cursor = conn.cursor()
 
-    def rqo(self):
-        if self.sql:
-            ### Connect ot postgres server
-            conn = psycopg2.connect(host="/tmp", dbname=self.db_name, user="lsh") # what database should be used
-            conn.set_session(autocommit=True)
-            cursor = conn.cursor()
-
+        if not inject:
             ### Set up for query execution
             write_to_file(self.est_base_sel, file_of_base_sel)
             write_to_file(self.est_join_sel, file_of_join_sel)
             write_pointers_to_file(list(range(self.num_of_base + self.num_of_join)))
-            
+
             ### Get candidate plan set
             cost_of_all_hints = get_all_plan_cost(cursor, self.sql, EXPLAIN, self.cur_plan_list)
             ori_opt_plan_id = cost_of_all_hints.index(min(cost_of_all_hints))   # original optimal plan
@@ -265,22 +250,134 @@ class Demo():
             ### Get robust plan
             rob_plan_id = self.rob_plan_dict[self.query_id]
 
+            self.plan_list = [ori_opt_plan_id] + rob_plan_id
+
             plans = []
-            for hint_id in [ori_opt_plan_id] + rob_plan_id:
-                plan = self.get_plan_explanation(hint_id, cursor, cost=True)
+            latencies = []
+            for hint_id in self.plan_list:
+                hint = self.cur_plan_list[hint_id]
+                _, plan = get_plan_cost(cursor, self.sql, hint=hint, explain=EXPLAIN_ALL, plan=True)
+                latency = get_real_latency(self.db_name, self.sql, hint=hint)
+                latencies.append(latency)
                 plans.append(plan)
-            cursor.close()
-            if save:
-                with open(f'./demo_data/plans_{self.db_name}_{self.query_id}.json', 'w') as file:
-                    json.dump(plans, file, indent=1)
-            return json.dumps(plans, indent=1)
+            self.plans = plans
+            self.latencies = latencies
+        else:
+            ### Inject the user's inputs
+            self.inject_input_sel(inject)
+            _, plan = get_plan_cost(cursor, self.sql, explain=EXPLAIN_ALL, plan=True)
+            latency = get_real_latency(self.db_name, self.sql)
+            latencies = self.latencies + [latency]
+            plans = self.plans + [plan]
+        # cursor.close()
+
+        if save:
+            if inject:
+                inject_ = "_adj"
+            else:
+                inject_ = ""
+            with open(f'./demo_data/plans{inject_}_{self.db_name}_{self.query_id}.json', 'w') as file:
+                json.dump(plans, file, indent=1)
+            with open(f'./demo_data/latencies{inject_}_{self.db_name}_{self.query_id}.json', 'w') as file:
+                json.dump(latencies, file, indent=1)
+        t2 = time.perf_counter()
+        print(f"time: {t2-t1}s")
+        return json.dumps(plans, indent=1)
+
+    def inject_input_sel(self, inject):
+        '''Process and inject the user input into postgres
+        '''
+        error = []
+        rel_list = []
+        for dim_name, sel_adj in inject.items():
+            rel_list.append(self.dim_name2id_dict[dim_name])
+            error.append(sel_adj)
+        _, _ = prep_sel(self.dim_name2id_dict, self.join_map, self.join_info,
+                        self.est_base_sel, file_of_base_sel,
+                        self.est_join_sel, file_of_join_sel,
+                        error=error, recentered_error=None,
+                        relation_list=rel_list, rela_error=self.rel_error)
+
+    def gen_samples_from_joint_err_dist(self, N, random_seeds=True, naive=False):
+        ''' Generate samples from the error distribution on each dimension and then joint them
+        '''
+        if random_seeds:
+            np.random.seed(2023)
+        joint_error_samples = []
+        for table_id in self.sen_dims:
+            if naive:
+                err_sample = np.random.uniform(-10, 10, N)
+            else:
+                r = find_bin_id_from_err_hist_list(self.est_card, self.raw_card, cur_dim=table_id, err_info_dict=self.err_info_dict)
+                pdf_of_err = self.err_info_dict[table_id][2][r]
+                err_sample = pdf_of_err.sample(N)
+            joint_error_samples.append(err_sample)
+        ### Transfer to joint samples
+        if naive:
+            joint_error_samples = np.array(joint_error_samples).T.tolist()
+        else:
+            joint_error_samples = np.array(joint_error_samples).T.tolist()[0]
+        return joint_error_samples
+
+    def get_all_cost(self, inject=None, N=100):
+        if self.plan_list:
+            costs = []
+            ### Connect ot postgres server
+            conn = psycopg2.connect(host="/tmp", dbname=self.db_name, user="lsh") # what database should be used
+            conn.set_session(autocommit=True)
+            cursor = conn.cursor()
+            if not inject:
+                ### Set up for query execution
+                write_to_file(self.est_base_sel, file_of_base_sel)
+                write_to_file(self.est_join_sel, file_of_join_sel)
+                write_pointers_to_file(list(range(self.num_of_base + self.num_of_join)))
+
+                error_samples = self.gen_samples_from_joint_err_dist(N, naive=self.naive)
+                for i, plan_id in enumerate(self.plan_list):
+                    plan_costs = {}
+                    hint = self.cur_plan_list[plan_id]
+                    for j, dim in enumerate(self.sen_dims):
+                        dim_name = self.dim_id2name_dict[dim]
+                        x, y = [], []
+                        dim_cost = []
+                        for sample in tqdm(error_samples):
+                            sample_inject = {dim_name:sample[j]}
+                            self.inject_input_sel(sample_inject)
+                            cost = get_plan_cost(cursor, self.sql, hint=hint, explain=EXPLAIN)
+                            dim_cost.append((sample[j], cost))
+                        dim_cost = sorted(dim_cost, key=lambda t:t[0])
+                        for s, c in dim_cost:
+                            x.append(s)
+                            y.append(c)
+                        plan_costs[dim_name] = {"x":x, "y":y}
+                    
+                    costs.append(plan_costs)
+                    print(f"plans: {i+1}/{len(self.plan_list)} done.")
+                # self.costs = costs
+                
+                if save:
+                    if inject:
+                        inject_ = "_adj"
+                    else:
+                        inject_ = ""
+                    with open(f'./demo_data/costs{inject_}_{self.db_name}_{self.query_id}.json', 'w') as file:
+                        json.dump(costs, file, indent=1)
+                return json.dumps(costs, indent=1)
+            # else:pass
+
 
 if __name__ == "__main__":
-    query_id = "1a"
+    query_id = "2a"
     save = True
     demo = Demo(query_id=query_id)
-    r = demo.get_basic_info(save)
+    basic_stats = demo.get_basic_info(save=save)
     
-    r = demo.get_sensitive_dim(save)
+    sen_dims = demo.get_sensitive_dim(save=save)
 
-    r = demo.rqo()
+    plans = demo.rqo(save=save)
+    
+    # inject = {"mi_idx-it":0.1}  # 1a
+    inject = {"mc-cn":0.1}  # 2a
+    plans_adj = demo.rqo(inject=inject, save=save)
+
+    costs = demo.get_all_cost()

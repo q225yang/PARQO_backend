@@ -1,0 +1,18 @@
+{
+ "mc-cn": {
+  "dim": 5,
+  "isedge": true,
+  "component": [
+   "mc",
+   "cn"
+  ]
+ },
+ "mk-k": {
+  "dim": 6,
+  "isedge": true,
+  "component": [
+   "mk",
+   "k"
+  ]
+ }
+}

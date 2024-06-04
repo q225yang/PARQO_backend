@@ -104,7 +104,7 @@ def get_plan_cost_simple(cursor, sql, hint=None, debug=None, explain=None):
 
 
 
-def get_plan_cost(cursor, sql, hint=None, debug=None, explain=None):
+def get_plan_cost(cursor, sql, hint=None, debug=None, explain=None, plan=False):
     os.system("cp ./cardinality/join.txt ../imdb/")
     os.system("cp ./cardinality/new_single.txt ../imdb/")
     os.system("cp ./cardinality/pointers.txt ../imdb")
@@ -139,6 +139,8 @@ def get_plan_cost(cursor, sql, hint=None, debug=None, explain=None):
         print(to_execute_)
     except psycopg2.errors.SyntaxError as e:            
         print(to_execute_)
+    if plan:
+        return cost, query_plan[0][0]
     if debug:
         return cost, join_order, scan_mtd
     return cost
