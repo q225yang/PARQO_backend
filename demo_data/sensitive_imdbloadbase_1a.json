@@ -1,0 +1,18 @@
+{
+ "mi_idx-it": {
+  "dim": 6,
+  "isedge": true,
+  "component": [
+   "mi_idx",
+   "it"
+  ]
+ },
+ "mi_idx-mc": {
+  "dim": 7,
+  "isedge": true,
+  "component": [
+   "mi_idx",
+   "mc"
+  ]
+ }
+}
