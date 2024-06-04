@@ -424,11 +424,11 @@ def get_error_dict_from_txt():
     alias_dict = {}
     basic_tables = {'u': 'users', 'c': 'comments','b': 'badges','ph': 'postHistory','p': 'posts','pl': 'postLinks','v': 'votes',}
     # Read the content of the first text file
-    with open('/winhomes/hx68/imdb/single_tbl_est_record.txt', 'r') as file:
+    with open('../imdb/single_tbl_est_record.txt', 'r') as file:
         single = file.read()
 
     # Read the content of the second text file
-    with open('/winhomes/hx68/imdb/join_est_record_job.txt', 'r') as file:
+    with open('../imdb/join_est_record_job.txt', 'r') as file:
         join = file.read()
 
     # Extract query numbers and corresponding filenames from the first text file using regular expressions
@@ -480,7 +480,7 @@ def get_error_dict_from_txt():
 def get_raw_size_from_txt():
 
     # Read the content of the file
-    with open('/winhomes/hx68/imdb/single_tbl_est_record.txt', 'r') as file:
+    with open('../imdb/single_tbl_est_record.txt', 'r') as file:
         content = file.read()
 
     # Extract raw rows from each query block using regular expressions
