@@ -428,7 +428,7 @@ for s in range(0, 4):
     # verify_by_multiple_random_instances(i, 20)
     for query_id in ["17a"]:
     # for query_id in ["1a", "2a","3a","4a","5a","6a","7a", "14a", "15a", "16a", "17a", "18a", "25a"]:
-        os.system("rm -rf ~/imdb/recordx.log")
+        os.system("rm -rf ../imdb/recordx.log")
         print(query_id)
         db_name = "imdbloadbase"
         explain = "EXPLAIN (SUMMARY, COSTS, FORMAT JSON)"

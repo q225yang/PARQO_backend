@@ -19,7 +19,7 @@ def gen_sql_by_template(query_id, K, db_name=None):
     
     if db_name == 'dsb': # simply use dsb's q gen
         sql_list = []
-        folder_path = f'/winhomes/hx68/robust-vcm/query/dsb/query{query_id}_spj'
+        folder_path = f'./query/dsb/query{query_id}_spj'
         for file_name in os.listdir(folder_path):
             file_path = os.path.join(folder_path, file_name)
             with open(file_path, "r") as sql_file:

@@ -4,10 +4,10 @@ import glob
 query_id = '_099'
 
 # Define the directory containing .sql files
-directory = '/winhomes/hx68/robust-vcm/query/dsb/query_condition' + query_id
+directory = 'query_condition' + query_id
 
 # Define the output file name
-output_file = '/winhomes/hx68/robust-vcm/query/dsb/DSB-local-sel-cond' + query_id + '.txt'
+output_file = 'DSB-local-sel-cond' + query_id + '.txt'
 
 # Function to read and concatenate rows from .sql files
 def read_sql_files(directory):
@@ -44,8 +44,8 @@ for row in all_rows:
         row_frequency[row] = 1
 
 # Write unique rows to the first file and corresponding frequencies to the second file
-unique_rows_file = '/winhomes/hx68/robust-vcm/query/dsb/unique_condition'+query_id+'.txt'
-frequency_file = '/winhomes/hx68/robust-vcm/query/dsb/frequency'+query_id+'.txt'
+unique_rows_file = 'unique_condition'+query_id+'.txt'
+frequency_file = 'frequency'+query_id+'.txt'
 
 # Write unique rows to the first file
 with open(unique_rows_file, 'w') as file:

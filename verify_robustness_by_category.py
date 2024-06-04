@@ -384,7 +384,7 @@ for i in range(1, 8):
     # for query_id in ["2a", "15a", "17a", "26a"]:
     for query_id in ["2a"]:
 
-        os.system("rm -rf ~/imdb/recordx.log")
+        os.system("rm -rf ../imdb/recordx.log")
         db_name = "imdbloadbase"
         explain = "EXPLAIN (SUMMARY, COSTS, FORMAT JSON)"
         with open('./query/join-order-benchmark/' + query_id + '.sql') as p:

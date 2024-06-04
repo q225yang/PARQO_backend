@@ -32,10 +32,10 @@ CACHE_FOREIGN_KEY_CONSTRAINT = [
 
 def get_sensitive_edge(db_name, sql):
     sen_id = []
-    os.system("rm ~/imdb/single_tbl_est_record.txt")
-    os.system("rm ~/imdb/join_est_record_job.txt")
+    os.system("rm ../imdb/single_tbl_est_record.txt")
+    os.system("rm ../imdb/join_est_record_job.txt")
 
-    conn = psycopg2.connect(host="/tmp", dbname=db_name, user="hx68")
+    conn = psycopg2.connect(host="/tmp", dbname=db_name, user="lsh")
     conn.set_session(autocommit=True)
     cursor = conn.cursor()
     cursor.execute('SET enable_material = off')
@@ -46,7 +46,7 @@ def get_sensitive_edge(db_name, sql):
     cursor.execute("SET ml_joinest_enabled=false;")
     cursor.execute(sql)
 
-    with open('/winhomes/hx68/imdb/join_est_record_job.txt') as f:
+    with open('../imdb/join_est_record_job.txt') as f:
         join = f.readlines()
     id = -1
     rel_1 = ""
@@ -101,7 +101,7 @@ def slope_RM(cursor, sql, hint, explain, t_list,
         base_output_sel = [est_base_card[i]/raw_base_card[i] for i in range(num_of_base_rel)]
         join_output_sel = [est_join_card[i]/raw_join_card[i] for i in range(num_of_join_rel)]
         write_to_file(base_output_sel, f_base_card)
-        os.system(" > ~/robust-vcm/cardinality/pointers.txt")
+        os.system(" > ./cardinality/pointers.txt")
         write_to_file(join_output_sel, f_join_card)
         ori_cost = get_plan_cost(cursor, sql=sql, hint=hint, explain=explain)
         

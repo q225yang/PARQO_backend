@@ -731,7 +731,7 @@ def rqo():
 
 
     ### Connect ot postgres server
-    conn = psycopg2.connect(host="/tmp", dbname=db_name, user="hx68")
+    conn = psycopg2.connect(host="/tmp", dbname=db_name, user="lsh")
     conn.set_session(autocommit=True)
     cursor = conn.cursor()
     print("## RQO: Connected to Postgres ...")
@@ -1028,7 +1028,7 @@ def pqo_query_subset(N=100):
 
 ### Future work, PARQO's paper uses basic pqo only
 def pqo(N=100):
-    conn = psycopg2.connect(host="/tmp", dbname=db_name, user="hx68")
+    conn = psycopg2.connect(host="/tmp", dbname=db_name, user="lsh")
     conn.set_session(autocommit=True)
     cursor = conn.cursor()
     logging.basicConfig(filename='./log/' + ON_SAMPLE + db_name + '_' + query_id + '_pqo_' + str(tolerance) + cal_sen_method + '.log', level=logging.INFO)
@@ -1197,7 +1197,7 @@ def pqo(N=100):
 
 ##### 6. PQO entrance #####
 def basic_pqo(N=100):
-    conn = psycopg2.connect(host="/tmp", dbname=db_name, user="hx68")
+    conn = psycopg2.connect(host="/tmp", dbname=db_name, user="lsh")
     conn.set_session(autocommit=True)
     cursor = conn.cursor()
     logging.basicConfig(filename='./log/' + ON_SAMPLE + db_name + '_' + query_id + '_pqo_' + str(tolerance) + '.log', level=logging.INFO)

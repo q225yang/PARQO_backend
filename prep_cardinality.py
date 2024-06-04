@@ -18,7 +18,7 @@ def write_pointers_to_file(sen_rel_list):
     output_list = [str(line) for line in sen_rel_list]
     with open("./cardinality/pointers.txt", 'w') as fp:
         fp.write('\n'.join(output_list))
-    os.system("cp ~/robust-vcm/cardinality/pointers.txt ~/imdb/")
+    os.system("cp ./cardinality/pointers.txt ../imdb/")
     return
 
 
@@ -55,9 +55,9 @@ Instead of reading estimated cardinality from file, generate the list by
 execute the sql and read the result from xxx.txt which is output by psql
 '''
 def ori_cardest(db_name, sql):
-    os.system("rm ~/imdb/single_tbl_est_record.txt")
-    os.system("rm ~/imdb/join_est_record_job.txt")
-    conn = psycopg2.connect(host="/tmp", dbname=db_name, user="vcm")
+    os.system("rm ../imdb/single_tbl_est_record.txt")
+    os.system("rm ../imdb/join_est_record_job.txt")
+    conn = psycopg2.connect(host="/tmp", dbname=db_name, user="lsh")
     conn.set_session(autocommit=True)
     cursor = conn.cursor()
     cursor.execute('SET enable_material = off')
@@ -108,9 +108,9 @@ def ori_cardest(db_name, sql):
 
 
 def get_maps(db_name, sql, debug=False):
-    os.system("rm ~/imdb/single_tbl_est_record.txt")
-    os.system("rm ~/imdb/join_est_record_job.txt")
-    conn = psycopg2.connect(host="/tmp", dbname=db_name, user="vcm")
+    os.system("rm ../imdb/single_tbl_est_record.txt")
+    os.system("rm ../imdb/join_est_record_job.txt")
+    conn = psycopg2.connect(host="/tmp", dbname=db_name, user="lsh")
     conn.set_session(autocommit=True)
     cursor = conn.cursor()
     cursor.execute('SET enable_material = off')

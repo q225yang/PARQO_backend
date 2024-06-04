@@ -415,7 +415,7 @@ if start_verify:
         print(s)
        
         for query_id in ["15a"]:
-            os.system("rm -rf ~/imdb/recordx.log")
+            os.system("rm -rf ../imdb/recordx.log")
             print(query_id)
             db_name = "imdbloadbase"
             explain = "EXPLAIN (SUMMARY, COSTS, FORMAT JSON)"
