@@ -12,3 +12,17 @@ INFO:root:### Best plan by std penalty: [6], overhead 38.37434792518616s
 INFO:root:std_penalty: 	[(0, 1653599.0729829087), (1, 1425592.7793972006), (2, 341519.21448396327), (3, 79906.17648582584), (4, 561353.957122881), (5, 26180.243923682134), (6, 14911.926654158231)]
 INFO:root:### Best plan by prob of penalized: [1], overhead 38.37434792518616s
 INFO:root:std_penalty: 	[(0, 0.78), (1, 0.44), (2, 0.78), (3, 0.72), (4, 0.76), (5, 0.98), (6, 0.98)]
+INFO:root:
+########## Robust Query Optimization ############ 
+
+INFO:root:Original optimal plan id is 0
+INFO:root:Instance id = None, Error div = 2, bandwidth = 1, tolerance = 0.2, have 50 samples.
+INFO:root:Cost of 7 plan: 	[(0, 3995.28), (1, 10014.17), (2, 4008.27), (3, 10027.17), (4, 40465.97), (5, 40143.83), (6, 54434.27)]
+INFO:root:Sensitive predicates: [5, 6]
+INFO:root:The number of samples to calculate expected penalty = 50.
+INFO:root:### Best plan by exp penalty: [3], overhead 38.76534676551819s
+INFO:root:exp_penalty_w_tol: 	[(0, 369811), (1, 231969), (2, 161994), (3, 31494), (4, 102583), (5, 34356), (6, 48608)]
+INFO:root:### Best plan by std penalty: [6], overhead 38.76534676551819s
+INFO:root:std_penalty: 	[(0, 1653599.0729829087), (1, 1425592.7793972006), (2, 341519.21448396327), (3, 79906.17648582584), (4, 561353.957122881), (5, 26180.243923682134), (6, 14911.926654158231)]
+INFO:root:### Best plan by prob of penalized: [1], overhead 38.76534676551819s
+INFO:root:std_penalty: 	[(0, 0.78), (1, 0.44), (2, 0.78), (3, 0.72), (4, 0.76), (5, 0.98), (6, 0.98)]

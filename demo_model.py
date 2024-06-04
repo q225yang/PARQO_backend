@@ -95,6 +95,7 @@ class Demo():
         self.num_of_base = len(table_name_id_dict)
         self.num_of_pair = len(pair_rel_info)
         self.num_of_join = len(join_info)
+        self.num_of_all_basic = list(range(self.num_of_base + self.num_of_pair)) # basic includes single and pair
         dim_name2id_dict, dim_id2name_dict = {}, {}
         for id in range(self.num_of_base+self.num_of_pair):
             if id < self.num_of_base:
@@ -155,6 +156,8 @@ class Demo():
         #     cur_plan_list = [cur_plan_list[7], cur_plan_list[8], cur_plan_list[10], cur_plan_list[44]]
         self.cur_plan_list = cur_plan_list  # all current plan hints
         self.plan_list = None   # the selected plan hints
+
+        self.center_err = gen_center_from_err_dist(self.est_card, self.raw_card, self.num_of_all_basic, self.err_info_dict, num_of_samples=1000, naive=self.naive)
 
     def get_error_data(self, dim):
         '''Prepare the error data for error distribution at a given dimension
@@ -290,12 +293,15 @@ class Demo():
         error = []
         rel_list = []
         for dim_name, sel_adj in inject.items():
-            rel_list.append(self.dim_name2id_dict[dim_name])
-            error.append(sel_adj)
+            dim = self.dim_name2id_dict[dim_name]
+            rel_list.append(dim)
+            est_sel = self.est_sel[dim]
+            err = cal_rel_error(sel_adj, est_sel)
+            error.append(err)
         _, _ = prep_sel(self.dim_name2id_dict, self.join_map, self.join_info,
                         self.est_base_sel, file_of_base_sel,
                         self.est_join_sel, file_of_join_sel,
-                        error=error, recentered_error=None,
+                        error=error, recentered_error=self.center_err,
                         relation_list=rel_list, rela_error=self.rel_error)
 
     def gen_samples_from_joint_err_dist(self, N, random_seeds=True, naive=False):
@@ -327,10 +333,10 @@ class Demo():
             conn.set_session(autocommit=True)
             cursor = conn.cursor()
             if not inject:
-                ### Set up for query execution
-                write_to_file(self.est_base_sel, file_of_base_sel)
-                write_to_file(self.est_join_sel, file_of_join_sel)
-                write_pointers_to_file(list(range(self.num_of_base + self.num_of_join)))
+                # ### Set up for query execution
+                # write_to_file(self.est_base_sel, file_of_base_sel)
+                # write_to_file(self.est_join_sel, file_of_join_sel)
+                # write_pointers_to_file(list(range(self.num_of_base + self.num_of_join)))
 
                 error_samples = self.gen_samples_from_joint_err_dist(N, naive=self.naive)
                 for i, plan_id in enumerate(self.plan_list):
@@ -350,7 +356,7 @@ class Demo():
                             x.append(s)
                             y.append(c)
                         plan_costs[dim_name] = {"x":x, "y":y}
-                    
+
                     costs.append(plan_costs)
                     print(f"plans: {i+1}/{len(self.plan_list)} done.")
                 # self.costs = costs
@@ -368,7 +374,7 @@ class Demo():
 
 if __name__ == "__main__":
     query_id = "2a"
-    save = True
+    save = False
     demo = Demo(query_id=query_id)
     basic_stats = demo.get_basic_info(save=save)
     
