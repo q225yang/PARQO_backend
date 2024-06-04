@@ -136,7 +136,7 @@ def get_maps(db_name, sql, debug=False):
             tname_id_dict[tname] = count
             count += 1
     single_table_num = len(estimate_single)
-    print(tname_id_dict)
+    # print(tname_id_dict)
     maps = [[-1] * single_table_num for _ in range(single_table_num)]
 
 
