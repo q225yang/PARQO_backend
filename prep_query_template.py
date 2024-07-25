@@ -14,12 +14,12 @@ cct_for_cc_subject_id = ["IN ('cast', 'crew')"] * 4 + ["= 'cast'"] * 12 + ["!= '
 cct_for_cc_status_id = ["= 'complete'"] * 3 + ["LIKE '%complete%'"] * 7 + [" = 'complete+verified'"] * 9
 
 
-def gen_sql_by_template(query_id, K, db_name=None):
+def gen_sql_by_template(query_id, K, db_name=None, rank_by_prob=False):
     np.random.seed(2024)
     
     if db_name == 'dsb': # simply use dsb's q gen
         sql_list = []
-        folder_path = f'./query/dsb/query{query_id}_spj'
+        folder_path = f'/winhomes/hx68/robust-vcm/query/dsb/query{query_id}_spj'
         for file_name in os.listdir(folder_path):
             file_path = os.path.join(folder_path, file_name)
             with open(file_path, "r") as sql_file:
@@ -114,6 +114,29 @@ def gen_sql_by_template(query_id, K, db_name=None):
     sampled_literals = np.transpose(sampled_literals).tolist()
     # Should avoid same conditions, # of parameter will change
     sampled_literals = [i for i in sampled_literals if len(set(i)) == len(i)][:K] 
+
+    # calculate the probaility of each sample: each table is sampled independently
+    if rank_by_prob:
+        chosen_probabilities = []
+        for i in sampled_literals:
+            p = 1
+            for id, literal in enumerate(i):
+                table = query_to_local_selection_dict[query_id][id]
+                total_frequency = sum(frequency_dict[table])
+                probabilities = [freq / total_frequency for freq in frequency_dict[table]]
+                indx = condition_dict[table].index(literal)
+                p *= probabilities[indx]
+            chosen_probabilities.append(p)
+        sample_prob_pairs = list(zip(sampled_literals, chosen_probabilities))
+
+        # Sort samples based on probabilities (descending order)
+        sorted_sample_prob_pairs = sorted(sample_prob_pairs, key=lambda x: x[1], reverse=True)
+
+        # Extract sorted samples and sorted probabilities
+        sampled_literals = [pair[0] for pair in sorted_sample_prob_pairs]
+        sorted_probabilities = [pair[1] for pair in sorted_sample_prob_pairs]
+        # for _, i in enumerate(sorted_probabilities):
+        #     print(i, sampled_literals[_])
 
     
     if db_name == 'stats':

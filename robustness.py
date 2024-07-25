@@ -974,7 +974,9 @@ def rqo():
 
 ### Future Work: use a subset of query to generate several robust plans and cover the entire space
 def pqo_query_subset(N=100):
-    sql_template, literal_list = gen_sql_by_template(query_id, N)
+    # sql_template, literal_list = gen_sql_by_template(query_id, N)
+    sql_template, literal_list = gen_sql_by_template(query_id, N, db_name, rank_by_prob=True)
+    
     optimized_queries_dict = {}
     ### Use the original JOB as the first cached query
     optimized_queries_dict[0] = [[int(x) for x in est_card], [int(x) for x in raw_card], sql]
