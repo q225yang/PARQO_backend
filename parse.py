@@ -36,10 +36,8 @@ def gen_join_hints(str):
         new_list.append(tmp[i])
         if i < len(tmp) - 1:
             new_list.append('(')
-    # print(new_list)
     final_list = parse_string(new_list, ')')
     final_list = parse_string(final_list, ',')
-    # print(final_list)
     for i in final_list:
         if i == '':
             final_list.remove('')
@@ -55,14 +53,11 @@ def gen_join_hints(str):
             lead += i + ' '
     lead = lead + ')'
 
-    # print(final_list)
     visited = [0] * len(final_list)
     join_hints = []
 
     for i in range(len(final_list)):
         if final_list[i] == ')' and visited[i] == 0:
-            # print("i=", i , " ", final_list[i])
-            # 找到前面第一个没有visited的左括号
             tmp_rst = ')'
             visited[i] == 1
             for j in range(i-1, -1, -1):
@@ -99,11 +94,6 @@ def gen_final_hint(str, scan_mtd):
     result += ' */'
     return result
 
-# str = 'Hash Join(c,Nested Loop(Nested Loop(Hash Join(v,p), Merge Join (a,u)),b))'
-# scan_mtd = ['Seq Scan(u)', 'Index Scan(p)', 'Index Scan(v)', 'Index Scan(b)', 'Index Only Scan(c)']
-# a, b = gen_join_hints(str)
-# print(a, b)
-# print(gen_scan_hints(scan_mtd))
 
 
 

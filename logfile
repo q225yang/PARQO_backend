@@ -8,3 +8,5 @@
 2024-05-08 10:41:44.507 EDT [2998] WARNING:  could not create listen socket for "localhost"
 2024-05-08 10:41:44.507 EDT [2998] FATAL:  could not create any TCP/IP sockets
 2024-05-08 10:41:44.517 EDT [2998] LOG:  database system is shut down
+2024-07-12 17:25:39.346 EDT [551039] FATAL:  lock file "postmaster.pid" already exists
+2024-07-12 17:25:39.346 EDT [551039] HINT:  Is another postmaster (PID 3085214) running in data directory "/home/lsh/imdb"?

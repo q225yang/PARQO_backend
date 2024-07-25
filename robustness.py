@@ -39,7 +39,7 @@ parser.add_argument('--method', type=str, default='sobol', required=False, help=
 parser.add_argument('--div',type=int, default=2, help='I do not want to say.')
 parser.add_argument('--exe', action='store_true')
 parser.add_argument('--test_18', action='store_true')
-parser.add_argument("--b", type=float, default=1)
+parser.add_argument("--b", type=float, default=1.0)
 parser.add_argument("--inst_id", type=int, default=-2)
 parser.add_argument('--plot_err', action='store_true')
 parser.add_argument('--debug', action='store_true')
@@ -1000,7 +1000,7 @@ def pqo_query_subset(N=100):
         ### Find the nearest sql by calculating KL
         nearest_id = -1
         min_kl = 1e6
-        print(sql_id, para_sql)
+        # print(sql_id, para_sql)
         for q_id, optimized_query in enumerate(optimized_queries_dict.values()):
             kl_val = cal_kl(err_info_dict, optimized_query[0], optimized_query[1], 
                         err_info_dict, para_est_card, para_raw_card, 
@@ -1020,7 +1020,7 @@ def pqo_query_subset(N=100):
         json.dump(optimized_queries_dict, file, indent=4) 
     
     for q_id, optimized_query in enumerate(optimized_queries_dict.values()):
-        print(optimized_query[2])
+        # print(optimized_query[2])
         with open(f'query/join-order-benchmark/{get_pure_q_id(query_id, db_name)}-{q_id}-b{args.b}.sql', 'w') as sql_file:
             sql_file.write(optimized_query[2])
     return
@@ -1087,7 +1087,8 @@ def pqo(N=100):
                 converted_dict = {eval(key): value for key, value in loaded_dict.items()}
                 cached_samples_dict_list.append(converted_dict)
                 
-                plan_file = f'./plan/{ON_SAMPLE}tmp_plan_dict_{db_name}_{get_pure_q_id(query_id, db_name)}-{i}{cal_sen_method}-b{args.b}.txt'
+                # plan_file = f'./plan/{ON_SAMPLE}tmp_plan_dict_{db_name}_{get_pure_q_id(query_id, db_name)}-{i}{cal_sen_method}-b{args.b}.txt'
+                plan_file = f'./plan/{ON_SAMPLE}tmp_plan_dict_{db_name}_{query_id}.txt'
                 plan_hint_dict = json.load(open(plan_file))
                 cur_list = []
                 for i in plan_hint_dict.values():
@@ -1320,6 +1321,7 @@ def basic_pqo(N=100):
         logging.info(f"Robust plan is {rob_plan_id}: {rob_latency}")
         logging.info(f"Postgres plan: {pg_latency}")
         result.append((rob_latency, pg_latency))
+    print(f"writing to reuse-test/pqo-{db_name}-{query_id}-b{args.b}.txt")
     write_to_file(result, f'reuse-test/pqo-{db_name}-{query_id}-b{args.b}.txt')
     return
 
@@ -1327,10 +1329,11 @@ def basic_pqo(N=100):
 if __name__ == "__main__":    
     np.random.seed(2023)
     if args.pqo:
-        # pqo_query_subset()
+        pqo_query_subset()
+        pqo()
         # quit()
         # basic_pqo()
-        print(calculate_overall(f'reuse-test/pqo-{db_name}-{query_id}.txt'))
+        # print(calculate_overall(f'reuse-test/pqo-{db_name}-{query_id}-b{args.b}.txt'))
         # input()
     else:
        rqo()

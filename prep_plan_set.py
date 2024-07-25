@@ -10,8 +10,8 @@ import json
 from postgres import *
 
 def enum(sensitive_dims, table_name_id_dict, join_maps, join_info, est_base_card, raw_base_card, f_base_sel, est_join_card, raw_join_card,  f_join_sel, to_execute_, db_name, err_samples, recentered_err, debug=False):
-    os.system("cp ./cardinality/new_single.txt ../imdb/")
-    conn = psycopg2.connect(host="/tmp", dbname=db_name, user="lsh")
+    os.system("cp ./cardinality/new_single.txt ~/imdb/")
+    conn = psycopg2.connect(host="/tmp", dbname=db_name, user="hx68")
     conn.set_session(autocommit=True)
 
     start_t = time.time()
@@ -42,12 +42,12 @@ def enum(sensitive_dims, table_name_id_dict, join_maps, join_info, est_base_card
             
             try:
                 # TODO: join relation
-                os.system("cp ./cardinality/join.txt ../imdb/")
-                os.system("cp ./cardinality/new_single.txt ../imdb/")
-                os.system("cp ./cardinality/pointers.txt ../imdb")
+                os.system("cp ./cardinality/join.txt ~/imdb/")
+                os.system("cp ./cardinality/new_single.txt ~/imdb/")
+                os.system("cp ./cardinality/pointers.txt ~/imdb")
                 cursor.execute('DISCARD ALL;')
                 cursor.execute('SET enable_material = off')
-                # cursor.execute('SET top_n = 0')
+                cursor.execute('SET top_n = 0')
                 cursor.execute("SET ml_cardest_enabled=true;")
                 cursor.execute("SET ml_joinest_enabled=true;")
                 cursor.execute("SET query_no=0;")
@@ -154,19 +154,19 @@ def get_plan_set_by_enum(table_name_id_dict, join_maps, join_info,
     plan_dict_total[0] = plan_list
     
     if top_k > 0:
-        conn = psycopg2.connect(host="/tmp", dbname=db_name, user="lsh")
+        conn = psycopg2.connect(host="/tmp", dbname=db_name, user="hx68")
         conn.set_session(autocommit=True)
         with conn.cursor() as cursor:
             cursor.execute('DISCARD ALL;')
             cursor.execute('SET enable_material = off')
-            # cursor.execute(f'SET top_n = {top_k}')
+            cursor.execute(f'SET top_n = {top_k}')
             cursor.execute(to_execute_)
 
 
 
 
             # Read the input from "/winhomes/hx68/imdb"
-            with open("../imdb/record.txt") as f:
+            with open("/winhomes/hx68/imdb/record.txt") as f:
                 input_string = f.read()
 
             # Build the plan tree and print the serialized plan
