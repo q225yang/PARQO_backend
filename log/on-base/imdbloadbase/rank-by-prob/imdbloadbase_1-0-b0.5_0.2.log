@@ -1,0 +1,78 @@
+INFO:root:
+########## Robust Query Optimization ############ 
+
+INFO:root:Sobol: Sample size N = 256, b = 1.0
+INFO:root:Recentered plan cost = 47095.14, plan is: /*+
+SeqScan(mc)
+SeqScan(ct)
+IndexScan(mi_idx)
+SeqScan(it)
+IndexScan(t)
+HashJoin ( mc ct )
+NestLoop ( mc ct mi_idx )
+HashJoin ( mc ct mi_idx it )
+NestLoop ( mc ct mi_idx it t )
+Leading ( ( ( ( ( mc ct ) mi_idx ) it ) t ) ) */
+INFO:root:Sobols samples size: 3584
+INFO:root:[((2, 'mc.txt'), 0.23912928981952639), ((5, 'mc_ct_r.txt'), 0.06814101589772299), ((6, 'mi_idx_it_r.txt'), 0.052669197282949026), ((7, 'mi_idx_mc_r.txt'), -0.014251150421621965), ((9, 't_mi_idx__it.txt'), 0.0008677301865733397), ((8, 't_mc_r.txt'), 0.0006017457663634044)]
+INFO:root:Max absolute value 1: (0, 5) - Value: -0.2545571911949475
+Max absolute value 2: (3, 5) - Value: 0.2437771689620834
+Max absolute value 3: (0, 4) - Value: -0.24014994746162313
+Max absolute value 4: (3, 4) - Value: 0.2240590843707003
+Max absolute value 5: (0, 3) - Value: -0.21712389291054157
+
+INFO:root:Sobols samples size: 1792
+INFO:root:[((5, 'mc_ct_r.txt'), 0.08261635077912208), ((2, 'mc.txt'), 0.06735450904639051), ((6, 'mi_idx_it_r.txt'), 0.030965177625790603), ((7, 'mi_idx_mc_r.txt'), -0.008924406976977457), ((8, 't_mc_r.txt'), 0.0015964070468752747), ((9, 't_mi_idx__it.txt'), 0.0006256178691378477)]
+INFO:root:Max absolute value 1: (3, 5) - Value: 0.29143488316269534
+Max absolute value 2: (3, 4) - Value: 0.26729533385894033
+Max absolute value 3: (0, 5) - Value: -0.056618897991798145
+Max absolute value 4: (0, 2) - Value: 0.052946977892904555
+Max absolute value 5: (1, 4) - Value: -0.05069939437043684
+
+INFO:root:Sobols samples size: 896
+INFO:root:[((6, 'mi_idx_it_r.txt'), 0.12151293678622112), ((5, 'mc_ct_r.txt'), 0.0805443652561544), ((2, 'mc.txt'), 0.04389774893161426), ((7, 'mi_idx_mc_r.txt'), 0.02676033460946541), ((9, 't_mi_idx__it.txt'), 0.0033197757099015907), ((8, 't_mc_r.txt'), 0.001720791909055975)]
+INFO:root:Max absolute value 1: (3, 5) - Value: 1.523479441287515
+Max absolute value 2: (3, 4) - Value: 1.3952522539712038
+Max absolute value 3: (0, 2) - Value: 0.43783120849227497
+Max absolute value 4: (0, 1) - Value: 0.28668580792550485
+Max absolute value 5: (0, 3) - Value: 0.09221582669976375
+
+INFO:root:Sobols samples size: 448
+INFO:root:[((5, 'mc_ct_r.txt'), 0.15595245801514632), ((6, 'mi_idx_it_r.txt'), 0.13306552204863484), ((2, 'mc.txt'), 0.09129270574937327), ((7, 'mi_idx_mc_r.txt'), 0.023202364569127294), ((9, 't_mi_idx__it.txt'), 0.009597314667879346), ((8, 't_mc_r.txt'), 0.0007107656698632282)]
+INFO:root:Max absolute value 1: (0, 2) - Value: 1.5123811332624544
+Max absolute value 2: (0, 1) - Value: 1.0744968328876014
+Max absolute value 3: (0, 3) - Value: 0.36772654228702406
+Max absolute value 4: (2, 3) - Value: 0.2973220272911601
+Max absolute value 5: (2, 5) - Value: 0.27731808124897733
+
+INFO:root:Sobols samples size: 224
+INFO:root:[((6, 'mi_idx_it_r.txt'), 0.30532244278651965), ((5, 'mc_ct_r.txt'), -0.08147061007764507), ((7, 'mi_idx_mc_r.txt'), 0.04000444225202687), ((2, 'mc.txt'), 0.009724071389222148), ((8, 't_mc_r.txt'), -0.007501563716283586), ((9, 't_mi_idx__it.txt'), 0.0)]
+INFO:root:Max absolute value 1: (0, 2) - Value: 7.068351851382051
+Max absolute value 2: (0, 1) - Value: 4.679071962990554
+Max absolute value 3: (0, 3) - Value: 2.161755934438106
+Max absolute value 4: (2, 3) - Value: 1.1353361306280532
+Max absolute value 5: (0, 4) - Value: 1.072231288341629
+
+INFO:root:Sobols samples size: 112
+INFO:root:[((5, 'mc_ct_r.txt'), -0.5520353354465986), ((6, 'mi_idx_it_r.txt'), 0.41438598901217044), ((2, 'mc.txt'), 0.19332645180840774), ((7, 'mi_idx_mc_r.txt'), -0.07576569830027954), ((8, 't_mc_r.txt'), -0.0437003085101377), ((9, 't_mi_idx__it.txt'), 0.0)]
+INFO:root:Max absolute value 1: (0, 2) - Value: 20.010919066684014
+Max absolute value 2: (0, 1) - Value: 12.982362650476317
+Max absolute value 3: (0, 3) - Value: 5.855503143215971
+Max absolute value 4: (0, 4) - Value: 2.6312881910839905
+Max absolute value 5: (0, 5) - Value: -1.3258772628204463
+
+INFO:root:Sobol's solving time: 168.91588616371155(s)
+INFO:root:
+########## Robust Query Optimization ############ 
+
+INFO:root:Original optimal plan id is 3
+INFO:root:Instance id = None, Error div = 2, bandwidth = 1.0, tolerance = 0.2, have 50 samples.
+INFO:root:Cost of 4 plan: 	[(0, 40427.48), (1, 44144.56), (2, 20255.57), (3, 20236.76)]
+INFO:root:Sensitive predicates: [2, 5, 6]
+INFO:root:The number of samples to calculate expected penalty = 50.
+INFO:root:### Best plan by exp penalty: [0], overhead 9.67063593864441s
+INFO:root:exp_penalty_w_tol: 	[(0, 4622), (1, 17861), (2, 102893), (3, 100739)]
+INFO:root:### Best plan by std penalty: [0], overhead 9.67063593864441s
+INFO:root:std_penalty: 	[(0, 10381.428409175935), (1, 23189.30436390078), (2, 110134.02292440449), (3, 106788.31255014738)]
+INFO:root:### Best plan by prob of penalized: [0], overhead 9.67063593864441s
+INFO:root:std_penalty: 	[(0, 0.2), (1, 0.56), (2, 0.78), (3, 0.78)]

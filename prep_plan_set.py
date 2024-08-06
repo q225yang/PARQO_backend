@@ -11,7 +11,7 @@ from postgres import *
 
 def enum(sensitive_dims, table_name_id_dict, join_maps, join_info, est_base_card, raw_base_card, f_base_sel, est_join_card, raw_join_card,  f_join_sel, to_execute_, db_name, err_samples, recentered_err, debug=False):
     os.system("cp ./cardinality/new_single.txt ~/imdb/")
-    conn = psycopg2.connect(host="/tmp", dbname=db_name, user="hx68")
+    conn = psycopg2.connect(host="/tmp", dbname=db_name, user="lsh")
     conn.set_session(autocommit=True)
 
     start_t = time.time()
@@ -47,7 +47,7 @@ def enum(sensitive_dims, table_name_id_dict, join_maps, join_info, est_base_card
                 os.system("cp ./cardinality/pointers.txt ~/imdb")
                 cursor.execute('DISCARD ALL;')
                 cursor.execute('SET enable_material = off')
-                cursor.execute('SET top_n = 0')
+                # cursor.execute('SET top_n = 0')
                 cursor.execute("SET ml_cardest_enabled=true;")
                 cursor.execute("SET ml_joinest_enabled=true;")
                 cursor.execute("SET query_no=0;")

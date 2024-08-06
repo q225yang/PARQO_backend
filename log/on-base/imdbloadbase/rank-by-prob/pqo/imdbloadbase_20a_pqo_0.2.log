@@ -1,0 +1,3884 @@
+INFO:root:0
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('hero', 'martial-arts', 'hand-to-hand-combat')
+        AND kt.kind ='movie'
+        AND t.production_year > 1990
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.08273641783331045 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind LIKE '%complete%'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('hero', 'martial-arts', 'hand-to-hand-combat')", "kt.kind ='movie'", 't.production_year > 1990']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:1
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword ='sequel'
+        AND kt.kind ='movie'
+        AND t.production_year > 2014
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 6
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind IN ('cast',\n                    'crew')", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='sequel'", "kt.kind ='movie'", 't.production_year > 2014']
+INFO:root:Robust plan is 18: 91.3
+INFO:root:Postgres plan: 48.2
+INFO:root:2
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword ='character-name-in-title'
+        AND kt.kind ='movie'
+        AND t.title = 'Shrek 2'
+  AND t.production_year BETWEEN 2000 AND 2010
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.6913059770395353 samples to be accurate, We have 50
+INFO:root:Nearest query is 8
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete'", "chn.name = 'Queen'", "k.keyword ='character-name-in-title'", "kt.kind ='movie'", "t.title = 'Shrek 2'\n  AND t.production_year BETWEEN 2000 AND 2010"]
+INFO:root:Robust plan is 14: 134.6
+INFO:root:Postgres plan: 129.6
+INFO:root:3
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword ='sequel'
+        AND kt.kind ='movie'
+        AND t.production_year BETWEEN 2007 AND 2010
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 6.73383806132072 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='sequel'", "kt.kind ='movie'", 't.production_year BETWEEN 2007 AND 2010']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:4
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name NOT LIKE '%Sherlock%'
+  AND (chn.name LIKE '%Tony%Stark%'
+       OR chn.name LIKE '%Iron%Man%')
+        AND k.keyword ='sequel'
+        AND kt.kind IN ('movie', 'episode')
+        AND t.production_year = 2007
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 7.866505860114367 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
+INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'complete+verified'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword ='sequel'", "kt.kind IN ('movie', 'episode')", 't.production_year = 2007']
+INFO:root:Robust plan is 8: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:5
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword ='sequel'
+        AND kt.kind IN ('movie', 'episode')
+        AND t.production_year BETWEEN 2008 AND 2014
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 2.818456563500116 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='sequel'", "kt.kind IN ('movie', 'episode')", 't.production_year BETWEEN 2008 AND 2014']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:6
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name NOT LIKE '%Sherlock%'
+  AND (chn.name LIKE '%Tony%Stark%'
+       OR chn.name LIKE '%Iron%Man%')
+        AND k.keyword LIKE '%sequel%'
+        AND kt.kind IN ('movie', 'episode')
+        AND t.production_year > 2000
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.9999999999999958 samples to be accurate, We have 49
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'complete+verified'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword LIKE '%sequel%'", "kt.kind IN ('movie', 'episode')", 't.production_year > 2000']
+INFO:root:Robust plan is 31: 1.3
+INFO:root:Postgres plan: 0.0
+INFO:root:7
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword ='sequel'
+        AND kt.kind ='movie'
+        AND t.episode_nr < 100
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.6005218281288547 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'complete+verified'", "chn.name = 'Queen'", "k.keyword ='sequel'", "kt.kind ='movie'", 't.episode_nr < 100']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:8
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword ='character-name-in-title'
+        AND kt.kind IN ('movie')
+        AND t.title = 'Shrek 2'
+  AND t.production_year BETWEEN 2000 AND 2005
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.568855240618477 samples to be accurate, We have 50
+INFO:root:Nearest query is 13
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='character-name-in-title'", "kt.kind IN ('movie')", "t.title = 'Shrek 2'\n  AND t.production_year BETWEEN 2000 AND 2005"]
+INFO:root:Robust plan is 0: 128.0
+INFO:root:Postgres plan: 130.7
+INFO:root:9
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword ='sequel'
+        AND kt.kind IN ('movie', 'episode')
+        AND t.title != '' AND (t.title LIKE 'Champion%' OR t.title LIKE 'Loser%')
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 15.08524848562758 samples to be accurate, We have 50
+INFO:root:Nearest query is 6
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'crew'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='sequel'", "kt.kind IN ('movie', 'episode')", "t.title != '' AND (t.title LIKE 'Champion%' OR t.title LIKE 'Loser%')"]
+INFO:root:Robust plan is 18: 115.6
+INFO:root:Postgres plan: 45.1
+INFO:root:10
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword = 'computer-animation'
+        AND kt.kind ='movie'
+        AND t.production_year > 2005
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.6871663663496512 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind != 'complete+verified'", "cct.kind LIKE '%complete%'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword = 'computer-animation'", "kt.kind ='movie'", 't.production_year > 2005']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:11
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+        AND kt.kind IN ('tv series')
+        AND t.production_year >2010
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 7.395958065422085 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind != 'complete+verified'", "chn.name = 'Queen'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('tv series')", 't.production_year >2010']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:12
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword = 'computer-animation'
+        AND kt.kind ='movie'
+        AND t.production_year = 1998
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 6.933697784898252 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind IN ('cast',\n                    'crew')", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword = 'computer-animation'", "kt.kind ='movie'", 't.production_year = 1998']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 15.1
+INFO:root:13
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
+        AND kt.kind IN ('movie', 'episode')
+        AND t.production_year > 2000
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.3941718140164989 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')", "kt.kind IN ('movie', 'episode')", 't.production_year > 2000']
+INFO:root:Robust plan is 8: 2.0
+INFO:root:Postgres plan: 0.0
+INFO:root:14
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword = 'computer-animation'
+        AND kt.kind ='movie'
+        AND t.production_year > 1990
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.33185563478257857 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'crew'", "chn.name = 'Queen'", "k.keyword = 'computer-animation'", "kt.kind ='movie'", 't.production_year > 1990']
+INFO:root:Robust plan is 7: 0.1
+INFO:root:Postgres plan: 0.0
+INFO:root:15
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword LIKE '%sequel%'
+        AND kt.kind ='movie'
+        AND t.production_year BETWEEN 2005 AND 2010
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.08200535458610152 samples to be accurate, We have 50
+INFO:root:Nearest query is 9
+INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind LIKE '%complete%'", "chn.name = 'Queen'", "k.keyword LIKE '%sequel%'", "kt.kind ='movie'", 't.production_year BETWEEN 2005 AND 2010']
+INFO:root:Robust plan is 6: 96.6
+INFO:root:Postgres plan: 0.0
+INFO:root:16
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword ='sequel'
+        AND kt.kind ='movie'
+        AND t.production_year = 2007
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 4.116328819131176 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind IN ('cast',\n                    'crew')", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='sequel'", "kt.kind ='movie'", 't.production_year = 2007']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:17
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name NOT LIKE '%Sherlock%'
+  AND (chn.name LIKE '%Tony%Stark%'
+       OR chn.name LIKE '%Iron%Man%')
+        AND k.keyword LIKE '%sequel%'
+        AND kt.kind ='movie'
+        AND t.production_year > 2014
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 11
+INFO:root:Current Query: ["cct.kind != 'complete+verified'", "cct.kind IN ('cast',\n                    'crew')", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword LIKE '%sequel%'", "kt.kind ='movie'", 't.production_year > 2014']
+INFO:root:Robust plan is 12: 90.0
+INFO:root:Postgres plan: 60.5
+INFO:root:18
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name NOT LIKE '%Sherlock%'
+  AND (chn.name LIKE '%Tony%Stark%'
+       OR chn.name LIKE '%Iron%Man%')
+        AND k.keyword ='character-name-in-title'
+        AND kt.kind IN ('tv series')
+        AND t.production_year >2010
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.1444753345149683 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind LIKE '%complete%'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword ='character-name-in-title'", "kt.kind IN ('tv series')", 't.production_year >2010']
+INFO:root:Robust plan is 13: 338.7
+INFO:root:Postgres plan: 129.4
+INFO:root:19
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')
+        AND kt.kind IN ('movie')
+        AND t.production_year > 1990
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.7974138912280401 samples to be accurate, We have 50
+INFO:root:Nearest query is 9
+INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'complete'", "chn.name = 'Queen'", "k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')", "kt.kind IN ('movie')", 't.production_year > 1990']
+INFO:root:Robust plan is 6: 99.5
+INFO:root:Postgres plan: 0.0
+INFO:root:20
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword = 'marvel-cinematic-universe'
+        AND kt.kind IN ('tv series',
+                   'episode')
+        AND t.production_year > 2000
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.0000005795701734 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword = 'marvel-cinematic-universe'", "kt.kind IN ('tv series',\n                   'episode')", 't.production_year > 2000']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:21
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+        AND kt.kind IN ('movie', 'episode')
+        AND t.production_year BETWEEN 2005 AND 2008
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 12.24788572553951 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('movie', 'episode')", 't.production_year BETWEEN 2005 AND 2008']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:22
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+        AND kt.kind ='movie'
+        AND t.production_year BETWEEN 2000 AND 2010
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 93.51640101951769 samples to be accurate, We have 50
+INFO:root:Nearest query is 9
+INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'cast'", "chn.name = 'Queen'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind ='movie'", 't.production_year BETWEEN 2000 AND 2010']
+INFO:root:Robust plan is 6: 99.6
+INFO:root:Postgres plan: 0.0
+INFO:root:23
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword ='sequel'
+        AND kt.kind IN ('movie')
+        AND t.production_year BETWEEN 2008 AND 2014
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 3.2930489497825164 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='sequel'", "kt.kind IN ('movie')", 't.production_year BETWEEN 2008 AND 2014']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:24
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IS NOT NULL AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+        AND kt.kind IN ('tv series')
+        AND t.production_year = 1998 AND t.title LIKE '%Money%'
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.1860812211327307 samples to be accurate, We have 50
+INFO:root:Nearest query is 13
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IS NOT NULL AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('tv series')", "t.production_year = 1998 AND t.title LIKE '%Money%'"]
+INFO:root:Robust plan is 0: 155.7
+INFO:root:Postgres plan: 155.8
+INFO:root:25
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+        AND kt.kind IN ('movie', 'tv movie', 'video movie', 'video game')
+        AND t.production_year BETWEEN 1950 AND 2000
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.673764684175372 samples to be accurate, We have 50
+INFO:root:Nearest query is 9
+INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'crew'", "chn.name = 'Queen'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('movie', 'tv movie', 'video movie', 'video game')", 't.production_year BETWEEN 1950 AND 2000']
+INFO:root:Robust plan is 6: 96.6
+INFO:root:Postgres plan: 0.0
+INFO:root:26
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword ='sequel'
+        AND kt.kind IN ('tv series')
+        AND t.production_year > 1950
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.9190119481883926 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind LIKE '%complete%'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='sequel'", "kt.kind IN ('tv series')", 't.production_year > 1950']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:27
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+        AND kt.kind IN ('tv series',
+                   'episode')
+        AND t.production_year > 2000
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 2.3416370607136283 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')", "kt.kind IN ('tv series',\n                   'episode')", 't.production_year > 2000']
+INFO:root:Robust plan is 8: 0.6
+INFO:root:Postgres plan: 0.0
+INFO:root:28
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('murder', 'blood', 'gore', 'death', 'female-nudity')
+        AND kt.kind IN ('tv series',
+                   'episode')
+        AND t.production_year BETWEEN 1950 AND 2010
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.030534266832314003 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('murder', 'blood', 'gore', 'death', 'female-nudity')", "kt.kind IN ('tv series',\n                   'episode')", 't.production_year BETWEEN 1950 AND 2010']
+INFO:root:Robust plan is 8: 1.8
+INFO:root:Postgres plan: 0.0
+INFO:root:29
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')
+        AND kt.kind ='movie'
+        AND t.production_year > 2008
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 138.04186498868518 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')", "kt.kind ='movie'", 't.production_year > 2008']
+INFO:root:Robust plan is 8: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:30
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword ='character-name-in-title'
+        AND kt.kind ='movie'
+        AND t.production_year > 1950
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.7255918792494516 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='character-name-in-title'", "kt.kind ='movie'", 't.production_year > 1950']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:31
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name NOT LIKE '%Sherlock%'
+  AND (chn.name LIKE '%Tony%Stark%'
+       OR chn.name LIKE '%Iron%Man%')
+        AND k.keyword LIKE '%sequel%'
+        AND kt.kind IN ('tv series',
+                   'episode')
+        AND t.production_year > 2000
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.0000000000000004 samples to be accurate, We have 49
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind LIKE '%complete%'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword LIKE '%sequel%'", "kt.kind IN ('tv series',\n                   'episode')", 't.production_year > 2000']
+INFO:root:Robust plan is 31: 2.4
+INFO:root:Postgres plan: 0.0
+INFO:root:32
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name NOT LIKE '%Sherlock%'
+  AND (chn.name LIKE '%Tony%Stark%'
+       OR chn.name LIKE '%Iron%Man%')
+        AND k.keyword LIKE '%sequel%'
+        AND kt.kind ='movie'
+        AND t.production_year BETWEEN 2005 AND 2008
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.34524773531719954 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind LIKE '%complete%'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword LIKE '%sequel%'", "kt.kind ='movie'", 't.production_year BETWEEN 2005 AND 2008']
+INFO:root:Robust plan is 13: 174.6
+INFO:root:Postgres plan: 0.0
+INFO:root:33
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword ='10,000-mile-club'
+        AND kt.kind IN ('tv series')
+        AND t.production_year > 2000
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.9748822004852541 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind LIKE '%complete%'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='10,000-mile-club'", "kt.kind IN ('tv series')", 't.production_year > 2000']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:34
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+        AND kt.kind ='movie'
+        AND t.production_year >2010
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 14.89690834798575 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')", "kt.kind ='movie'", 't.production_year >2010']
+INFO:root:Robust plan is 8: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:35
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword LIKE '%sequel%'
+        AND kt.kind IN ('tv series')
+        AND t.production_year > 2005
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.0000000000000004 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword LIKE '%sequel%'", "kt.kind IN ('tv series')", 't.production_year > 2005']
+INFO:root:Robust plan is 8: 2.2
+INFO:root:Postgres plan: 0.0
+INFO:root:36
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IS NOT NULL AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+        AND kt.kind ='movie'
+        AND t.production_year > 2009
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.40948133736625203 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'crew'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IS NOT NULL AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind ='movie'", 't.production_year > 2009']
+INFO:root:Robust plan is 8: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:37
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+        AND kt.kind ='movie'
+        AND t.production_year BETWEEN 2007 AND 2008
+  AND t.title LIKE '%Kung%Fu%Panda%'
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.6877433417571718 samples to be accurate, We have 50
+INFO:root:Nearest query is 8
+INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind IN ('cast',\n                    'crew')", "chn.name = 'Queen'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind ='movie'", "t.production_year BETWEEN 2007 AND 2008\n  AND t.title LIKE '%Kung%Fu%Panda%'"]
+INFO:root:Robust plan is 14: 236.0
+INFO:root:Postgres plan: 147.4
+INFO:root:38
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword ='character-name-in-title'
+        AND kt.kind ='movie'
+        AND t.production_year >2010
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.007831425833218617 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='character-name-in-title'", "kt.kind ='movie'", 't.production_year >2010']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:39
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword ='sequel'
+        AND kt.kind IN ('movie')
+        AND t.production_year > 2005
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.092236555702913 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='sequel'", "kt.kind IN ('movie')", 't.production_year > 2005']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:40
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword ='character-name-in-title'
+        AND kt.kind ='movie'
+        AND t.production_year > 2000
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.9999999999999994 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='character-name-in-title'", "kt.kind ='movie'", 't.production_year > 2000']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:41
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+        AND kt.kind IN ('tv series',
+                   'episode')
+        AND t.production_year > 2000
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.23875617674682442 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'complete'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')", "kt.kind IN ('tv series',\n                   'episode')", 't.production_year > 2000']
+INFO:root:Robust plan is 8: 0.7
+INFO:root:Postgres plan: 0.0
+INFO:root:42
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
+        AND kt.kind IN ('movie', 'episode')
+        AND t.production_year BETWEEN 1950 AND 2010
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 27.456927491645622 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cct.kind = 'crew'", "cct.kind LIKE '%complete%'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')", "kt.kind IN ('movie', 'episode')", 't.production_year BETWEEN 1950 AND 2010']
+INFO:root:Robust plan is 8: 1.8
+INFO:root:Postgres plan: 0.0
+INFO:root:43
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword LIKE '%sequel%'
+        AND kt.kind ='movie'
+        AND t.production_year BETWEEN 2000 AND 2010
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.9612373640786823 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind LIKE '%complete%'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword LIKE '%sequel%'", "kt.kind ='movie'", 't.production_year BETWEEN 2000 AND 2010']
+INFO:root:Robust plan is 8: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:44
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword ='character-name-in-title'
+        AND kt.kind IN ('movie')
+        AND t.production_year >2010
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.0938064872435211 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete+verified'", "chn.name = 'Queen'", "k.keyword ='character-name-in-title'", "kt.kind IN ('movie')", 't.production_year >2010']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:45
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+        AND kt.kind IN ('tv series')
+        AND t.production_year > 2005
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.9678503883794964 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cct.kind = 'crew'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('tv series')", 't.production_year > 2005']
+INFO:root:Robust plan is 8: 2.6
+INFO:root:Postgres plan: 0.0
+INFO:root:46
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name NOT LIKE '%Sherlock%'
+  AND (chn.name LIKE '%Tony%Stark%'
+       OR chn.name LIKE '%Iron%Man%')
+        AND k.keyword ='character-name-in-title'
+        AND kt.kind IN ('movie', 'episode')
+        AND t.production_year BETWEEN 2000 AND 2010
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.1173531286515666 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
+INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind = 'complete+verified'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword ='character-name-in-title'", "kt.kind IN ('movie', 'episode')", 't.production_year BETWEEN 2000 AND 2010']
+INFO:root:Robust plan is 8: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:47
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword LIKE '%sequel%'
+        AND kt.kind ='movie'
+        AND t.production_year BETWEEN 1950 AND 2000
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.9565551023538857 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind LIKE '%complete%'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword LIKE '%sequel%'", "kt.kind ='movie'", 't.production_year BETWEEN 1950 AND 2000']
+INFO:root:Robust plan is 8: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:48
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('hero', 'martial-arts', 'hand-to-hand-combat')
+        AND kt.kind IN ('tv series')
+        AND t.production_year > 2008
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.974808903662447 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind != 'complete+verified'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('hero', 'martial-arts', 'hand-to-hand-combat')", "kt.kind IN ('tv series')", 't.production_year > 2008']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:49
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword = 'computer-animation'
+        AND kt.kind ='movie'
+        AND t.production_year > 2005
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.149180604496291 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'cast'", "chn.name = 'Queen'", "k.keyword = 'computer-animation'", "kt.kind ='movie'", 't.production_year > 2005']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:50
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IS NOT NULL AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+        AND kt.kind IN ('movie', 'episode')
+        AND t.production_year > 2000
+  AND (t.title LIKE '%Freddy%'
+       OR t.title LIKE '%Jason%'
+       OR t.title LIKE 'Saw%')
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.41058596079597426 samples to be accurate, We have 50
+INFO:root:Nearest query is 5
+INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'crew'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IS NOT NULL AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('movie', 'episode')", "t.production_year > 2000\n  AND (t.title LIKE '%Freddy%'\n       OR t.title LIKE '%Jason%'\n       OR t.title LIKE 'Saw%')"]
+INFO:root:Robust plan is 11: 132.1
+INFO:root:Postgres plan: 197.8
+INFO:root:51
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')
+        AND kt.kind IN ('movie', 'episode')
+        AND t.production_year BETWEEN 2000 AND 2010
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 8.07762525399944 samples to be accurate, We have 50
+INFO:root:Nearest query is 9
+INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind = 'cast'", "chn.name = 'Queen'", "k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')", "kt.kind IN ('movie', 'episode')", 't.production_year BETWEEN 2000 AND 2010']
+INFO:root:Robust plan is 6: 100.9
+INFO:root:Postgres plan: 0.0
+INFO:root:52
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+        AND kt.kind ='movie'
+        AND t.title = 'Shrek 2'
+  AND t.production_year BETWEEN 2000 AND 2005
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.9143174783994686 samples to be accurate, We have 50
+INFO:root:Nearest query is 13
+INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind LIKE '%complete%'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind ='movie'", "t.title = 'Shrek 2'\n  AND t.production_year BETWEEN 2000 AND 2005"]
+INFO:root:Robust plan is 0: 153.9
+INFO:root:Postgres plan: 150.4
+INFO:root:53
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name NOT LIKE '%Sherlock%'
+  AND (chn.name LIKE '%Tony%Stark%'
+       OR chn.name LIKE '%Iron%Man%')
+        AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+        AND kt.kind IN ('movie')
+        AND t.production_year > 2000
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.32980793227342375 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind LIKE '%complete%'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')", "kt.kind IN ('movie')", 't.production_year > 2000']
+INFO:root:Robust plan is 13: 174.4
+INFO:root:Postgres plan: 0.0
+INFO:root:54
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword LIKE '%sequel%'
+        AND kt.kind ='movie'
+        AND t.production_year > 2000
+  AND (t.title LIKE '%Freddy%'
+       OR t.title LIKE '%Jason%'
+       OR t.title LIKE 'Saw%')
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.6986193339187243 samples to be accurate, We have 50
+INFO:root:Nearest query is 5
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind LIKE '%complete%'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword LIKE '%sequel%'", "kt.kind ='movie'", "t.production_year > 2000\n  AND (t.title LIKE '%Freddy%'\n       OR t.title LIKE '%Jason%'\n       OR t.title LIKE 'Saw%')"]
+INFO:root:Robust plan is 11: 14.2
+INFO:root:Postgres plan: 61.7
+INFO:root:55
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name NOT LIKE '%Sherlock%'
+  AND (chn.name LIKE '%Tony%Stark%'
+       OR chn.name LIKE '%Iron%Man%')
+        AND k.keyword ='sequel'
+        AND kt.kind IN ('tv series')
+        AND t.production_year > 2000
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.780201302830709 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
+INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind = 'crew'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword ='sequel'", "kt.kind IN ('tv series')", 't.production_year > 2000']
+INFO:root:Robust plan is 8: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:56
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+        AND kt.kind ='movie'
+        AND t.production_year > 1990
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.03945483447211175 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'cast'", "chn.name = 'Queen'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind ='movie'", 't.production_year > 1990']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:57
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+        AND kt.kind IN ('tv series',
+                   'episode')
+        AND t.production_year BETWEEN 2005 AND 2008
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 17.938601870535024 samples to be accurate, We have 50
+INFO:root:Nearest query is 9
+INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind = 'cast'", "chn.name = 'Queen'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('tv series',\n                   'episode')", 't.production_year BETWEEN 2005 AND 2008']
+INFO:root:Robust plan is 6: 100.9
+INFO:root:Postgres plan: 0.0
+INFO:root:58
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword ='sequel'
+        AND kt.kind ='movie'
+        AND t.production_year > 2005
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.05624137394360914 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='sequel'", "kt.kind ='movie'", 't.production_year > 2005']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:59
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+        AND kt.kind IN ('tv series')
+        AND t.production_year BETWEEN 1950 AND 2010
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 2.04386087442665 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('tv series')", 't.production_year BETWEEN 1950 AND 2010']
+INFO:root:Robust plan is 8: 2.7
+INFO:root:Postgres plan: 0.0
+INFO:root:60
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword ='sequel'
+        AND kt.kind IN ('movie', 'episode')
+        AND t.production_year > 2000
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.6540971277357139 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='sequel'", "kt.kind IN ('movie', 'episode')", 't.production_year > 2000']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:61
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword IN ('hero', 'martial-arts', 'hand-to-hand-combat', 'computer-animated-movie')
+        AND kt.kind ='movie'
+        AND t.production_year > 2010
+  AND t.title LIKE 'Vampire%'
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 37.048869905219355 samples to be accurate, We have 50
+INFO:root:Nearest query is 8
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'cast'", "chn.name = 'Queen'", "k.keyword IN ('hero', 'martial-arts', 'hand-to-hand-combat', 'computer-animated-movie')", "kt.kind ='movie'", "t.production_year > 2010\n  AND t.title LIKE 'Vampire%'"]
+INFO:root:Robust plan is 14: 20.8
+INFO:root:Postgres plan: 55.9
+INFO:root:62
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+        AND kt.kind ='movie'
+        AND t.title = 'Shrek 2'
+  AND t.production_year BETWEEN 2000 AND 2010
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 155.09958895093988 samples to be accurate, We have 50
+INFO:root:Nearest query is 10
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'cast'", "chn.name = 'Queen'", "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')", "kt.kind ='movie'", "t.title = 'Shrek 2'\n  AND t.production_year BETWEEN 2000 AND 2010"]
+INFO:root:Robust plan is 8: 98.5
+INFO:root:Postgres plan: 105.7
+INFO:root:63
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('sequel', 'revenge', 'based-on-novel')
+        AND kt.kind ='movie'
+        AND t.production_year > 1950
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 813.8395741559567 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('sequel', 'revenge', 'based-on-novel')", "kt.kind ='movie'", 't.production_year > 1950']
+INFO:root:Robust plan is 13: 172.5
+INFO:root:Postgres plan: 0.0
+INFO:root:64
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+        AND kt.kind IN ('movie', 'tv movie', 'video movie', 'video game')
+        AND t.title = 'Shrek 2'
+  AND t.production_year BETWEEN 2000 AND 2005
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.0213634854323366 samples to be accurate, We have 50
+INFO:root:Nearest query is 13
+INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')", "kt.kind IN ('movie', 'tv movie', 'video movie', 'video game')", "t.title = 'Shrek 2'\n  AND t.production_year BETWEEN 2000 AND 2005"]
+INFO:root:Robust plan is 0: 149.1
+INFO:root:Postgres plan: 154.1
+INFO:root:65
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')
+        AND kt.kind IN ('movie')
+        AND t.production_year > 2000
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 4.5786344843029445 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')", "kt.kind IN ('movie')", 't.production_year > 2000']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:66
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword ='character-name-in-title'
+        AND kt.kind ='movie'
+        AND t.production_year = 2007
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.3545887474377512 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'cast'", "chn.name = 'Queen'", "k.keyword ='character-name-in-title'", "kt.kind ='movie'", 't.production_year = 2007']
+INFO:root:Robust plan is 7: 0.1
+INFO:root:Postgres plan: 0.0
+INFO:root:67
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name NOT LIKE '%Sherlock%'
+  AND (chn.name LIKE '%Tony%Stark%'
+       OR chn.name LIKE '%Iron%Man%')
+        AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+        AND kt.kind IN ('tv series')
+        AND t.production_year > 1950
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.08506019646548454 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'cast'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('tv series')", 't.production_year > 1950']
+INFO:root:Robust plan is 13: 435.3
+INFO:root:Postgres plan: 0.0
+INFO:root:68
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword = 'computer-animation'
+        AND kt.kind ='movie'
+        AND t.production_year = 1998 AND t.title LIKE '%Money%'
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 246.63758020228912 samples to be accurate, We have 50
+INFO:root:Nearest query is 13
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind IN ('cast',\n                    'crew')", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword = 'computer-animation'", "kt.kind ='movie'", "t.production_year = 1998 AND t.title LIKE '%Money%'"]
+INFO:root:Robust plan is 0: 18.3
+INFO:root:Postgres plan: 14.7
+INFO:root:69
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+        AND kt.kind IN ('tv series',
+                   'episode')
+        AND t.production_year > 1950
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 23.465351041132532 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('tv series',\n                   'episode')", 't.production_year > 1950']
+INFO:root:Robust plan is 8: 2.7
+INFO:root:Postgres plan: 0.0
+INFO:root:70
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword ='sequel'
+        AND kt.kind ='movie'
+        AND t.production_year > 2010
+  AND t.title LIKE 'Vampire%'
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.9999999999999993 samples to be accurate, We have 50
+INFO:root:Nearest query is 8
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete+verified'", "chn.name = 'Queen'", "k.keyword ='sequel'", "kt.kind ='movie'", "t.production_year > 2010\n  AND t.title LIKE 'Vampire%'"]
+INFO:root:Robust plan is 14: 21.2
+INFO:root:Postgres plan: 47.9
+INFO:root:71
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+        AND kt.kind IN ('tv series')
+        AND t.production_year BETWEEN 2007 AND 2010
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.5151879392666807 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')", "kt.kind IN ('tv series')", 't.production_year BETWEEN 2007 AND 2010']
+INFO:root:Robust plan is 8: 0.6
+INFO:root:Postgres plan: 0.0
+INFO:root:72
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword ='sequel'
+        AND kt.kind ='movie'
+        AND t.production_year > 2009
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 6.739490995729502 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='sequel'", "kt.kind ='movie'", 't.production_year > 2009']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:73
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name NOT LIKE '%Sherlock%'
+  AND (chn.name LIKE '%Tony%Stark%'
+       OR chn.name LIKE '%Iron%Man%')
+        AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+        AND kt.kind IN ('movie', 'episode')
+        AND t.production_year > 2005
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.22963644671765576 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind LIKE '%complete%'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')", "kt.kind IN ('movie', 'episode')", 't.production_year > 2005']
+INFO:root:Robust plan is 13: 669.4
+INFO:root:Postgres plan: 0.0
+INFO:root:74
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword ='character-name-in-title'
+        AND kt.kind IN ('tv series')
+        AND t.production_year > 2000
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.65087028064153 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'cast'", "chn.name = 'Queen'", "k.keyword ='character-name-in-title'", "kt.kind IN ('tv series')", 't.production_year > 2000']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:75
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword = 'marvel-cinematic-universe'
+        AND kt.kind ='movie'
+        AND t.production_year > 2005
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.7752594652231264 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword = 'marvel-cinematic-universe'", "kt.kind ='movie'", 't.production_year > 2005']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:76
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword IS NOT NULL AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+        AND kt.kind IN ('movie', 'episode')
+        AND t.production_year > 2005
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 31.15435043154626 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'complete'", "chn.name = 'Queen'", "k.keyword IS NOT NULL AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('movie', 'episode')", 't.production_year > 2005']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:77
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name NOT LIKE '%Sherlock%'
+  AND (chn.name LIKE '%Tony%Stark%'
+       OR chn.name LIKE '%Iron%Man%')
+        AND k.keyword ='character-name-in-title'
+        AND kt.kind IN ('movie', 'episode')
+        AND t.production_year BETWEEN 1950 AND 2010
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.2827175639053168 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
+INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind = 'cast'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword ='character-name-in-title'", "kt.kind IN ('movie', 'episode')", 't.production_year BETWEEN 1950 AND 2010']
+INFO:root:Robust plan is 8: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:78
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+        AND kt.kind IN ('tv series',
+                   'episode')
+        AND t.production_year > 2000
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.4467606297720121 samples to be accurate, We have 50
+INFO:root:Nearest query is 9
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind IN ('cast',\n                    'crew')", "chn.name = 'Queen'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('tv series',\n                   'episode')", 't.production_year > 2000']
+INFO:root:Robust plan is 6: 98.2
+INFO:root:Postgres plan: 0.0
+INFO:root:79
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword = 'marvel-cinematic-universe'
+        AND kt.kind ='movie'
+        AND t.production_year BETWEEN 2008 AND 2014
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.44799101940206654 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind != 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword = 'marvel-cinematic-universe'", "kt.kind ='movie'", 't.production_year BETWEEN 2008 AND 2014']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:80
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+        AND kt.kind ='movie'
+        AND t.production_year BETWEEN 1950 AND 2010
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.8627023531686482 samples to be accurate, We have 50
+INFO:root:Nearest query is 9
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind IN ('cast',\n                    'crew')", "chn.name = 'Queen'", "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')", "kt.kind ='movie'", 't.production_year BETWEEN 1950 AND 2010']
+INFO:root:Robust plan is 6: 96.6
+INFO:root:Postgres plan: 0.0
+INFO:root:81
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword LIKE '%sequel%'
+        AND kt.kind IN ('movie', 'episode')
+        AND t.production_year BETWEEN 2008 AND 2014
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.00014384768211855842 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword LIKE '%sequel%'", "kt.kind IN ('movie', 'episode')", 't.production_year BETWEEN 2008 AND 2014']
+INFO:root:Robust plan is 8: 1.8
+INFO:root:Postgres plan: 0.0
+INFO:root:82
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword = 'computer-animation'
+        AND kt.kind IN ('tv series')
+        AND t.title != '' AND (t.title LIKE 'Champion%' OR t.title LIKE 'Loser%')
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 9.02268404897095 samples to be accurate, We have 50
+INFO:root:Nearest query is 6
+INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword = 'computer-animation'", "kt.kind IN ('tv series')", "t.title != '' AND (t.title LIKE 'Champion%' OR t.title LIKE 'Loser%')"]
+INFO:root:Robust plan is 18: 116.5
+INFO:root:Postgres plan: 14.2
+INFO:root:83
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+        AND kt.kind IN ('tv series')
+        AND t.production_year BETWEEN 1950 AND 2000
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.1268705013470146 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('tv series')", 't.production_year BETWEEN 1950 AND 2000']
+INFO:root:Robust plan is 8: 2.5
+INFO:root:Postgres plan: 0.0
+INFO:root:84
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name NOT LIKE '%Sherlock%'
+  AND (chn.name LIKE '%Tony%Stark%'
+       OR chn.name LIKE '%Iron%Man%')
+        AND k.keyword ='sequel'
+        AND kt.kind IN ('movie', 'episode')
+        AND t.production_year > 2010
+  AND t.title LIKE 'Kung Fu Panda%'
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.26406812883452546 samples to be accurate, We have 50
+INFO:root:Nearest query is 12
+INFO:root:Current Query: ["cct.kind != 'complete+verified'", "cct.kind = 'complete+verified'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword ='sequel'", "kt.kind IN ('movie', 'episode')", "t.production_year > 2010\n  AND t.title LIKE 'Kung Fu Panda%'"]
+INFO:root:Robust plan is 17: 96.8
+INFO:root:Postgres plan: 46.3
+INFO:root:85
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+        AND kt.kind ='movie'
+        AND t.production_year = 2007
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 28.089778459144014 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'complete'", "chn.name = 'Queen'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind ='movie'", 't.production_year = 2007']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:86
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+        AND kt.kind ='movie'
+        AND t.production_year BETWEEN 2007 AND 2008
+  AND t.title LIKE '%Kung%Fu%Panda%'
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 22.418661226813676 samples to be accurate, We have 50
+INFO:root:Nearest query is 5
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind LIKE '%complete%'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')", "kt.kind ='movie'", "t.production_year BETWEEN 2007 AND 2008\n  AND t.title LIKE '%Kung%Fu%Panda%'"]
+INFO:root:Robust plan is 11: 234.1
+INFO:root:Postgres plan: 106.5
+INFO:root:87
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword ='character-name-in-title'
+        AND kt.kind IN ('movie', 'episode')
+        AND t.production_year > 1990
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.018384333664175655 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='character-name-in-title'", "kt.kind IN ('movie', 'episode')", 't.production_year > 1990']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:88
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name = 'Queen'
+        AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
+        AND kt.kind IN ('movie', 'episode')
+        AND t.production_year > 2000
+  AND (t.title LIKE '%Freddy%'
+       OR t.title LIKE '%Jason%'
+       OR t.title LIKE 'Saw%')
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 10
+INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind IN ('cast',\n                    'crew')", "chn.name = 'Queen'", "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')", "kt.kind IN ('movie', 'episode')", "t.production_year > 2000\n  AND (t.title LIKE '%Freddy%'\n       OR t.title LIKE '%Jason%'\n       OR t.title LIKE 'Saw%')"]
+INFO:root:Robust plan is 8: 99.1
+INFO:root:Postgres plan: 320.8
+INFO:root:89
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')
+        AND kt.kind IN ('tv series')
+        AND t.production_year > 2009
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 31.754814300480124 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')", "kt.kind IN ('tv series')", 't.production_year > 2009']
+INFO:root:Robust plan is 8: 1.5
+INFO:root:Postgres plan: 0.0
+INFO:root:90
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
+        AND kt.kind IN ('movie', 'tv movie', 'video movie', 'video game')
+        AND t.production_year >2010
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 7.7770558423057805 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')", "kt.kind IN ('movie', 'tv movie', 'video movie', 'video game')", 't.production_year >2010']
+INFO:root:Robust plan is 8: 2.3
+INFO:root:Postgres plan: 0.0
+INFO:root:91
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name NOT LIKE '%Sherlock%'
+  AND (chn.name LIKE '%Tony%Stark%'
+       OR chn.name LIKE '%Iron%Man%')
+        AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+        AND kt.kind IN ('tv series',
+                   'episode')
+        AND t.production_year > 2010
+  AND t.title LIKE 'Kung Fu Panda%'
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 3.1655716415526323 samples to be accurate, We have 50
+INFO:root:Nearest query is 11
+INFO:root:Current Query: ["cct.kind = 'crew'", "cct.kind LIKE '%complete%'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('tv series',\n                   'episode')", "t.production_year > 2010\n  AND t.title LIKE 'Kung Fu Panda%'"]
+INFO:root:Robust plan is 12: 95.1
+INFO:root:Postgres plan: 148.6
+INFO:root:92
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword ='character-name-in-title'
+        AND kt.kind IN ('movie', 'episode')
+        AND t.production_year > 2005
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.35150257962042764 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind LIKE '%complete%'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='character-name-in-title'", "kt.kind IN ('movie', 'episode')", 't.production_year > 2005']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:93
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+        AND kt.kind IN ('movie', 'episode')
+        AND t.title = 'Shrek 2'
+  AND t.production_year BETWEEN 2000 AND 2010
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 3.667605765898855 samples to be accurate, We have 50
+INFO:root:Nearest query is 13
+INFO:root:Current Query: ["cct.kind = 'crew'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')", "kt.kind IN ('movie', 'episode')", "t.title = 'Shrek 2'\n  AND t.production_year BETWEEN 2000 AND 2010"]
+INFO:root:Robust plan is 0: 163.0
+INFO:root:Postgres plan: 150.1
+INFO:root:94
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword ='character-name-in-title'
+        AND kt.kind IN ('tv series',
+                   'episode')
+        AND t.production_year > 2000
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.35091980686304547 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='character-name-in-title'", "kt.kind IN ('tv series',\n                   'episode')", 't.production_year > 2000']
+INFO:root:Robust plan is 7: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:95
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword LIKE '%sequel%'
+        AND kt.kind IN ('tv series')
+        AND t.production_year BETWEEN 2005 AND 2010
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.4646397726574623 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword LIKE '%sequel%'", "kt.kind IN ('tv series')", 't.production_year BETWEEN 2005 AND 2010']
+INFO:root:Robust plan is 8: 2.4
+INFO:root:Postgres plan: 0.0
+INFO:root:96
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+        AND kt.kind IN ('tv series',
+                   'episode')
+        AND t.production_year > 2000
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 2.0533982485905455 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'complete'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('tv series',\n                   'episode')", 't.production_year > 2000']
+INFO:root:Robust plan is 8: 2.6
+INFO:root:Postgres plan: 0.0
+INFO:root:97
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name NOT LIKE '%Sherlock%'
+  AND (chn.name LIKE '%Tony%Stark%'
+       OR chn.name LIKE '%Iron%Man%')
+        AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+        AND kt.kind IN ('movie')
+        AND t.production_year > 2000
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.7605873254597718 samples to be accurate, We have 49
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind IN ('cast',\n                    'crew')", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')", "kt.kind IN ('movie')", 't.production_year > 2000']
+INFO:root:Robust plan is 31: 0.0
+INFO:root:Postgres plan: 0.0
+INFO:root:98
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name NOT LIKE '%Sherlock%'
+  AND (chn.name LIKE '%Tony%Stark%'
+       OR chn.name LIKE '%Iron%Man%')
+        AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
+        AND kt.kind ='movie'
+        AND t.production_year > 2005
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 0.0637906441315477 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind = 'cast'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')", "kt.kind ='movie'", 't.production_year > 2005']
+INFO:root:Robust plan is 13: 171.5
+INFO:root:Postgres plan: 0.0
+INFO:root:99
+INFO:root:
+        SELECT MIN(t.title) AS complete_downey_ironman_movie
+        FROM complete_cast AS cc,
+            comp_cast_type AS cct1,
+            comp_cast_type AS cct2,
+            char_name AS chn,
+            cast_info AS ci,
+            keyword AS k,
+            kind_type AS kt,
+            movie_keyword AS mk,
+            name AS n,
+            title AS t
+        WHERE cct1.kind = 'cast'
+        AND cct2.kind LIKE '%complete%'
+        AND chn.name NOT LIKE '%Sherlock%'
+  AND (chn.name LIKE '%Tony%Stark%'
+       OR chn.name LIKE '%Iron%Man%')
+        AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+        AND kt.kind IN ('tv series')
+        AND t.production_year > 2014
+        AND kt.id = t.kind_id
+        AND t.id = mk.movie_id
+        AND t.id = ci.movie_id
+        AND t.id = cc.movie_id
+        AND mk.movie_id = ci.movie_id
+        AND mk.movie_id = cc.movie_id
+        AND ci.movie_id = cc.movie_id
+        AND chn.id = ci.person_role_id
+        AND n.id = ci.person_id
+        AND k.id = mk.keyword_id
+        AND cct1.id = cc.subject_id
+        AND cct2.id = cc.status_id;
+    
+INFO:root:--- PQO: Need 2.2911771676153534 samples to be accurate, We have 50
+INFO:root:Nearest query is 11
+INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind LIKE '%complete%'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')", "kt.kind IN ('tv series')", 't.production_year > 2014']
+INFO:root:Robust plan is 12: 97.9
+INFO:root:Postgres plan: 104.8

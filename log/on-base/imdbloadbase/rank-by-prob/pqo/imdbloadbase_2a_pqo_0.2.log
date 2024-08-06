@@ -1,0 +1,2121 @@
+INFO:root:0
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword ='sequel'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0000000000000009 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword ='sequel'"]
+INFO:root:Robust plan is 10: 571.2
+INFO:root:Postgres plan: 182.9
+INFO:root:1
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code = '[ru]'
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 2.2822513845289834 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ["cn.country_code = '[ru]'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')"]
+INFO:root:Robust plan is 7: 267.3
+INFO:root:Postgres plan: 796.1
+INFO:root:2
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword ='character-name-in-title'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.9999999999999998 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword ='character-name-in-title'"]
+INFO:root:Robust plan is 10: 623.3
+INFO:root:Postgres plan: 525.8
+INFO:root:3
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[nl]'
+    AND k.keyword ='character-name-in-title'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 2.194035295697405 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cn.country_code ='[nl]'", "k.keyword ='character-name-in-title'"]
+INFO:root:Robust plan is 7: 293.7
+INFO:root:Postgres plan: 413.6
+INFO:root:4
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 3.1397294970535743 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')"]
+INFO:root:Robust plan is 5: 540.1
+INFO:root:Postgres plan: 533.7
+INFO:root:5
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.3636714621259723 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')"]
+INFO:root:Robust plan is 5: 540.0
+INFO:root:Postgres plan: 542.0
+INFO:root:6
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code !='[pl]' AND (cn.name LIKE '%Film%' OR cn.name LIKE '%Warner%')
+    AND k.keyword IN ('sequel', 'revenge', 'based-on-novel')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 4.223727782329888 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["cn.country_code !='[pl]' AND (cn.name LIKE '%Film%' OR cn.name LIKE '%Warner%')", "k.keyword IN ('sequel', 'revenge', 'based-on-novel')"]
+INFO:root:Robust plan is 2: 522.9
+INFO:root:Postgres plan: 788.9
+INFO:root:7
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[jp]'
+    AND k.keyword ='character-name-in-title'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.6843647387361902 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["cn.country_code ='[jp]'", "k.keyword ='character-name-in-title'"]
+INFO:root:Robust plan is 2: 312.1
+INFO:root:Postgres plan: 420.7
+INFO:root:8
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword ='sequel'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0000000000000004 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword ='sequel'"]
+INFO:root:Robust plan is 10: 564.2
+INFO:root:Postgres plan: 180.2
+INFO:root:9
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword ='sequel'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.9999999999999994 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword ='sequel'"]
+INFO:root:Robust plan is 10: 580.5
+INFO:root:Postgres plan: 171.4
+INFO:root:10
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[de]'
+    AND k.keyword ='sequel'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0000000000000007 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["cn.country_code ='[de]'", "k.keyword ='sequel'"]
+INFO:root:Robust plan is 2: 131.1
+INFO:root:Postgres plan: 145.8
+INFO:root:11
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code !='[pl]' AND (cn.name LIKE '20th Century Fox%' OR cn.name LIKE 'Twentieth Century Fox%')
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 103.08061356021253 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
+INFO:root:Current Query: ["cn.country_code !='[pl]' AND (cn.name LIKE '20th Century Fox%' OR cn.name LIKE 'Twentieth Century Fox%')", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')"]
+INFO:root:Robust plan is 0: 258.4
+INFO:root:Postgres plan: 795.5
+INFO:root:12
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.9999999999999993 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')"]
+INFO:root:Robust plan is 5: 597.8
+INFO:root:Postgres plan: 1696.4
+INFO:root:13
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.name LIKE 'Lionsgate%'
+    AND k.keyword = 'marvel-cinematic-universe'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 24.902526414633712 samples to be accurate, We have 50
+INFO:root:Nearest query is 5
+INFO:root:Current Query: ["cn.name LIKE 'Lionsgate%'", "k.keyword = 'marvel-cinematic-universe'"]
+INFO:root:Robust plan is 0: 113.8
+INFO:root:Postgres plan: 23.2
+INFO:root:14
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[jp]'
+    AND k.keyword IN ('murder', 'murder-in-title')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.650554606927423 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cn.country_code ='[jp]'", "k.keyword IN ('murder', 'murder-in-title')"]
+INFO:root:Robust plan is 7: 335.7
+INFO:root:Postgres plan: 380.8
+INFO:root:15
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0000000000000007 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')"]
+INFO:root:Robust plan is 5: 592.6
+INFO:root:Postgres plan: 1705.2
+INFO:root:16
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 6.163940598956333 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')"]
+INFO:root:Robust plan is 5: 439.6
+INFO:root:Postgres plan: 62.4
+INFO:root:17
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.838136319091989 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')"]
+INFO:root:Robust plan is 7: 374.3
+INFO:root:Postgres plan: 524.8
+INFO:root:18
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[jp]'
+    AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0000000000000004 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ["cn.country_code ='[jp]'", "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')"]
+INFO:root:Robust plan is 7: 355.0
+INFO:root:Postgres plan: 1490.8
+INFO:root:19
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code !='[pl]' AND (cn.name LIKE '%Film%' OR cn.name LIKE '%Warner%')
+    AND k.keyword ='sequel'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 4.266387290172687 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code !='[pl]' AND (cn.name LIKE '%Film%' OR cn.name LIKE '%Warner%')", "k.keyword ='sequel'"]
+INFO:root:Robust plan is 10: 439.7
+INFO:root:Postgres plan: 176.4
+INFO:root:20
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword ='character-name-in-title'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0000000000000002 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword ='character-name-in-title'"]
+INFO:root:Robust plan is 10: 645.9
+INFO:root:Postgres plan: 525.6
+INFO:root:21
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.7872201793373163 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')"]
+INFO:root:Robust plan is 5: 536.9
+INFO:root:Postgres plan: 895.6
+INFO:root:22
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.name LIKE 'Lionsgate%'
+    AND k.keyword IN ('hero', 'martial-arts', 'hand-to-hand-combat')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 2.638144588091597 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
+INFO:root:Current Query: ["cn.name LIKE 'Lionsgate%'", "k.keyword IN ('hero', 'martial-arts', 'hand-to-hand-combat')"]
+INFO:root:Robust plan is 0: 70.7
+INFO:root:Postgres plan: 248.4
+INFO:root:23
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword = 'marvel-cinematic-universe'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword = 'marvel-cinematic-universe'"]
+INFO:root:Robust plan is 10: 547.3
+INFO:root:Postgres plan: 21.8
+INFO:root:24
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword ='character-name-in-title'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword ='character-name-in-title'"]
+INFO:root:Robust plan is 10: 659.2
+INFO:root:Postgres plan: 531.3
+INFO:root:25
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code !='[pl]'
+    AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 5.327890295284135 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code !='[pl]'", "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')"]
+INFO:root:Robust plan is 5: 615.0
+INFO:root:Postgres plan: 537.8
+INFO:root:26
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code !='[pl]'
+  AND (cn.name LIKE '%Film%'
+       OR cn.name LIKE '%Warner%')
+    AND k.keyword LIKE '%sequel%'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 2.2215284871344596 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code !='[pl]'\n  AND (cn.name LIKE '%Film%'\n       OR cn.name LIKE '%Warner%')", "k.keyword LIKE '%sequel%'"]
+INFO:root:Robust plan is 5: 488.1
+INFO:root:Postgres plan: 233.1
+INFO:root:27
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword ='character-name-in-title'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.9999999999999997 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword ='character-name-in-title'"]
+INFO:root:Robust plan is 10: 655.5
+INFO:root:Postgres plan: 522.1
+INFO:root:28
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword ='character-name-in-title'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword ='character-name-in-title'"]
+INFO:root:Robust plan is 10: 661.7
+INFO:root:Postgres plan: 518.3
+INFO:root:29
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword ='10,000-mile-club'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword ='10,000-mile-club'"]
+INFO:root:Robust plan is 10: 554.1
+INFO:root:Postgres plan: 22.2
+INFO:root:30
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.20030537989583097 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')"]
+INFO:root:Robust plan is 5: 550.2
+INFO:root:Postgres plan: 913.7
+INFO:root:31
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code !='[pl]' AND (cn.name LIKE '%Film%' OR cn.name LIKE '%Warner%')
+    AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 2.804740406591577 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ["cn.country_code !='[pl]' AND (cn.name LIKE '%Film%' OR cn.name LIKE '%Warner%')", "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')"]
+INFO:root:Robust plan is 7: 497.4
+INFO:root:Postgres plan: 1818.4
+INFO:root:32
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword ='character-name-in-title'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0000000000000002 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword ='character-name-in-title'"]
+INFO:root:Robust plan is 10: 636.2
+INFO:root:Postgres plan: 525.4
+INFO:root:33
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword = 'marvel-cinematic-universe'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.9999999999999996 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword = 'marvel-cinematic-universe'"]
+INFO:root:Robust plan is 10: 538.5
+INFO:root:Postgres plan: 19.9
+INFO:root:34
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+  AND cn.name = 'DreamWorks Animation'
+    AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 184070.3250053436 samples to be accurate, We have 50
+INFO:root:35
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword ='sequel'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.9999999999999996 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword ='sequel'"]
+INFO:root:Robust plan is 10: 594.2
+INFO:root:Postgres plan: 183.0
+INFO:root:36
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code = '[us]' AND cn.name = 'YouTube'
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.08179800282468198 samples to be accurate, We have 50
+INFO:root:Nearest query is 6
+INFO:root:Current Query: ["cn.country_code = '[us]' AND cn.name = 'YouTube'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')"]
+INFO:root:Robust plan is 1: 54.4
+INFO:root:Postgres plan: 38.6
+INFO:root:37
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code !='[pl]' AND (cn.name LIKE '20th Century Fox%' OR cn.name LIKE 'Twentieth Century Fox%')
+    AND k.keyword ='sequel'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
+INFO:root:Current Query: ["cn.country_code !='[pl]' AND (cn.name LIKE '20th Century Fox%' OR cn.name LIKE 'Twentieth Century Fox%')", "k.keyword ='sequel'"]
+INFO:root:Robust plan is 0: 253.5
+INFO:root:Postgres plan: 157.2
+INFO:root:38
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword LIKE '%sequel%'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.9516202042948309 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword LIKE '%sequel%'"]
+INFO:root:Robust plan is 5: 516.3
+INFO:root:Postgres plan: 234.3
+INFO:root:39
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 35.86340830648267 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')"]
+INFO:root:Robust plan is 5: 554.2
+INFO:root:Postgres plan: 883.7
+INFO:root:40
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.5355574891331046 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')"]
+INFO:root:Robust plan is 10: 688.2
+INFO:root:Postgres plan: 898.6
+INFO:root:41
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[sm]'
+    AND k.keyword ='sequel'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 22.68966081925236 samples to be accurate, We have 50
+INFO:root:Nearest query is 5
+INFO:root:Current Query: ["cn.country_code ='[sm]'", "k.keyword ='sequel'"]
+INFO:root:Robust plan is 0: 33.0
+INFO:root:Postgres plan: 155.3
+INFO:root:42
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.3103483956217061 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')"]
+INFO:root:Robust plan is 2: 411.2
+INFO:root:Postgres plan: 732.4
+INFO:root:43
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code !='[pl]'
+  AND (cn.name LIKE '%Film%'
+       OR cn.name LIKE '%Warner%')
+    AND k.keyword ='sequel'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 5.842797007532076 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["cn.country_code !='[pl]'\n  AND (cn.name LIKE '%Film%'\n       OR cn.name LIKE '%Warner%')", "k.keyword ='sequel'"]
+INFO:root:Robust plan is 2: 158.7
+INFO:root:Postgres plan: 180.0
+INFO:root:44
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+  AND cn.name = 'DreamWorks Animation'
+    AND k.keyword IN ('murder', 'murder-in-title')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.6633207995561646 samples to be accurate, We have 50
+INFO:root:Nearest query is 5
+INFO:root:Current Query: ["cn.country_code ='[us]'\n  AND cn.name = 'DreamWorks Animation'", "k.keyword IN ('murder', 'murder-in-title')"]
+INFO:root:Robust plan is 0: 38.6
+INFO:root:Postgres plan: 372.9
+INFO:root:45
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword = 'computer-animation'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0000000000000009 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword = 'computer-animation'"]
+INFO:root:Robust plan is 10: 568.8
+INFO:root:Postgres plan: 33.2
+INFO:root:46
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')"]
+INFO:root:Robust plan is 5: 604.4
+INFO:root:Postgres plan: 1774.4
+INFO:root:47
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+  AND cn.name = 'DreamWorks Animation'
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.9695744560428816 samples to be accurate, We have 50
+INFO:root:Nearest query is 5
+INFO:root:Current Query: ["cn.country_code ='[us]'\n  AND cn.name = 'DreamWorks Animation'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')"]
+INFO:root:Robust plan is 0: 36.3
+INFO:root:Postgres plan: 37.5
+INFO:root:48
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0537326319359217 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')"]
+INFO:root:Robust plan is 5: 546.4
+INFO:root:Postgres plan: 554.7
+INFO:root:49
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code !='[pl]'
+  AND (cn.name LIKE '%Film%'
+       OR cn.name LIKE '%Warner%')
+    AND k.keyword ='character-name-in-title'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.3625672045702586 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["cn.country_code !='[pl]'\n  AND (cn.name LIKE '%Film%'\n       OR cn.name LIKE '%Warner%')", "k.keyword ='character-name-in-title'"]
+INFO:root:Robust plan is 2: 337.9
+INFO:root:Postgres plan: 530.0
+INFO:root:50
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[de]'
+    AND k.keyword ='character-name-in-title'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["cn.country_code ='[de]'", "k.keyword ='character-name-in-title'"]
+INFO:root:Robust plan is 2: 310.9
+INFO:root:Postgres plan: 441.2
+INFO:root:51
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword ='character-name-in-title'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0000000000000004 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword ='character-name-in-title'"]
+INFO:root:Robust plan is 10: 661.6
+INFO:root:Postgres plan: 524.7
+INFO:root:52
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('murder', 'blood', 'gore', 'death', 'female-nudity')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.5284828201140406 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('murder', 'blood', 'gore', 'death', 'female-nudity')"]
+INFO:root:Robust plan is 5: 573.4
+INFO:root:Postgres plan: 1330.7
+INFO:root:53
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code != '[us]'
+    AND k.keyword = 'marvel-cinematic-universe'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 2.5811378156270224 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code != '[us]'", "k.keyword = 'marvel-cinematic-universe'"]
+INFO:root:Robust plan is 10: 551.9
+INFO:root:Postgres plan: 23.6
+INFO:root:54
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword ='sequel'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword ='sequel'"]
+INFO:root:Robust plan is 10: 607.2
+INFO:root:Postgres plan: 184.5
+INFO:root:55
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[sm]'
+    AND k.keyword ='sequel'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 21.816873590725873 samples to be accurate, We have 50
+INFO:root:Nearest query is 5
+INFO:root:Current Query: ["cn.country_code ='[sm]'", "k.keyword ='sequel'"]
+INFO:root:Robust plan is 0: 27.4
+INFO:root:Postgres plan: 149.9
+INFO:root:56
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code != '[us]'
+    AND k.keyword ='character-name-in-title'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.173402551634829 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code != '[us]'", "k.keyword ='character-name-in-title'"]
+INFO:root:Robust plan is 10: 646.3
+INFO:root:Postgres plan: 526.2
+INFO:root:57
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code !='[pl]'
+  AND (cn.name LIKE '%Film%'
+       OR cn.name LIKE '%Warner%')
+    AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.1787777194601076 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ["cn.country_code !='[pl]'\n  AND (cn.name LIKE '%Film%'\n       OR cn.name LIKE '%Warner%')", "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')"]
+INFO:root:Robust plan is 7: 321.0
+INFO:root:Postgres plan: 563.1
+INFO:root:58
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword LIKE '%sequel%'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0820143372981124 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword LIKE '%sequel%'"]
+INFO:root:Robust plan is 5: 506.4
+INFO:root:Postgres plan: 233.4
+INFO:root:59
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.name LIKE 'Lionsgate%'
+    AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 6
+INFO:root:Current Query: ["cn.name LIKE 'Lionsgate%'", "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')"]
+INFO:root:Robust plan is 1: 80.9
+INFO:root:Postgres plan: 126.8
+INFO:root:60
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword LIKE '%sequel%'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 9.762132939837814 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword LIKE '%sequel%'"]
+INFO:root:Robust plan is 5: 510.6
+INFO:root:Postgres plan: 243.4
+INFO:root:61
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0000000000000007 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')"]
+INFO:root:Robust plan is 5: 590.7
+INFO:root:Postgres plan: 1732.2
+INFO:root:62
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code !='[pl]'
+  AND (cn.name LIKE '%Film%'
+       OR cn.name LIKE '%Warner%')
+    AND k.keyword LIKE '%sequel%'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 4.937340070265962 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code !='[pl]'\n  AND (cn.name LIKE '%Film%'\n       OR cn.name LIKE '%Warner%')", "k.keyword LIKE '%sequel%'"]
+INFO:root:Robust plan is 5: 491.9
+INFO:root:Postgres plan: 229.1
+INFO:root:63
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code !='[pl]'
+  AND (cn.name LIKE '%Film%'
+       OR cn.name LIKE '%Warner%')
+    AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 23.19127713560841 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code !='[pl]'\n  AND (cn.name LIKE '%Film%'\n       OR cn.name LIKE '%Warner%')", "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')"]
+INFO:root:Robust plan is 5: 533.0
+INFO:root:Postgres plan: 747.9
+INFO:root:64
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[jp]'
+    AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 103.78051620760077 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ["cn.country_code ='[jp]'", "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')"]
+INFO:root:Robust plan is 7: 282.4
+INFO:root:Postgres plan: 623.1
+INFO:root:65
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[nl]'
+    AND k.keyword LIKE '%sequel%'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.18551590320908629 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["cn.country_code ='[nl]'", "k.keyword LIKE '%sequel%'"]
+INFO:root:Robust plan is 2: 154.7
+INFO:root:Postgres plan: 187.8
+INFO:root:66
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.7749200300613396 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')"]
+INFO:root:Robust plan is 5: 551.0
+INFO:root:Postgres plan: 531.4
+INFO:root:67
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code = '[ru]'
+    AND k.keyword ='sequel'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cn.country_code = '[ru]'", "k.keyword ='sequel'"]
+INFO:root:Robust plan is 7: 204.3
+INFO:root:Postgres plan: 147.0
+INFO:root:68
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code !='[pl]'
+  AND (cn.name LIKE '%Film%'
+       OR cn.name LIKE '%Warner%')
+    AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 2.2157447127990775 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code !='[pl]'\n  AND (cn.name LIKE '%Film%'\n       OR cn.name LIKE '%Warner%')", "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')"]
+INFO:root:Robust plan is 10: 608.5
+INFO:root:Postgres plan: 1815.0
+INFO:root:69
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 4.070006506093172 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')"]
+INFO:root:Robust plan is 5: 567.3
+INFO:root:Postgres plan: 716.1
+INFO:root:70
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword LIKE '%sequel%'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.5432034449965948 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword LIKE '%sequel%'"]
+INFO:root:Robust plan is 5: 518.3
+INFO:root:Postgres plan: 228.7
+INFO:root:71
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code !='[pl]'
+  AND (cn.name LIKE '%Film%'
+       OR cn.name LIKE '%Warner%')
+    AND k.keyword LIKE '%sequel%'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 8.045403184683357 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code !='[pl]'\n  AND (cn.name LIKE '%Film%'\n       OR cn.name LIKE '%Warner%')", "k.keyword LIKE '%sequel%'"]
+INFO:root:Robust plan is 5: 476.7
+INFO:root:Postgres plan: 238.1
+INFO:root:72
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.1841291112277739 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')"]
+INFO:root:Robust plan is 5: 561.9
+INFO:root:Postgres plan: 711.0
+INFO:root:73
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[jp]'
+    AND k.keyword ='character-name-in-title'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.5199630760414788 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["cn.country_code ='[jp]'", "k.keyword ='character-name-in-title'"]
+INFO:root:Robust plan is 2: 334.0
+INFO:root:Postgres plan: 437.9
+INFO:root:74
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword ='character-name-in-title'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.40239504368764417 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword ='character-name-in-title'"]
+INFO:root:Robust plan is 10: 634.8
+INFO:root:Postgres plan: 532.2
+INFO:root:75
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[jp]'
+    AND k.keyword LIKE '%sequel%'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.31503041873307064 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ["cn.country_code ='[jp]'", "k.keyword LIKE '%sequel%'"]
+INFO:root:Robust plan is 7: 213.2
+INFO:root:Postgres plan: 196.9
+INFO:root:76
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword LIKE '%sequel%'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.5909945482632547 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword LIKE '%sequel%'"]
+INFO:root:Robust plan is 5: 500.8
+INFO:root:Postgres plan: 233.8
+INFO:root:77
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword ='character-name-in-title'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword ='character-name-in-title'"]
+INFO:root:Robust plan is 10: 607.2
+INFO:root:Postgres plan: 526.8
+INFO:root:78
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code !='[pl]'
+  AND (cn.name LIKE '%Film%'
+       OR cn.name LIKE '%Warner%')
+    AND k.keyword ='character-name-in-title'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.25737420909732495 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code !='[pl]'\n  AND (cn.name LIKE '%Film%'\n       OR cn.name LIKE '%Warner%')", "k.keyword ='character-name-in-title'"]
+INFO:root:Robust plan is 10: 490.3
+INFO:root:Postgres plan: 496.6
+INFO:root:79
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code !='[pl]' AND (cn.name LIKE '%Film%' OR cn.name LIKE '%Warner%')
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 5.723467705646014 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code !='[pl]' AND (cn.name LIKE '%Film%' OR cn.name LIKE '%Warner%')", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')"]
+INFO:root:Robust plan is 10: 520.5
+INFO:root:Postgres plan: 966.0
+INFO:root:80
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword LIKE '%sequel%'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 4.3492897421411865 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword LIKE '%sequel%'"]
+INFO:root:Robust plan is 5: 504.2
+INFO:root:Postgres plan: 238.5
+INFO:root:81
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.07326747708723298 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')"]
+INFO:root:Robust plan is 10: 668.0
+INFO:root:Postgres plan: 707.0
+INFO:root:82
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code = '[us]' AND cn.name = 'YouTube'
+    AND k.keyword ='character-name-in-title'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 5
+INFO:root:Current Query: ["cn.country_code = '[us]' AND cn.name = 'YouTube'", "k.keyword ='character-name-in-title'"]
+INFO:root:Robust plan is 0: 40.1
+INFO:root:Postgres plan: 407.3
+INFO:root:83
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword LIKE '%sequel%'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 4.079183707916099 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword LIKE '%sequel%'"]
+INFO:root:Robust plan is 5: 511.1
+INFO:root:Postgres plan: 230.8
+INFO:root:84
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('murder', 'murder-in-title')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 4.382017237064399 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('murder', 'murder-in-title')"]
+INFO:root:Robust plan is 5: 519.7
+INFO:root:Postgres plan: 439.9
+INFO:root:85
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword ='character-name-in-title'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword ='character-name-in-title'"]
+INFO:root:Robust plan is 10: 651.5
+INFO:root:Postgres plan: 526.1
+INFO:root:86
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[sm]'
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.5692961034793678 samples to be accurate, We have 50
+INFO:root:Nearest query is 6
+INFO:root:Current Query: ["cn.country_code ='[sm]'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')"]
+INFO:root:Robust plan is 1: 43.9
+INFO:root:Postgres plan: 762.4
+INFO:root:87
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword ='character-name-in-title'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword ='character-name-in-title'"]
+INFO:root:Robust plan is 10: 650.1
+INFO:root:Postgres plan: 535.0
+INFO:root:88
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code !='[pl]' AND (cn.name LIKE '%Film%' OR cn.name LIKE '%Warner%')
+    AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 118.2751351964717 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ["cn.country_code !='[pl]' AND (cn.name LIKE '%Film%' OR cn.name LIKE '%Warner%')", "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')"]
+INFO:root:Robust plan is 7: 356.3
+INFO:root:Postgres plan: 738.9
+INFO:root:89
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 29.042622326880064 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')"]
+INFO:root:Robust plan is 5: 555.9
+INFO:root:Postgres plan: 895.7
+INFO:root:90
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword ='sequel'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.9999999999999992 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword ='sequel'"]
+INFO:root:Robust plan is 10: 583.8
+INFO:root:Postgres plan: 181.1
+INFO:root:91
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword LIKE '%sequel%'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.5383826186351061 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword LIKE '%sequel%'"]
+INFO:root:Robust plan is 5: 506.1
+INFO:root:Postgres plan: 233.5
+INFO:root:92
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code !='[pl]'
+  AND (cn.name LIKE '%Film%'
+       OR cn.name LIKE '%Warner%')
+    AND k.keyword ='sequel'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 20.15864549901 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ["cn.country_code !='[pl]'\n  AND (cn.name LIKE '%Film%'\n       OR cn.name LIKE '%Warner%')", "k.keyword ='sequel'"]
+INFO:root:Robust plan is 7: 586.2
+INFO:root:Postgres plan: 176.2
+INFO:root:93
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword ='character-name-in-title'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 1.0000000000000002 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword ='character-name-in-title'"]
+INFO:root:Robust plan is 10: 601.0
+INFO:root:Postgres plan: 524.9
+INFO:root:94
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('murder', 'murder-in-title')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 0.11100351916936617 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('murder', 'murder-in-title')"]
+INFO:root:Robust plan is 5: 548.8
+INFO:root:Postgres plan: 425.3
+INFO:root:95
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code = '[ru]'
+    AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 3.3144889755538047 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ["cn.country_code = '[ru]'", "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')"]
+INFO:root:Robust plan is 7: 234.7
+INFO:root:Postgres plan: 452.4
+INFO:root:96
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code !='[pl]'
+  AND (cn.name LIKE '%Film%'
+       OR cn.name LIKE '%Warner%')
+    AND k.keyword ='character-name-in-title'
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 3.1138314859787455 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["cn.country_code !='[pl]'\n  AND (cn.name LIKE '%Film%'\n       OR cn.name LIKE '%Warner%')", "k.keyword ='character-name-in-title'"]
+INFO:root:Robust plan is 2: 345.6
+INFO:root:Postgres plan: 494.9
+INFO:root:97
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 3.0533204020005447 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')"]
+INFO:root:Robust plan is 5: 551.5
+INFO:root:Postgres plan: 914.4
+INFO:root:98
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code = '[ru]'
+    AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 84.8112070305985 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ["cn.country_code = '[ru]'", "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')"]
+INFO:root:Robust plan is 7: 334.9
+INFO:root:Postgres plan: 1636.3
+INFO:root:99
+INFO:root:
+    SELECT MIN(t.title) AS movie_title
+    FROM company_name AS cn,
+        keyword AS k,
+        movie_companies AS mc,
+        movie_keyword AS mk,
+        title AS t
+    WHERE cn.country_code ='[us]'
+    AND k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')
+    AND cn.id = mc.company_id
+    AND mc.movie_id = t.id
+    AND t.id = mk.movie_id
+    AND mk.keyword_id = k.id
+    AND mc.movie_id = mk.movie_id;
+    
+INFO:root:--- PQO: Need 2.8019133714208846 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ["cn.country_code ='[us]'", "k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')"]
+INFO:root:Robust plan is 5: 439.1
+INFO:root:Postgres plan: 62.3

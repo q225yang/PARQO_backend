@@ -1,0 +1,2394 @@
+INFO:root:0
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'bottom 10 rank'
+    AND k.keyword ='sequel'
+    AND mi_idx.info < '8.5'
+    AND t.episode_nr >= 50 AND t.episode_nr < 100
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 14.787888640408786 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['bottom 10 rank', "k.keyword ='sequel'", "mi_idx.info < '8.5'", 't.episode_nr >= 50 AND t.episode_nr < 100']
+INFO:root:Robust plan is 4: 136.6
+INFO:root:Postgres plan: 55.6
+INFO:root:1
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND mi_idx.info > '8.0'
+    AND t.production_year > 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.000000000000001 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
+INFO:root:Current Query: ['rating', "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "mi_idx.info > '8.0'", 't.production_year > 2000']
+INFO:root:Robust plan is 7: 183.5
+INFO:root:Postgres plan: 156.7
+INFO:root:2
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword ='character-name-in-title'
+    AND  mi_idx.info < '7.0'
+    AND t.production_year > 2005
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.41632613263131857 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ['votes', "k.keyword ='character-name-in-title'", " mi_idx.info < '7.0'", 't.production_year > 2005']
+INFO:root:Robust plan is 19: 567.9
+INFO:root:Postgres plan: 187.4
+INFO:root:3
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword ='character-name-in-title'
+    AND mi_idx.info > '7.0'
+    AND t.production_year > 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ['rating', "k.keyword ='character-name-in-title'", "mi_idx.info > '7.0'", 't.production_year > 2000']
+INFO:root:Robust plan is 6: 169.0
+INFO:root:Postgres plan: 142.1
+INFO:root:4
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+    AND mi_idx.info > '6.5'
+    AND t.production_year >2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 15.342706686655816 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['rating', "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')", "mi_idx.info > '6.5'", 't.production_year >2010']
+INFO:root:Robust plan is 6: 194.7
+INFO:root:Postgres plan: 134.9
+INFO:root:5
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+    AND mi_idx.info < '8.5'
+    AND t.production_year BETWEEN 1980 AND 1995
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.220468759226124 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['votes', "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')", "mi_idx.info < '8.5'", 't.production_year BETWEEN 1980 AND 1995']
+INFO:root:Robust plan is 6: 254.9
+INFO:root:Postgres plan: 134.9
+INFO:root:6
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword IN ('sequel', 'revenge', 'based-on-novel')
+    AND mi_idx.info > '9.0'
+    AND t.production_year BETWEEN 1980 AND 1984
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 3023.87447296434 samples to be accurate, We have 50
+INFO:root:7
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword ='character-name-in-title'
+    AND mi_idx.info < '8.5'
+    AND t.production_year > 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['votes', "k.keyword ='character-name-in-title'", "mi_idx.info < '8.5'", 't.production_year > 2000']
+INFO:root:Robust plan is 4: 234.0
+INFO:root:Postgres plan: 191.6
+INFO:root:8
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword ='sequel'
+    AND mi_idx.info > '8.0'
+    AND t.production_year > 1990
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.31869681360585356 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ['rating', "k.keyword ='sequel'", "mi_idx.info > '8.0'", 't.production_year > 1990']
+INFO:root:Robust plan is 7: 107.6
+INFO:root:Postgres plan: 55.3
+INFO:root:9
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword ='sequel'
+    AND mi_idx.info < '3.0'
+    AND t.production_year > 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.5308007932615093 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['rating', "k.keyword ='sequel'", "mi_idx.info < '3.0'", 't.production_year > 2000']
+INFO:root:Robust plan is 4: 122.8
+INFO:root:Postgres plan: 57.1
+INFO:root:10
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword ='sequel'
+    AND mi_idx.info < '8.5'
+    AND t.production_year > 2005
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.4555040057176303 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['votes', "k.keyword ='sequel'", "mi_idx.info < '8.5'", 't.production_year > 2005']
+INFO:root:Robust plan is 4: 176.2
+INFO:root:Postgres plan: 75.3
+INFO:root:11
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND mi_idx.info > '8.0'
+    AND t.production_year BETWEEN 2007 AND 2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.5444682263818348 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
+INFO:root:Current Query: ['rating', "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "mi_idx.info > '8.0'", 't.production_year BETWEEN 2007 AND 2010']
+INFO:root:Robust plan is 7: 182.4
+INFO:root:Postgres plan: 153.5
+INFO:root:12
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
+    AND mi_idx.info > '7.0'
+    AND t.production_year > 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.1572586089083673 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['votes', "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')", "mi_idx.info > '7.0'", 't.production_year > 2000']
+INFO:root:Robust plan is 6: 266.6
+INFO:root:Postgres plan: 304.6
+INFO:root:13
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'bottom 10 rank'
+    AND k.keyword = 'marvel-cinematic-universe'
+    AND mi_idx.info < '8.5'
+    AND t.production_year BETWEEN 2007 AND 2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.5443167418789709 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['bottom 10 rank', "k.keyword = 'marvel-cinematic-universe'", "mi_idx.info < '8.5'", 't.production_year BETWEEN 2007 AND 2010']
+INFO:root:Robust plan is 4: 109.1
+INFO:root:Postgres plan: 23.4
+INFO:root:14
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword IN ('murder', 'murder-in-title')
+    AND mi_idx.info < '8.5'
+    AND t.production_year BETWEEN 1950 AND 2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.16751325219517202 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['votes', "k.keyword IN ('murder', 'murder-in-title')", "mi_idx.info < '8.5'", 't.production_year BETWEEN 1950 AND 2010']
+INFO:root:Robust plan is 4: 230.2
+INFO:root:Postgres plan: 142.3
+INFO:root:15
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'bottom 10 rank'
+    AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
+    AND mi_idx.info < '3.5'
+    AND t.production_year BETWEEN 2000 AND 2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 2.7666749967094866 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['bottom 10 rank', "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')", "mi_idx.info < '3.5'", 't.production_year BETWEEN 2000 AND 2010']
+INFO:root:Robust plan is 6: 290.4
+INFO:root:Postgres plan: 295.5
+INFO:root:16
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')
+    AND mi_idx.info < '8.5'
+    AND t.production_year BETWEEN 2005 AND 2015
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.9674049244864557 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ['votes', "k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')", "mi_idx.info < '8.5'", 't.production_year BETWEEN 2005 AND 2015']
+INFO:root:Robust plan is 6: 161.8
+INFO:root:Postgres plan: 33.8
+INFO:root:17
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+    AND mi_idx.info > '6.0'
+    AND t.title = 'Shrek 2'
+  AND t.production_year BETWEEN 2000 AND 2005
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.0000000000000002 samples to be accurate, We have 50
+INFO:root:Nearest query is 11
+INFO:root:Current Query: ['votes', "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')", "mi_idx.info > '6.0'", "t.title = 'Shrek 2'\n  AND t.production_year BETWEEN 2000 AND 2005"]
+INFO:root:Robust plan is 6: 102.3
+INFO:root:Postgres plan: 111.9
+INFO:root:18
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
+    AND mi_idx.info > '6.5'
+    AND t.production_year BETWEEN 1980 AND 2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.38402154320928794 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['votes', "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')", "mi_idx.info > '6.5'", 't.production_year BETWEEN 1980 AND 2010']
+INFO:root:Robust plan is 6: 273.2
+INFO:root:Postgres plan: 337.8
+INFO:root:19
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword ='sequel'
+    AND mi_idx.info < '3.0'
+    AND t.production_year > 1990
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 3.299373105660079 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['votes', "k.keyword ='sequel'", "mi_idx.info < '3.0'", 't.production_year > 1990']
+INFO:root:Robust plan is 4: 141.1
+INFO:root:Postgres plan: 66.2
+INFO:root:20
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword ='character-name-in-title'
+    AND mi_idx.info > '2.0'
+    AND t.production_year BETWEEN 2000 AND 2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 2.4774065736084703 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['votes', "k.keyword ='character-name-in-title'", "mi_idx.info > '2.0'", 't.production_year BETWEEN 2000 AND 2010']
+INFO:root:Robust plan is 4: 213.7
+INFO:root:Postgres plan: 178.1
+INFO:root:21
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND mi_idx.info < '8.5'
+    AND t.production_year BETWEEN 1980 AND 1984
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 5.850424494892921 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['rating', "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "mi_idx.info < '8.5'", 't.production_year BETWEEN 1980 AND 1984']
+INFO:root:Robust plan is 6: 293.4
+INFO:root:Postgres plan: 167.0
+INFO:root:22
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword IN ('hero', 'martial-arts', 'hand-to-hand-combat')
+    AND mi_idx.info > '8.0'
+    AND t.production_year > 1990
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 17.98779508464278 samples to be accurate, We have 50
+INFO:root:Nearest query is 9
+INFO:root:Current Query: ['votes', "k.keyword IN ('hero', 'martial-arts', 'hand-to-hand-combat')", "mi_idx.info > '8.0'", 't.production_year > 1990']
+INFO:root:Robust plan is 4: 112.3
+INFO:root:Postgres plan: 66.2
+INFO:root:23
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'top 250 rank'
+    AND k.keyword = 'marvel-cinematic-universe'
+    AND mi_idx.info > '9.0'
+    AND t.production_year >2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 12134.32613816945 samples to be accurate, We have 50
+INFO:root:24
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword ='character-name-in-title'
+    AND  mi_idx.info < '7.0'
+    AND t.production_year BETWEEN 1950 AND 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.5998710323685459 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['rating', "k.keyword ='character-name-in-title'", " mi_idx.info < '7.0'", 't.production_year BETWEEN 1950 AND 2000']
+INFO:root:Robust plan is 4: 223.0
+INFO:root:Postgres plan: 185.2
+INFO:root:25
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+    AND  mi_idx.info < '7.0'
+    AND t.production_year BETWEEN 2005 AND 2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.5294807691610531 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['votes', "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')", " mi_idx.info < '7.0'", 't.production_year BETWEEN 2005 AND 2010']
+INFO:root:Robust plan is 6: 247.2
+INFO:root:Postgres plan: 167.3
+INFO:root:26
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword LIKE '%sequel%'
+    AND mi_idx.info > '6.0'
+    AND t.production_year > 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 2.8809706695797725 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['votes', "k.keyword LIKE '%sequel%'", "mi_idx.info > '6.0'", 't.production_year > 2000']
+INFO:root:Robust plan is 6: 136.6
+INFO:root:Postgres plan: 75.0
+INFO:root:27
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'bottom 10 rank'
+    AND k.keyword ='character-name-in-title'
+    AND mi_idx.info < '8.5'
+    AND t.production_year = 1998 AND t.title LIKE '%Money%'
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.903536216431266 samples to be accurate, We have 50
+INFO:root:Nearest query is 5
+INFO:root:Current Query: ['bottom 10 rank', "k.keyword ='character-name-in-title'", "mi_idx.info < '8.5'", "t.production_year = 1998 AND t.title LIKE '%Money%'"]
+INFO:root:Robust plan is 5: 114.0
+INFO:root:Postgres plan: 142.6
+INFO:root:28
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword ='character-name-in-title'
+    AND mi_idx.info < '3.5'
+    AND t.production_year > 2010 AND (t.title LIKE '%murder%' OR t.title LIKE '%Murder%' OR t.title LIKE '%Mord%')
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.433742623440703 samples to be accurate, We have 50
+INFO:root:Nearest query is 6
+INFO:root:Current Query: ['rating', "k.keyword ='character-name-in-title'", "mi_idx.info < '3.5'", "t.production_year > 2010 AND (t.title LIKE '%murder%' OR t.title LIKE '%Murder%' OR t.title LIKE '%Mord%')"]
+INFO:root:Robust plan is 3: 171.4
+INFO:root:Postgres plan: 142.5
+INFO:root:29
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword ='10,000-mile-club'
+    AND mi_idx.info > '7.0'
+    AND t.production_year > 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.0000000000000002 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ['votes', "k.keyword ='10,000-mile-club'", "mi_idx.info > '7.0'", 't.production_year > 2000']
+INFO:root:Robust plan is 6: 90.2
+INFO:root:Postgres plan: 21.9
+INFO:root:30
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'bottom 10 rank'
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND mi_idx.info < '8.5'
+    AND t.production_year > 1950
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.8596451560139826 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['bottom 10 rank', "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "mi_idx.info < '8.5'", 't.production_year > 1950']
+INFO:root:Robust plan is 4: 224.6
+INFO:root:Postgres plan: 169.3
+INFO:root:31
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
+    AND  mi_idx.info < '7.0'
+    AND t.production_year BETWEEN 2000 AND 2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.246026698888972 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ['rating', "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')", " mi_idx.info < '7.0'", 't.production_year BETWEEN 2000 AND 2010']
+INFO:root:Robust plan is 19: 591.0
+INFO:root:Postgres plan: 452.6
+INFO:root:32
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword ='character-name-in-title'
+    AND mi_idx.info > '7.0'
+    AND t.production_year > 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ['votes', "k.keyword ='character-name-in-title'", "mi_idx.info > '7.0'", 't.production_year > 2000']
+INFO:root:Robust plan is 6: 161.3
+INFO:root:Postgres plan: 137.0
+INFO:root:33
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'bottom 10 rank'
+    AND k.keyword = 'marvel-cinematic-universe'
+    AND mi_idx.info < '3.0'
+    AND t.production_year >2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 3.4757856251303743 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ['bottom 10 rank', "k.keyword = 'marvel-cinematic-universe'", "mi_idx.info < '3.0'", 't.production_year >2010']
+INFO:root:Robust plan is 6: 101.4
+INFO:root:Postgres plan: 22.3
+INFO:root:34
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+    AND mi_idx.info > '2.0'
+    AND t.production_year > 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.36784122326442864 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['rating', "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')", "mi_idx.info > '2.0'", 't.production_year > 2000']
+INFO:root:Robust plan is 6: 244.0
+INFO:root:Postgres plan: 173.4
+INFO:root:35
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword ='sequel'
+    AND mi_idx.info < '8.5'
+    AND t.production_year > 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.9251541091849311 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['votes', "k.keyword ='sequel'", "mi_idx.info < '8.5'", 't.production_year > 2000']
+INFO:root:Robust plan is 4: 172.1
+INFO:root:Postgres plan: 77.9
+INFO:root:36
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND  mi_idx.info < '7.0'
+    AND t.production_year BETWEEN 1950 AND 2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.3019185069401355 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ['rating', "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", " mi_idx.info < '7.0'", 't.production_year BETWEEN 1950 AND 2010']
+INFO:root:Robust plan is 19: 696.6
+INFO:root:Postgres plan: 239.3
+INFO:root:37
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword ='sequel'
+    AND mi_idx.info < '8.5'
+    AND t.production_year BETWEEN 2008 AND 2014
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 2.513436953291687 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['votes', "k.keyword ='sequel'", "mi_idx.info < '8.5'", 't.production_year BETWEEN 2008 AND 2014']
+INFO:root:Robust plan is 4: 170.2
+INFO:root:Postgres plan: 77.9
+INFO:root:38
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword LIKE '%sequel%'
+    AND mi_idx.info > '7.0'
+    AND t.production_year > 2005
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 5.705294552363818 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['rating', "k.keyword LIKE '%sequel%'", "mi_idx.info > '7.0'", 't.production_year > 2005']
+INFO:root:Robust plan is 6: 127.7
+INFO:root:Postgres plan: 70.9
+INFO:root:39
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND mi_idx.info < '8.5'
+    AND t.production_year BETWEEN 2005 AND 2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.2743938728297918 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ['rating', "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "mi_idx.info < '8.5'", 't.production_year BETWEEN 2005 AND 2010']
+INFO:root:Robust plan is 19: 582.7
+INFO:root:Postgres plan: 257.3
+INFO:root:40
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND mi_idx.info < '8.5'
+    AND t.production_year > 2005
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 2.179348969358486 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ['rating', "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "mi_idx.info < '8.5'", 't.production_year > 2005']
+INFO:root:Robust plan is 19: 595.5
+INFO:root:Postgres plan: 258.7
+INFO:root:41
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword ='sequel'
+    AND mi_idx.info > '5.0'
+    AND t.production_year > 2014
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.1826064087293123 samples to be accurate, We have 50
+INFO:root:Nearest query is 10
+INFO:root:Current Query: ['rating', "k.keyword ='sequel'", "mi_idx.info > '5.0'", 't.production_year > 2014']
+INFO:root:Robust plan is 3: 93.1
+INFO:root:Postgres plan: 56.6
+INFO:root:42
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+    AND mi_idx.info > '9.0'
+    AND t.production_year > 1990
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 34204.26630566648 samples to be accurate, We have 50
+INFO:root:43
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword ='sequel'
+    AND mi_idx.info < '8.5'
+    AND t.production_year > 2005
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 2.4779514570536887 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['rating', "k.keyword ='sequel'", "mi_idx.info < '8.5'", 't.production_year > 2005']
+INFO:root:Robust plan is 4: 171.2
+INFO:root:Postgres plan: 74.5
+INFO:root:44
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword IN ('murder', 'murder-in-title')
+    AND mi_idx.info > '6.0'
+    AND t.production_year BETWEEN 2005 AND 2008
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 10.337970370350378 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ['rating', "k.keyword IN ('murder', 'murder-in-title')", "mi_idx.info > '6.0'", 't.production_year BETWEEN 2005 AND 2008']
+INFO:root:Robust plan is 6: 178.4
+INFO:root:Postgres plan: 118.0
+INFO:root:45
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword = 'computer-animation'
+    AND mi_idx.info < '8.5'
+    AND t.production_year > 1990
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.3723305698702024 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['rating', "k.keyword = 'computer-animation'", "mi_idx.info < '8.5'", 't.production_year > 1990']
+INFO:root:Robust plan is 4: 144.7
+INFO:root:Postgres plan: 25.3
+INFO:root:46
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
+    AND mi_idx.info < '8.5'
+    AND t.production_year > 1950
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 72.22474108953081 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['rating', "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')", "mi_idx.info < '8.5'", 't.production_year > 1950']
+INFO:root:Robust plan is 6: 404.6
+INFO:root:Postgres plan: 498.5
+INFO:root:47
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'bottom 10 rank'
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND mi_idx.info < '3.5'
+    AND t.production_year BETWEEN 2000 AND 2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.0591795051396509 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ['bottom 10 rank', "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "mi_idx.info < '3.5'", 't.production_year BETWEEN 2000 AND 2010']
+INFO:root:Robust plan is 19: 403.1
+INFO:root:Postgres plan: 157.9
+INFO:root:48
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+    AND mi_idx.info > '7.0'
+    AND t.production_year > 2005
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 9.863664696956945 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['rating', "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')", "mi_idx.info > '7.0'", 't.production_year > 2005']
+INFO:root:Robust plan is 6: 160.2
+INFO:root:Postgres plan: 122.5
+INFO:root:49
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword ='character-name-in-title'
+    AND mi_idx.info < '8.5'
+    AND t.production_year BETWEEN 1980 AND 1995
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.329104177146052 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['rating', "k.keyword ='character-name-in-title'", "mi_idx.info < '8.5'", 't.production_year BETWEEN 1980 AND 1995']
+INFO:root:Robust plan is 4: 242.1
+INFO:root:Postgres plan: 162.1
+INFO:root:50
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword ='character-name-in-title'
+    AND mi_idx.info < '8.5'
+    AND t.production_year > 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.999999999999999 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['votes', "k.keyword ='character-name-in-title'", "mi_idx.info < '8.5'", 't.production_year > 2000']
+INFO:root:Robust plan is 4: 231.1
+INFO:root:Postgres plan: 185.6
+INFO:root:51
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword ='character-name-in-title'
+    AND mi_idx.info < '8.5'
+    AND t.production_year >2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 9.194431679816958 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['rating', "k.keyword ='character-name-in-title'", "mi_idx.info < '8.5'", 't.production_year >2010']
+INFO:root:Robust plan is 4: 243.0
+INFO:root:Postgres plan: 139.8
+INFO:root:52
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword IN ('murder', 'blood', 'gore', 'death', 'female-nudity')
+    AND mi_idx.info > '6.0'
+    AND t.production_year BETWEEN 1950 AND 2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 39.11447393710202 samples to be accurate, We have 50
+INFO:root:Nearest query is 9
+INFO:root:Current Query: ['rating', "k.keyword IN ('murder', 'blood', 'gore', 'death', 'female-nudity')", "mi_idx.info > '6.0'", 't.production_year BETWEEN 1950 AND 2010']
+INFO:root:Robust plan is 4: 273.4
+INFO:root:Postgres plan: 312.6
+INFO:root:53
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword = 'marvel-cinematic-universe'
+    AND mi_idx.info < '8.5'
+    AND t.production_year > 2010
+  AND t.title LIKE 'Vampire%'
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.9999999999999982 samples to be accurate, We have 50
+INFO:root:Nearest query is 10
+INFO:root:Current Query: ['votes', "k.keyword = 'marvel-cinematic-universe'", "mi_idx.info < '8.5'", "t.production_year > 2010\n  AND t.title LIKE 'Vampire%'"]
+INFO:root:Robust plan is 3: 99.6
+INFO:root:Postgres plan: 23.3
+INFO:root:54
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword ='sequel'
+    AND  mi_idx.info < '7.0'
+    AND t.production_year > 1990
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.738748993994045 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['rating', "k.keyword ='sequel'", " mi_idx.info < '7.0'", 't.production_year > 1990']
+INFO:root:Robust plan is 4: 159.7
+INFO:root:Postgres plan: 71.7
+INFO:root:55
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword ='sequel'
+    AND mi_idx.info > '6.5'
+    AND t.production_year > 2005
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.1612879222158303 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ['rating', "k.keyword ='sequel'", "mi_idx.info > '6.5'", 't.production_year > 2005']
+INFO:root:Robust plan is 6: 128.4
+INFO:root:Postgres plan: 62.6
+INFO:root:56
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword ='character-name-in-title'
+    AND mi_idx.info < '8.5'
+    AND t.title != '' AND (t.title LIKE 'Champion%' OR t.title LIKE 'Loser%')
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 39.00828727121357 samples to be accurate, We have 50
+INFO:root:Nearest query is 6
+INFO:root:Current Query: ['votes', "k.keyword ='character-name-in-title'", "mi_idx.info < '8.5'", "t.title != '' AND (t.title LIKE 'Champion%' OR t.title LIKE 'Loser%')"]
+INFO:root:Robust plan is 3: 226.0
+INFO:root:Postgres plan: 141.4
+INFO:root:57
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+    AND mi_idx.info > '8.0'
+    AND t.production_year > 2005
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.8393204591019203 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
+INFO:root:Current Query: ['rating', "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')", "mi_idx.info > '8.0'", 't.production_year > 2005']
+INFO:root:Robust plan is 7: 147.2
+INFO:root:Postgres plan: 109.2
+INFO:root:58
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword LIKE '%sequel%'
+    AND mi_idx.info < '8.5'
+    AND t.production_year > 1990
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.1699350659197726 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['votes', "k.keyword LIKE '%sequel%'", "mi_idx.info < '8.5'", 't.production_year > 1990']
+INFO:root:Robust plan is 6: 195.4
+INFO:root:Postgres plan: 93.4
+INFO:root:59
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+    AND mi_idx.info < '8.5'
+    AND t.episode_nr >= 50 AND t.episode_nr < 100
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 40.45321373181646 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ['votes', "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')", "mi_idx.info < '8.5'", 't.episode_nr >= 50 AND t.episode_nr < 100']
+INFO:root:Robust plan is 19: 481.7
+INFO:root:Postgres plan: 159.9
+INFO:root:60
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword LIKE '%sequel%'
+    AND mi_idx.info < '3.0'
+    AND t.production_year BETWEEN 2007 AND 2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.3153301547773817 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ['votes', "k.keyword LIKE '%sequel%'", "mi_idx.info < '3.0'", 't.production_year BETWEEN 2007 AND 2010']
+INFO:root:Robust plan is 19: 474.3
+INFO:root:Postgres plan: 81.3
+INFO:root:61
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
+    AND mi_idx.info < '8.5'
+    AND t.production_year > 1950
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 4.618254495304037 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ['votes', "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')", "mi_idx.info < '8.5'", 't.production_year > 1950']
+INFO:root:Robust plan is 19: 802.8
+INFO:root:Postgres plan: 475.8
+INFO:root:62
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword LIKE '%sequel%'
+    AND mi_idx.info > '6.5'
+    AND t.production_year BETWEEN 2005 AND 2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 6.466302133833582 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['votes', "k.keyword LIKE '%sequel%'", "mi_idx.info > '6.5'", 't.production_year BETWEEN 2005 AND 2010']
+INFO:root:Robust plan is 6: 134.4
+INFO:root:Postgres plan: 71.2
+INFO:root:63
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+    AND mi_idx.info < '8.5'
+    AND t.production_year > 2010 AND (t.title LIKE '%murder%' OR t.title LIKE '%Murder%' OR t.title LIKE '%Mord%')
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 6.40272100241847 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['rating', "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')", "mi_idx.info < '8.5'", "t.production_year > 2010 AND (t.title LIKE '%murder%' OR t.title LIKE '%Murder%' OR t.title LIKE '%Mord%')"]
+INFO:root:Robust plan is 6: 286.1
+INFO:root:Postgres plan: 157.5
+INFO:root:64
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+    AND mi_idx.info > '8.0'
+    AND t.production_year BETWEEN 2005 AND 2008
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 6.727190631921283 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
+INFO:root:Current Query: ['rating', "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')", "mi_idx.info > '8.0'", 't.production_year BETWEEN 2005 AND 2008']
+INFO:root:Robust plan is 7: 176.7
+INFO:root:Postgres plan: 151.8
+INFO:root:65
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword LIKE '%sequel%'
+    AND mi_idx.info < '8.5'
+    AND t.production_year > 2005
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.0903928849213615 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ['votes', "k.keyword LIKE '%sequel%'", "mi_idx.info < '8.5'", 't.production_year > 2005']
+INFO:root:Robust plan is 19: 592.5
+INFO:root:Postgres plan: 90.4
+INFO:root:66
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+    AND mi_idx.info < '8.5'
+    AND t.production_year >2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 4.815894691493378 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['votes', "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')", "mi_idx.info < '8.5'", 't.production_year >2010']
+INFO:root:Robust plan is 6: 249.7
+INFO:root:Postgres plan: 171.6
+INFO:root:67
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword ='sequel'
+    AND mi_idx.info > '7.0'
+    AND t.production_year > 1990
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.1187740403889508 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ['rating', "k.keyword ='sequel'", "mi_idx.info > '7.0'", 't.production_year > 1990']
+INFO:root:Robust plan is 6: 121.3
+INFO:root:Postgres plan: 56.6
+INFO:root:68
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'bottom 10 rank'
+    AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
+    AND mi_idx.info > '5.0'
+    AND t.production_year > 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.9815793538949924 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['bottom 10 rank', "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')", "mi_idx.info > '5.0'", 't.production_year > 2000']
+INFO:root:Robust plan is 6: 267.6
+INFO:root:Postgres plan: 278.1
+INFO:root:69
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+    AND  mi_idx.info < '7.0'
+    AND t.production_year > 2000
+  AND (t.title LIKE '%Freddy%'
+       OR t.title LIKE '%Jason%'
+       OR t.title LIKE 'Saw%')
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 8
+INFO:root:Current Query: ['rating', "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')", " mi_idx.info < '7.0'", "t.production_year > 2000\n  AND (t.title LIKE '%Freddy%'\n       OR t.title LIKE '%Jason%'\n       OR t.title LIKE 'Saw%')"]
+INFO:root:Robust plan is 7: 131.1
+INFO:root:Postgres plan: 166.2
+INFO:root:70
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword LIKE '%sequel%'
+    AND mi_idx.info < '3.5'
+    AND t.production_year BETWEEN 1950 AND 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.7490735775925368 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['votes', "k.keyword LIKE '%sequel%'", "mi_idx.info < '3.5'", 't.production_year BETWEEN 1950 AND 2000']
+INFO:root:Robust plan is 6: 156.3
+INFO:root:Postgres plan: 79.3
+INFO:root:71
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword LIKE '%sequel%'
+    AND mi_idx.info < '3.0'
+    AND t.production_year BETWEEN 1950 AND 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.6224874442154316 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['rating', "k.keyword LIKE '%sequel%'", "mi_idx.info < '3.0'", 't.production_year BETWEEN 1950 AND 2000']
+INFO:root:Robust plan is 6: 132.9
+INFO:root:Postgres plan: 69.4
+INFO:root:72
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+    AND mi_idx.info < '8.5'
+    AND t.production_year > 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.2737939751215916 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ['rating', "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')", "mi_idx.info < '8.5'", 't.production_year > 2000']
+INFO:root:Robust plan is 19: 669.7
+INFO:root:Postgres plan: 244.2
+INFO:root:73
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword ='character-name-in-title'
+    AND mi_idx.info < '8.5'
+    AND t.production_year > 2010 AND (t.title LIKE '%murder%' OR t.title LIKE '%Murder%' OR t.title LIKE '%Mord%')
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 6
+INFO:root:Current Query: ['votes', "k.keyword ='character-name-in-title'", "mi_idx.info < '8.5'", "t.production_year > 2010 AND (t.title LIKE '%murder%' OR t.title LIKE '%Murder%' OR t.title LIKE '%Mord%')"]
+INFO:root:Robust plan is 3: 225.9
+INFO:root:Postgres plan: 143.5
+INFO:root:74
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword ='character-name-in-title'
+    AND mi_idx.info < '8.5'
+    AND t.production_year BETWEEN 1980 AND 1984
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.40392531084474526 samples to be accurate, We have 50
+INFO:root:Nearest query is 6
+INFO:root:Current Query: ['rating', "k.keyword ='character-name-in-title'", "mi_idx.info < '8.5'", 't.production_year BETWEEN 1980 AND 1984']
+INFO:root:Robust plan is 3: 245.0
+INFO:root:Postgres plan: 146.9
+INFO:root:75
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword LIKE '%sequel%'
+    AND mi_idx.info < '3.0'
+    AND t.episode_nr >= 5 AND t.episode_nr < 100
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.2090154566984574 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['rating', "k.keyword LIKE '%sequel%'", "mi_idx.info < '3.0'", 't.episode_nr >= 5 AND t.episode_nr < 100']
+INFO:root:Robust plan is 6: 138.5
+INFO:root:Postgres plan: 72.1
+INFO:root:76
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword LIKE '%sequel%'
+    AND mi_idx.info > '7.0'
+    AND t.production_year > 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.7518021473044125 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ['rating', "k.keyword LIKE '%sequel%'", "mi_idx.info > '7.0'", 't.production_year > 2000']
+INFO:root:Robust plan is 6: 135.0
+INFO:root:Postgres plan: 70.3
+INFO:root:77
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword ='character-name-in-title'
+    AND  mi_idx.info < '7.0'
+    AND t.production_year BETWEEN 1950 AND 2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.5893650286457137 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['rating', "k.keyword ='character-name-in-title'", " mi_idx.info < '7.0'", 't.production_year BETWEEN 1950 AND 2010']
+INFO:root:Robust plan is 4: 216.7
+INFO:root:Postgres plan: 185.0
+INFO:root:78
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword ='character-name-in-title'
+    AND mi_idx.info < '8.5'
+    AND t.production_year BETWEEN 1950 AND 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 2.4343360122339335 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['rating', "k.keyword ='character-name-in-title'", "mi_idx.info < '8.5'", 't.production_year BETWEEN 1950 AND 2000']
+INFO:root:Robust plan is 4: 237.4
+INFO:root:Postgres plan: 206.4
+INFO:root:79
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'top 250 rank'
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND mi_idx.info < '8.5'
+    AND t.production_year > 1950
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.39006952377321186 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ['top 250 rank', "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "mi_idx.info < '8.5'", 't.production_year > 1950']
+INFO:root:Robust plan is 19: 441.7
+INFO:root:Postgres plan: 164.9
+INFO:root:80
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword LIKE '%sequel%'
+    AND mi_idx.info > '7.0'
+    AND t.production_year BETWEEN 2005 AND 2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 142.14067373730117 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['rating', "k.keyword LIKE '%sequel%'", "mi_idx.info > '7.0'", 't.production_year BETWEEN 2005 AND 2010']
+INFO:root:Robust plan is 6: 133.7
+INFO:root:Postgres plan: 71.6
+INFO:root:81
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+    AND mi_idx.info < '8.5'
+    AND t.production_year > 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.0000000000000004 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ['votes', "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')", "mi_idx.info < '8.5'", 't.production_year > 2000']
+INFO:root:Robust plan is 19: 657.9
+INFO:root:Postgres plan: 241.2
+INFO:root:82
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword ='character-name-in-title'
+    AND mi_idx.info < '3.0'
+    AND t.production_year > 2005
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.7462855851900719 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['votes', "k.keyword ='character-name-in-title'", "mi_idx.info < '3.0'", 't.production_year > 2005']
+INFO:root:Robust plan is 4: 196.4
+INFO:root:Postgres plan: 162.8
+INFO:root:83
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword LIKE '%sequel%'
+    AND mi_idx.info < '8.5'
+    AND t.production_year > 2005
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 10.80160845587995 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ['rating', "k.keyword LIKE '%sequel%'", "mi_idx.info < '8.5'", 't.production_year > 2005']
+INFO:root:Robust plan is 19: 595.8
+INFO:root:Postgres plan: 94.2
+INFO:root:84
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword IN ('murder', 'murder-in-title')
+    AND mi_idx.info > '2.0'
+    AND t.production_year > 1990
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 515.9351285072187 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['rating', "k.keyword IN ('murder', 'murder-in-title')", "mi_idx.info > '2.0'", 't.production_year > 1990']
+INFO:root:Robust plan is 4: 209.1
+INFO:root:Postgres plan: 138.2
+INFO:root:85
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword ='character-name-in-title'
+    AND mi_idx.info > '2.0'
+    AND t.production_year BETWEEN 2000 AND 2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.07229602665259593 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['rating', "k.keyword ='character-name-in-title'", "mi_idx.info > '2.0'", 't.production_year BETWEEN 2000 AND 2010']
+INFO:root:Robust plan is 4: 224.0
+INFO:root:Postgres plan: 195.8
+INFO:root:86
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND mi_idx.info < '8.5'
+    AND t.production_year BETWEEN 1980 AND 2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.2473733222003982 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ['votes', "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "mi_idx.info < '8.5'", 't.production_year BETWEEN 1980 AND 2010']
+INFO:root:Robust plan is 19: 707.5
+INFO:root:Postgres plan: 260.2
+INFO:root:87
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword ='character-name-in-title'
+    AND mi_idx.info > '8.0'
+    AND t.production_year >2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ['rating', "k.keyword ='character-name-in-title'", "mi_idx.info > '8.0'", 't.production_year >2010']
+INFO:root:Robust plan is 7: 143.5
+INFO:root:Postgres plan: 122.5
+INFO:root:88
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'top 250 rank'
+    AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+    AND mi_idx.info > '7.0'
+    AND t.production_year BETWEEN 2000 AND 2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 30.734549873856476 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
+INFO:root:Current Query: ['top 250 rank', "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')", "mi_idx.info > '7.0'", 't.production_year BETWEEN 2000 AND 2010']
+INFO:root:Robust plan is 7: 186.6
+INFO:root:Postgres plan: 149.2
+INFO:root:89
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND mi_idx.info < '3.0'
+    AND t.production_year > 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.2204271758288886 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ['votes', "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "mi_idx.info < '3.0'", 't.production_year > 2000']
+INFO:root:Robust plan is 19: 555.1
+INFO:root:Postgres plan: 227.6
+INFO:root:90
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword ='sequel'
+    AND mi_idx.info < '8.5'
+    AND t.production_year BETWEEN 2007 AND 2008
+  AND t.title LIKE '%Kung%Fu%Panda%'
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.6778971832478315 samples to be accurate, We have 50
+INFO:root:Nearest query is 10
+INFO:root:Current Query: ['rating', "k.keyword ='sequel'", "mi_idx.info < '8.5'", "t.production_year BETWEEN 2007 AND 2008\n  AND t.title LIKE '%Kung%Fu%Panda%'"]
+INFO:root:Robust plan is 3: 99.4
+INFO:root:Postgres plan: 56.3
+INFO:root:91
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'bottom 10 rank'
+    AND k.keyword LIKE '%sequel%'
+    AND mi_idx.info < '8.5'
+    AND t.production_year > 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 2.886846408206819 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['bottom 10 rank', "k.keyword LIKE '%sequel%'", "mi_idx.info < '8.5'", 't.production_year > 2000']
+INFO:root:Robust plan is 6: 149.2
+INFO:root:Postgres plan: 69.7
+INFO:root:92
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword ='sequel'
+    AND mi_idx.info > '5.0'
+    AND t.production_year > 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.4091042649630337 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ['votes', "k.keyword ='sequel'", "mi_idx.info > '5.0'", 't.production_year > 2000']
+INFO:root:Robust plan is 4: 136.0
+INFO:root:Postgres plan: 62.2
+INFO:root:93
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'top 250 rank'
+    AND k.keyword ='character-name-in-title'
+    AND mi_idx.info > '6.5'
+    AND t.production_year > 2005
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 9.519939910646151 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ['top 250 rank', "k.keyword ='character-name-in-title'", "mi_idx.info > '6.5'", 't.production_year > 2005']
+INFO:root:Robust plan is 6: 160.2
+INFO:root:Postgres plan: 124.1
+INFO:root:94
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword IN ('murder', 'murder-in-title')
+    AND mi_idx.info > '8.0'
+    AND t.production_year > 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 2.184204718767752 samples to be accurate, We have 50
+INFO:root:Nearest query is 9
+INFO:root:Current Query: ['votes', "k.keyword IN ('murder', 'murder-in-title')", "mi_idx.info > '8.0'", 't.production_year > 2000']
+INFO:root:Robust plan is 4: 147.9
+INFO:root:Postgres plan: 94.5
+INFO:root:95
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+    AND mi_idx.info < '3.0'
+    AND t.production_year > 1950
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.19340341247915294 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ['votes', "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')", "mi_idx.info < '3.0'", 't.production_year > 1950']
+INFO:root:Robust plan is 6: 210.9
+INFO:root:Postgres plan: 142.0
+INFO:root:96
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword ='character-name-in-title'
+    AND mi_idx.info > '8.0'
+    AND t.production_year > 2005
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 3.708753877727514 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
+INFO:root:Current Query: ['votes', "k.keyword ='character-name-in-title'", "mi_idx.info > '8.0'", 't.production_year > 2005']
+INFO:root:Robust plan is 7: 152.0
+INFO:root:Postgres plan: 131.4
+INFO:root:97
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'votes'
+    AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
+    AND mi_idx.info > '6.5'
+    AND t.production_year BETWEEN 2000 AND 2010
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.7867303291627227 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
+INFO:root:Current Query: ['votes', "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "mi_idx.info > '6.5'", 't.production_year BETWEEN 2000 AND 2010']
+INFO:root:Robust plan is 6: 200.5
+INFO:root:Postgres plan: 183.4
+INFO:root:98
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'rating'
+    AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
+    AND  mi_idx.info < '7.0'
+    AND t.production_year > 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 7.535233344741673 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ['rating', "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')", " mi_idx.info < '7.0'", 't.production_year > 2000']
+INFO:root:Robust plan is 19: 604.4
+INFO:root:Postgres plan: 442.6
+INFO:root:99
+INFO:root:
+    SELECT MIN(mi_idx.info) AS rating,
+       MIN(t.title) AS movie_title
+    FROM info_type AS it,
+        keyword AS k,
+        movie_info_idx AS mi_idx,
+        movie_keyword AS mk,
+        title AS t
+    WHERE it.info = 'top 250 rank'
+    AND k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')
+    AND  mi_idx.info < '7.0'
+    AND t.production_year > 2000
+    AND t.id = mi_idx.movie_id
+    AND t.id = mk.movie_id
+    AND mk.movie_id = mi_idx.movie_id
+    AND k.id = mk.keyword_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.17432459680534676 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ['top 250 rank', "k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')", " mi_idx.info < '7.0'", 't.production_year > 2000']
+INFO:root:Robust plan is 19: 429.3
+INFO:root:Postgres plan: 40.0

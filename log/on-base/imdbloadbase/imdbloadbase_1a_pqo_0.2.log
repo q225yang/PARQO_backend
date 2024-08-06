@@ -1,0 +1,2385 @@
+INFO:root:0
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:0
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 10.0926175331187 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 680.9
+INFO:root:Postgres plan: 1028.3
+INFO:root:0
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 10.0926175331187 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 697.5
+INFO:root:Postgres plan: 1039.4
+INFO:root:1
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note LIKE '%(Japan)%' AND mc.note NOT LIKE '%(USA)%' AND (mc.note LIKE '%(2006)%' OR mc.note LIKE '%(2007)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 18984.920505768605 samples to be accurate, We have 100
+INFO:root:2
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note LIKE '%(Blu-ray)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 7.50431276708636 samples to be accurate, We have 100
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note LIKE '%(Blu-ray)%'"]
+INFO:root:Robust plan is 0: 101.8
+INFO:root:Postgres plan: 512.1
+INFO:root:3
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note IS NOT NULL AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.35673096615670763 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note IS NOT NULL AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')"]
+INFO:root:Robust plan is 1: 278.6
+INFO:root:Postgres plan: 546.0
+INFO:root:4
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note LIKE '%(200%)%' AND mc.note LIKE '%(worldwide)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.2726008016654 samples to be accurate, We have 100
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note LIKE '%(200%)%' AND mc.note LIKE '%(worldwide)%'"]
+INFO:root:Robust plan is 0: 116.1
+INFO:root:Postgres plan: 511.5
+INFO:root:5
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.42632432362967654 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 687.6
+INFO:root:Postgres plan: 995.7
+INFO:root:6
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note NOT LIKE '%(as Metro-Goldwyn-Mayer Pictures)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 274422.2106690228 samples to be accurate, We have 100
+INFO:root:7
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.4429420356838232 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 677.2
+INFO:root:Postgres plan: 1044.2
+INFO:root:8
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note LIKE '%(VHS)%' AND mc.note LIKE '%(USA)%' AND mc.note LIKE '%(1994)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 671511519.7045604 samples to be accurate, We have 100
+INFO:root:9
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note NOT LIKE '%(USA)%'
+  AND mc.note LIKE '%(200%)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.0054655738104175695 samples to be accurate, We have 100
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', "mc.note NOT LIKE '%(USA)%'\n  AND mc.note LIKE '%(200%)%'"]
+INFO:root:Robust plan is 0: 125.2
+INFO:root:Postgres plan: 536.1
+INFO:root:10
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.2313376635048163 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 672.7
+INFO:root:Postgres plan: 1030.4
+INFO:root:11
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note LIKE '%(theatrical)%' AND mc.note LIKE '%(France)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 6436.271808128059 samples to be accurate, We have 100
+INFO:root:12
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note LIKE '%(200%)%' AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.2182361257554962 samples to be accurate, We have 100
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note LIKE '%(200%)%' AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')"]
+INFO:root:Robust plan is 0: 123.7
+INFO:root:Postgres plan: 535.8
+INFO:root:13
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind IS NOT NULL AND (ct.kind ='production companies' OR ct.kind = 'distributors')
+    AND it.info = 'rating'
+    AND mc.note LIKE '%(200%)%' AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.7699432457769924 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind IS NOT NULL AND (ct.kind ='production companies' OR ct.kind = 'distributors')", 'rating', "mc.note LIKE '%(200%)%' AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')"]
+INFO:root:Robust plan is 1: 240.9
+INFO:root:Postgres plan: 530.1
+INFO:root:14
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.7126852339593497 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 676.3
+INFO:root:Postgres plan: 993.0
+INFO:root:15
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note NOT LIKE '%(USA)%'
+  AND mc.note LIKE '%(200%)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.8193189104268852 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note NOT LIKE '%(USA)%'\n  AND mc.note LIKE '%(200%)%'"]
+INFO:root:Robust plan is 1: 255.2
+INFO:root:Postgres plan: 533.8
+INFO:root:16
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note LIKE '%(200%)%' AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.0065064542528612 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', "mc.note LIKE '%(200%)%' AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')"]
+INFO:root:Robust plan is 1: 246.3
+INFO:root:Postgres plan: 529.9
+INFO:root:17
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note IS NOT NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 15935.36778608195 samples to be accurate, We have 100
+INFO:root:18
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note NOT LIKE '%(USA)%'
+  AND mc.note LIKE '%(200%)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.18177563648493508 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', "mc.note NOT LIKE '%(USA)%'\n  AND mc.note LIKE '%(200%)%'"]
+INFO:root:Robust plan is 1: 254.9
+INFO:root:Postgres plan: 536.6
+INFO:root:19
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note NOT LIKE '%(USA)%'
+  AND mc.note LIKE '%(200%)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 2365.8424868022257 samples to be accurate, We have 100
+INFO:root:20
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note NOT LIKE '%(as Metro-Goldwyn-Mayer Pictures)%' AND (mc.note LIKE '%(co-production)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 7.3159628661434715 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note NOT LIKE '%(as Metro-Goldwyn-Mayer Pictures)%' AND (mc.note LIKE '%(co-production)%')"]
+INFO:root:Robust plan is 1: 257.6
+INFO:root:Postgres plan: 560.8
+INFO:root:21
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 12.00482101379949 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 672.2
+INFO:root:Postgres plan: 1006.7
+INFO:root:22
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind IS NOT NULL AND (ct.kind ='production companies' OR ct.kind = 'distributors')
+    AND it.info = 'votes'
+    AND mc.note LIKE '%(VHS)%' AND mc.note LIKE '%(USA)%' AND mc.note LIKE '%(1994)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 29.21145576302495 samples to be accurate, We have 100
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["ct.kind IS NOT NULL AND (ct.kind ='production companies' OR ct.kind = 'distributors')", 'votes', "mc.note LIKE '%(VHS)%' AND mc.note LIKE '%(USA)%' AND mc.note LIKE '%(1994)%'"]
+INFO:root:Robust plan is 0: 108.0
+INFO:root:Postgres plan: 518.6
+INFO:root:23
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note NOT LIKE '%(as Metro-Goldwyn-Mayer Pictures)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 4584.598240077961 samples to be accurate, We have 100
+INFO:root:24
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note LIKE '%(Blu-ray)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 7.777756625738597 samples to be accurate, We have 100
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note LIKE '%(Blu-ray)%'"]
+INFO:root:Robust plan is 0: 110.1
+INFO:root:Postgres plan: 517.6
+INFO:root:25
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note LIKE '%(200%)%' AND mc.note LIKE '%(worldwide)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 28.551346371534652 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note LIKE '%(200%)%' AND mc.note LIKE '%(worldwide)%'"]
+INFO:root:Robust plan is 1: 227.5
+INFO:root:Postgres plan: 520.7
+INFO:root:26
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note IS NOT NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 3882.3858035858934 samples to be accurate, We have 100
+INFO:root:27
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 5.250736993054848 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 704.1
+INFO:root:Postgres plan: 1015.2
+INFO:root:28
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note NOT LIKE '%(USA)%'
+  AND mc.note LIKE '%(200%)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.3970396231994242 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', "mc.note NOT LIKE '%(USA)%'\n  AND mc.note LIKE '%(200%)%'"]
+INFO:root:Robust plan is 1: 253.6
+INFO:root:Postgres plan: 540.5
+INFO:root:29
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note IS NOT NULL AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 55.99962859730049 samples to be accurate, We have 100
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', "mc.note IS NOT NULL AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')"]
+INFO:root:Robust plan is 0: 139.6
+INFO:root:Postgres plan: 552.6
+INFO:root:30
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note LIKE '%(200%)%' AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 55.51737776681209 samples to be accurate, We have 100
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note LIKE '%(200%)%' AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')"]
+INFO:root:Robust plan is 0: 123.4
+INFO:root:Postgres plan: 540.1
+INFO:root:31
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note LIKE '%(200%)%' AND mc.note LIKE '%(worldwide)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 4020.3879066514623 samples to be accurate, We have 100
+INFO:root:32
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note IS NOT NULL AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.2889648414041264 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', "mc.note IS NOT NULL AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')"]
+INFO:root:Robust plan is 1: 275.9
+INFO:root:Postgres plan: 564.6
+INFO:root:33
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note NOT LIKE '%(USA)%'
+  AND mc.note LIKE '%(200%)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.6094658957473196 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note NOT LIKE '%(USA)%'\n  AND mc.note LIKE '%(200%)%'"]
+INFO:root:Robust plan is 1: 250.0
+INFO:root:Postgres plan: 544.7
+INFO:root:34
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind != 'production companies' AND ct.kind IS NOT NULL
+    AND it.info = 'votes'
+    AND mc.note NOT LIKE '%(as Metro-Goldwyn-Mayer Pictures)%' AND (mc.note LIKE '%(co-production)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 65.40982116351222 samples to be accurate, We have 100
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["ct.kind != 'production companies' AND ct.kind IS NOT NULL", 'votes', "mc.note NOT LIKE '%(as Metro-Goldwyn-Mayer Pictures)%' AND (mc.note LIKE '%(co-production)%')"]
+INFO:root:Robust plan is 0: 126.3
+INFO:root:Postgres plan: 535.1
+INFO:root:35
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 7.049263843201411 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 664.2
+INFO:root:Postgres plan: 1018.1
+INFO:root:36
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'bottom 10 rank'
+    AND mc.note LIKE '%(Blu-ray)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.2245206225797979 samples to be accurate, We have 100
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'bottom 10 rank', "mc.note LIKE '%(Blu-ray)%'"]
+INFO:root:Robust plan is 0: 105.3
+INFO:root:Postgres plan: 86.8
+INFO:root:37
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'bottom 10 rank'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.4395158454812127 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'bottom 10 rank', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 171.0
+INFO:root:Postgres plan: 88.8
+INFO:root:38
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note IS NOT NULL AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.904487715471554 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note IS NOT NULL AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')"]
+INFO:root:Robust plan is 1: 277.7
+INFO:root:Postgres plan: 549.8
+INFO:root:39
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.2736001164329015 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 683.9
+INFO:root:Postgres plan: 1003.1
+INFO:root:40
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note LIKE '%(200%)%' AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.1699084353899467 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', "mc.note LIKE '%(200%)%' AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')"]
+INFO:root:Robust plan is 1: 248.2
+INFO:root:Postgres plan: 535.8
+INFO:root:41
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'bottom 10 rank'
+    AND mc.note NOT LIKE '%(as Metro-Goldwyn-Mayer Pictures)%' AND (mc.note LIKE '%(co-production)%' OR mc.note LIKE '%(presents)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 2.0543688738594312 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'bottom 10 rank', "mc.note NOT LIKE '%(as Metro-Goldwyn-Mayer Pictures)%' AND (mc.note LIKE '%(co-production)%' OR mc.note LIKE '%(presents)%')"]
+INFO:root:Robust plan is 1: 211.6
+INFO:root:Postgres plan: 94.3
+INFO:root:42
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note NOT LIKE '%(as Metro-Goldwyn-Mayer Pictures)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.728752166714126 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note NOT LIKE '%(as Metro-Goldwyn-Mayer Pictures)%'"]
+INFO:root:Robust plan is 1: 395.3
+INFO:root:Postgres plan: 673.7
+INFO:root:43
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.19701189264407318 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 679.8
+INFO:root:Postgres plan: 1009.8
+INFO:root:44
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind != 'production companies' AND ct.kind IS NOT NULL
+    AND it.info = 'rating'
+    AND mc.note IS NOT NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.5728271066974749 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind != 'production companies' AND ct.kind IS NOT NULL", 'rating', 'mc.note IS NOT NULL']
+INFO:root:Robust plan is 1: 291.0
+INFO:root:Postgres plan: 990.9
+INFO:root:45
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 9182.637499424405 samples to be accurate, We have 100
+INFO:root:46
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 29.105988661846293 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 674.4
+INFO:root:Postgres plan: 1015.8
+INFO:root:47
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind != 'production companies' AND ct.kind IS NOT NULL
+    AND it.info = 'votes'
+    AND mc.note NOT LIKE '%(USA)%'
+  AND mc.note LIKE '%(200%)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.02436870311703449 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind != 'production companies' AND ct.kind IS NOT NULL", 'votes', "mc.note NOT LIKE '%(USA)%'\n  AND mc.note LIKE '%(200%)%'"]
+INFO:root:Robust plan is 1: 254.3
+INFO:root:Postgres plan: 535.8
+INFO:root:48
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note IS NOT NULL AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.7552482137792748 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note IS NOT NULL AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')"]
+INFO:root:Robust plan is 1: 272.9
+INFO:root:Postgres plan: 552.4
+INFO:root:49
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.2876877795204063 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 674.2
+INFO:root:Postgres plan: 998.3
+INFO:root:50
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'bottom 10 rank'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 6301.362403346522 samples to be accurate, We have 100
+INFO:root:51
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note IS NOT NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 3.4213224606787813 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', 'mc.note IS NOT NULL']
+INFO:root:Robust plan is 1: 375.5
+INFO:root:Postgres plan: 662.3
+INFO:root:52
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note IS NOT NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 5.4973093465130844 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', 'mc.note IS NOT NULL']
+INFO:root:Robust plan is 1: 378.7
+INFO:root:Postgres plan: 656.7
+INFO:root:53
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind != 'production companies' AND ct.kind IS NOT NULL
+    AND it.info = 'votes'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 42.92028143857382 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind != 'production companies' AND ct.kind IS NOT NULL", 'votes', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 272.7
+INFO:root:Postgres plan: 977.3
+INFO:root:54
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'top 250 rank'
+    AND mc.note LIKE '%(Blu-ray)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 3.1092495253294845 samples to be accurate, We have 100
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'top 250 rank', "mc.note LIKE '%(Blu-ray)%'"]
+INFO:root:Robust plan is 0: 110.2
+INFO:root:Postgres plan: 91.8
+INFO:root:55
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note NOT LIKE '%(USA)%'
+  AND mc.note LIKE '%(200%)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.7457415047561978 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note NOT LIKE '%(USA)%'\n  AND mc.note LIKE '%(200%)%'"]
+INFO:root:Robust plan is 1: 252.2
+INFO:root:Postgres plan: 543.8
+INFO:root:56
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind != 'production companies' AND ct.kind IS NOT NULL
+    AND it.info = 'rating'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 11.332280305187842 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind != 'production companies' AND ct.kind IS NOT NULL", 'rating', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 276.0
+INFO:root:Postgres plan: 975.7
+INFO:root:57
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note LIKE '%(Japan)%' AND mc.note NOT LIKE '%(USA)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 2.119101493435701 samples to be accurate, We have 100
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', "mc.note LIKE '%(Japan)%' AND mc.note NOT LIKE '%(USA)%'"]
+INFO:root:Robust plan is 0: 111.6
+INFO:root:Postgres plan: 514.1
+INFO:root:58
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'top 250 rank'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 6.119847761719938 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'top 250 rank', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 174.5
+INFO:root:Postgres plan: 92.6
+INFO:root:59
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind IS NOT NULL AND (ct.kind ='production companies' OR ct.kind = 'distributors')
+    AND it.info = 'votes'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 35.30831817917079 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind IS NOT NULL AND (ct.kind ='production companies' OR ct.kind = 'distributors')", 'votes', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 674.8
+INFO:root:Postgres plan: 1008.6
+INFO:root:60
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note NOT LIKE '%(USA)%'
+  AND mc.note LIKE '%(200%)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.5018581826762429 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note NOT LIKE '%(USA)%'\n  AND mc.note LIKE '%(200%)%'"]
+INFO:root:Robust plan is 1: 256.3
+INFO:root:Postgres plan: 534.1
+INFO:root:61
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 9887971.913524626 samples to be accurate, We have 100
+INFO:root:62
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note NOT LIKE '%(USA)%'
+  AND mc.note LIKE '%(200%)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.474936434507411 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note NOT LIKE '%(USA)%'\n  AND mc.note LIKE '%(200%)%'"]
+INFO:root:Robust plan is 1: 249.2
+INFO:root:Postgres plan: 539.0
+INFO:root:63
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind != 'production companies' AND ct.kind IS NOT NULL
+    AND it.info = 'votes'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 8.738554023803655 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind != 'production companies' AND ct.kind IS NOT NULL", 'votes', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 272.9
+INFO:root:Postgres plan: 971.3
+INFO:root:64
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note LIKE '%(VHS)%' AND mc.note LIKE '%(USA)%' AND mc.note LIKE '%(1994)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.7551573212476597 samples to be accurate, We have 100
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', "mc.note LIKE '%(VHS)%' AND mc.note LIKE '%(USA)%' AND mc.note LIKE '%(1994)%'"]
+INFO:root:Robust plan is 0: 105.4
+INFO:root:Postgres plan: 510.8
+INFO:root:65
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 36.662660541675095 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 672.8
+INFO:root:Postgres plan: 1002.1
+INFO:root:66
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1112.7980917775494 samples to be accurate, We have 100
+INFO:root:67
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note LIKE '%(200%)%' AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.7343391407586529 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', "mc.note LIKE '%(200%)%' AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')"]
+INFO:root:Robust plan is 1: 242.1
+INFO:root:Postgres plan: 531.5
+INFO:root:68
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note NOT LIKE '%(as Metro-Goldwyn-Mayer Pictures)%' AND (mc.note LIKE '%(co-production)%' OR mc.note LIKE '%(presents)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 3.3065660510302037 samples to be accurate, We have 100
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note NOT LIKE '%(as Metro-Goldwyn-Mayer Pictures)%' AND (mc.note LIKE '%(co-production)%' OR mc.note LIKE '%(presents)%')"]
+INFO:root:Robust plan is 0: 215.5
+INFO:root:Postgres plan: 591.9
+INFO:root:69
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note LIKE '%(Blu-ray)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 11.788942988479342 samples to be accurate, We have 100
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note LIKE '%(Blu-ray)%'"]
+INFO:root:Robust plan is 0: 109.6
+INFO:root:Postgres plan: 510.2
+INFO:root:70
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note NOT LIKE '%(USA)%'
+  AND mc.note LIKE '%(200%)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.0495217604015625 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', "mc.note NOT LIKE '%(USA)%'\n  AND mc.note LIKE '%(200%)%'"]
+INFO:root:Robust plan is 1: 255.8
+INFO:root:Postgres plan: 538.1
+INFO:root:71
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note NOT LIKE '%(USA)%'
+  AND mc.note LIKE '%(200%)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.13724753778287188 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note NOT LIKE '%(USA)%'\n  AND mc.note LIKE '%(200%)%'"]
+INFO:root:Robust plan is 1: 250.5
+INFO:root:Postgres plan: 538.3
+INFO:root:72
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.12443618309144862 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 675.0
+INFO:root:Postgres plan: 1012.2
+INFO:root:73
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 2.335724551726498 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 666.7
+INFO:root:Postgres plan: 1005.7
+INFO:root:74
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'bottom 10 rank'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 5678.2340755721925 samples to be accurate, We have 100
+INFO:root:75
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note NOT LIKE '%(USA)%'
+  AND mc.note LIKE '%(200%)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.715477895401406 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', "mc.note NOT LIKE '%(USA)%'\n  AND mc.note LIKE '%(200%)%'"]
+INFO:root:Robust plan is 1: 256.6
+INFO:root:Postgres plan: 536.8
+INFO:root:76
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note LIKE '%(200%)%' AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.6887389446226356 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', "mc.note LIKE '%(200%)%' AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')"]
+INFO:root:Robust plan is 1: 249.5
+INFO:root:Postgres plan: 529.2
+INFO:root:77
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note LIKE '%(200%)%' AND mc.note LIKE '%(worldwide)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.003571745693990336 samples to be accurate, We have 100
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note LIKE '%(200%)%' AND mc.note LIKE '%(worldwide)%'"]
+INFO:root:Robust plan is 0: 117.6
+INFO:root:Postgres plan: 520.2
+INFO:root:78
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.6118861895554207 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 678.9
+INFO:root:Postgres plan: 1011.3
+INFO:root:79
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 31.60252610825833 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 681.4
+INFO:root:Postgres plan: 1014.9
+INFO:root:80
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'top 250 rank'
+    AND mc.note IS NOT NULL AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.0029073130897737 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'top 250 rank', "mc.note IS NOT NULL AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')"]
+INFO:root:Robust plan is 1: 191.0
+INFO:root:Postgres plan: 93.6
+INFO:root:81
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 5652.073370985598 samples to be accurate, We have 100
+INFO:root:82
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note NOT LIKE '%(USA)%'
+  AND mc.note LIKE '%(200%)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.0055901411386554455 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', "mc.note NOT LIKE '%(USA)%'\n  AND mc.note LIKE '%(200%)%'"]
+INFO:root:Robust plan is 1: 252.4
+INFO:root:Postgres plan: 560.5
+INFO:root:83
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 16.20073241895615 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 685.0
+INFO:root:Postgres plan: 1006.4
+INFO:root:84
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note NOT LIKE '%(as Metro-Goldwyn-Mayer Pictures)%' AND (mc.note LIKE '%(co-production)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 3.1859774631023945 samples to be accurate, We have 100
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note NOT LIKE '%(as Metro-Goldwyn-Mayer Pictures)%' AND (mc.note LIKE '%(co-production)%')"]
+INFO:root:Robust plan is 0: 166.5
+INFO:root:Postgres plan: 558.5
+INFO:root:85
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note NOT LIKE '%(as Metro-Goldwyn-Mayer Pictures)%' AND (mc.note LIKE '%(co-production)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1.0400241021659709 samples to be accurate, We have 100
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note NOT LIKE '%(as Metro-Goldwyn-Mayer Pictures)%' AND (mc.note LIKE '%(co-production)%')"]
+INFO:root:Robust plan is 0: 166.7
+INFO:root:Postgres plan: 562.0
+INFO:root:86
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 679203.8984232043 samples to be accurate, We have 100
+INFO:root:87
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note LIKE '%(VHS)%' AND mc.note LIKE '%(USA)%' AND mc.note LIKE '%(1994)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 22912368.131721035 samples to be accurate, We have 100
+INFO:root:88
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note LIKE '%(200%)%' AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.08550889880194286 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', "mc.note LIKE '%(200%)%' AND (mc.note LIKE '%(USA)%' OR mc.note LIKE '%(worldwide)%')"]
+INFO:root:Robust plan is 1: 244.8
+INFO:root:Postgres plan: 535.9
+INFO:root:89
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note NOT LIKE '%(USA)%'
+  AND mc.note LIKE '%(200%)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.8625564472479363 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note NOT LIKE '%(USA)%'\n  AND mc.note LIKE '%(200%)%'"]
+INFO:root:Robust plan is 1: 252.6
+INFO:root:Postgres plan: 534.4
+INFO:root:90
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.9277836091993275 samples to be accurate, We have 100
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', 'mc.note IS NULL']
+INFO:root:Robust plan is 0: 1121.0
+INFO:root:Postgres plan: 1011.9
+INFO:root:91
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note IS NULL
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 7.161543776272723 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', 'mc.note IS NULL']
+INFO:root:Robust plan is 1: 679.4
+INFO:root:Postgres plan: 1004.2
+INFO:root:92
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note NOT LIKE '%(as Metro-Goldwyn-Mayer Pictures)%' AND (mc.note LIKE '%(co-production)%' OR mc.note LIKE '%(presents)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 565.1553738884747 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note NOT LIKE '%(as Metro-Goldwyn-Mayer Pictures)%' AND (mc.note LIKE '%(co-production)%' OR mc.note LIKE '%(presents)%')"]
+INFO:root:Robust plan is 1: 299.9
+INFO:root:Postgres plan: 594.5
+INFO:root:93
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'top 250 rank'
+    AND mc.note NOT LIKE '%(USA)%'
+  AND mc.note LIKE '%(200%)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.595620914819578 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'top 250 rank', "mc.note NOT LIKE '%(USA)%'\n  AND mc.note LIKE '%(200%)%'"]
+INFO:root:Robust plan is 1: 183.8
+INFO:root:Postgres plan: 92.8
+INFO:root:94
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'votes'
+    AND mc.note LIKE '%(Japan)%' AND mc.note NOT LIKE '%(USA)%' AND (mc.note LIKE '%(2006)%' OR mc.note LIKE '%(2007)%')
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.2029115735604381 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'votes', "mc.note LIKE '%(Japan)%' AND mc.note NOT LIKE '%(USA)%' AND (mc.note LIKE '%(2006)%' OR mc.note LIKE '%(2007)%')"]
+INFO:root:Robust plan is 1: 219.6
+INFO:root:Postgres plan: 515.5
+INFO:root:95
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note NOT LIKE '%(USA)%'
+  AND mc.note LIKE '%(200%)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 0.7982304590533967 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note NOT LIKE '%(USA)%'\n  AND mc.note LIKE '%(200%)%'"]
+INFO:root:Robust plan is 1: 258.3
+INFO:root:Postgres plan: 537.2
+INFO:root:96
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note LIKE '%(VHS)%' AND mc.note LIKE '%(USA)%' AND mc.note LIKE '%(1994)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 1237012146.5873597 samples to be accurate, We have 100
+INFO:root:97
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note NOT LIKE '%(USA)%'
+  AND mc.note LIKE '%(200%)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 5886.04529304091 samples to be accurate, We have 100
+INFO:root:98
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note LIKE '%(Blu-ray)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 2.4030395449797917 samples to be accurate, We have 100
+INFO:root:Nearest query is 1
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note LIKE '%(Blu-ray)%'"]
+INFO:root:Robust plan is 0: 107.2
+INFO:root:Postgres plan: 512.2
+INFO:root:99
+INFO:root:
+    SELECT MIN(mc.note) AS production_note,
+       MIN(t.title) AS movie_title,
+       MIN(t.production_year) AS movie_year
+    FROM company_type AS ct,
+        info_type AS it,
+        movie_companies AS mc,
+        movie_info_idx AS mi_idx,
+        title AS t
+    WHERE ct.kind = 'production companies'
+    AND it.info = 'rating'
+    AND mc.note LIKE '%(200%)%' AND mc.note LIKE '%(worldwide)%'
+    AND ct.id = mc.company_type_id
+    AND t.id = mc.movie_id
+    AND t.id = mi_idx.movie_id
+    AND mc.movie_id = mi_idx.movie_id
+    AND it.id = mi_idx.info_type_id;
+    
+INFO:root:--- PQO: Need 5.595032919005201 samples to be accurate, We have 100
+INFO:root:Nearest query is 0
+INFO:root:Current Query: ["ct.kind = 'production companies'", 'rating', "mc.note LIKE '%(200%)%' AND mc.note LIKE '%(worldwide)%'"]
+INFO:root:Robust plan is 1: 231.3
+INFO:root:Postgres plan: 517.6
