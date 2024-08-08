@@ -9,8 +9,8 @@
             name AS n,
             title AS t
         WHERE cn.country_code ='[jp]'
-        AND k.keyword ='character-name-in-title'
-        AND n.gender ='f' AND n.name LIKE '%An%'
+        AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
+        AND n.gender = 'm'
         AND n.id = ci.person_id
         AND ci.movie_id = t.id
         AND t.id = mk.movie_id

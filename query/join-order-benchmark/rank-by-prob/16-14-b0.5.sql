@@ -9,9 +9,10 @@
         movie_keyword AS mk,
         name AS n,
         title AS t
-    WHERE cn.country_code = '[ru]'
-    AND k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')
-    AND t.title != '' AND (t.title LIKE '%Champion%' OR t.title LIKE '%Loser%')
+    WHERE cn.country_code ='[us]'
+  AND cn.name = 'DreamWorks Animation'
+    AND k.keyword IN ('murder', 'murder-in-title')
+    AND t.production_year BETWEEN 2000 AND 2010
     AND an.person_id = n.id
     AND n.id = ci.person_id
     AND ci.movie_id = t.id

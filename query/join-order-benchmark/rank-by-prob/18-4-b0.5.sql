@@ -9,10 +9,10 @@
         movie_info_idx AS mi_idx,
         name AS n,
         title AS t
-    WHERE ci.note ='(voice: English version)'
-    AND it1.info = 'countries'
-    AND it2.info = 'votes'
-    AND n.gender ='f' AND n.name LIKE '%An%'
+    WHERE ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')
+    AND it1.info = 'genres'
+    AND it2.info = 'rating'
+    AND n.name_pcode_cf LIKE 'D%' AND n.gender='m'
     AND t.id = mi.movie_id
     AND t.id = mi_idx.movie_id
     AND t.id = ci.movie_id

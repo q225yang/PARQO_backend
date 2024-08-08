@@ -8,9 +8,9 @@
             movie_keyword AS mk,
             name AS n,
             title AS t
-        WHERE cn.country_code = '[us]' AND cn.name = 'YouTube'
-        AND k.keyword ='character-name-in-title'
-        AND n.gender = 'm'
+        WHERE cn.country_code = '[ru]'
+        AND k.keyword ='sequel'
+        AND n.gender ='f' AND n.name LIKE '%An%'
         AND n.id = ci.person_id
         AND ci.movie_id = t.id
         AND t.id = mk.movie_id

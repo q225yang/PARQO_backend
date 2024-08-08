@@ -15,9 +15,9 @@
         AND chn.name NOT LIKE '%Sherlock%'
   AND (chn.name LIKE '%Tony%Stark%'
        OR chn.name LIKE '%Iron%Man%')
-        AND k.keyword LIKE '%sequel%'
-        AND kt.kind IN ('movie', 'episode')
-        AND t.production_year > 2000
+        AND k.keyword ='character-name-in-title'
+        AND kt.kind IN ('tv series')
+        AND t.production_year >2010
         AND kt.id = t.kind_id
         AND t.id = mk.movie_id
         AND t.id = ci.movie_id

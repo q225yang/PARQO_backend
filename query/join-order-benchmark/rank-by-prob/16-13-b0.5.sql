@@ -9,9 +9,10 @@
         movie_keyword AS mk,
         name AS n,
         title AS t
-    WHERE cn.country_code = '[us]' AND cn.name = 'YouTube'
-    AND k.keyword ='character-name-in-title'
-    AND t.production_year = 1998
+    WHERE cn.country_code ='[us]'
+  AND cn.name = 'DreamWorks Animation'
+    AND k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')
+    AND t.production_year > 2005
     AND an.person_id = n.id
     AND n.id = ci.person_id
     AND ci.movie_id = t.id

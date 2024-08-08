@@ -32,11 +32,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.08273641783331045 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.057035704354594666 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind LIKE '%complete%'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('hero', 'martial-arts', 'hand-to-hand-combat')", "kt.kind ='movie'", 't.production_year > 1990']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 411.925
+INFO:root:Postgres plan: 557.747
 INFO:root:1
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -71,11 +71,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.9999999999999984 samples to be accurate, We have 50
 INFO:root:Nearest query is 6
 INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind IN ('cast',\n                    'crew')", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='sequel'", "kt.kind ='movie'", 't.production_year > 2014']
-INFO:root:Robust plan is 18: 91.3
-INFO:root:Postgres plan: 48.2
+INFO:root:Robust plan is 15: 68.771
+INFO:root:Postgres plan: 45.17
 INFO:root:2
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -109,11 +109,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.6913059770395353 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.3305360215034376 samples to be accurate, We have 50
 INFO:root:Nearest query is 8
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete'", "chn.name = 'Queen'", "k.keyword ='character-name-in-title'", "kt.kind ='movie'", "t.title = 'Shrek 2'\n  AND t.production_year BETWEEN 2000 AND 2010"]
-INFO:root:Robust plan is 14: 134.6
-INFO:root:Postgres plan: 129.6
+INFO:root:Robust plan is 13: 97.755
+INFO:root:Postgres plan: 120.371
 INFO:root:3
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -148,11 +148,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 6.73383806132072 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 2.789314203924421 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='sequel'", "kt.kind ='movie'", 't.production_year BETWEEN 2007 AND 2010']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 81.751
+INFO:root:Postgres plan: 72.973
 INFO:root:4
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -187,11 +187,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 7.866505860114367 samples to be accurate, We have 50
-INFO:root:Nearest query is 7
+INFO:root:--- PQO: Need 6.5915920912538 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'complete+verified'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword ='sequel'", "kt.kind IN ('movie', 'episode')", 't.production_year = 2007']
-INFO:root:Robust plan is 8: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 16: 94.389
+INFO:root:Postgres plan: 53.557
 INFO:root:5
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -226,11 +226,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 2.818456563500116 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.0829158613330003 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='sequel'", "kt.kind IN ('movie', 'episode')", 't.production_year BETWEEN 2008 AND 2014']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 80.698
+INFO:root:Postgres plan: 89.418
 INFO:root:6
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -265,11 +265,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.9999999999999958 samples to be accurate, We have 49
-INFO:root:Nearest query is 4
+INFO:root:--- PQO: Need 0.2591522439657616 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
 INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'complete+verified'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword LIKE '%sequel%'", "kt.kind IN ('movie', 'episode')", 't.production_year > 2000']
-INFO:root:Robust plan is 31: 1.3
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 9: 181.528
+INFO:root:Postgres plan: 204.758
 INFO:root:7
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -302,11 +302,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.6005218281288547 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.5189790012908824 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'complete+verified'", "chn.name = 'Queen'", "k.keyword ='sequel'", "kt.kind ='movie'", 't.episode_nr < 100']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 3: 95.948
+INFO:root:Postgres plan: 44.057
 INFO:root:8
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -342,11 +342,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.568855240618477 samples to be accurate, We have 50
-INFO:root:Nearest query is 13
+INFO:root:--- PQO: Need 21.081705673876073 samples to be accurate, We have 50
+INFO:root:Nearest query is 6
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='character-name-in-title'", "kt.kind IN ('movie')", "t.title = 'Shrek 2'\n  AND t.production_year BETWEEN 2000 AND 2005"]
-INFO:root:Robust plan is 0: 128.0
-INFO:root:Postgres plan: 130.7
+INFO:root:Robust plan is 15: 96.152
+INFO:root:Postgres plan: 118.379
 INFO:root:9
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -381,11 +381,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 15.08524848562758 samples to be accurate, We have 50
-INFO:root:Nearest query is 6
+INFO:root:--- PQO: Need 0.9999999999999993 samples to be accurate, We have 50
+INFO:root:Nearest query is 11
 INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'crew'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='sequel'", "kt.kind IN ('movie', 'episode')", "t.title != '' AND (t.title LIKE 'Champion%' OR t.title LIKE 'Loser%')"]
-INFO:root:Robust plan is 18: 115.6
-INFO:root:Postgres plan: 45.1
+INFO:root:Robust plan is 6: 70.46
+INFO:root:Postgres plan: 44.623
 INFO:root:10
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -420,11 +420,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.6871663663496512 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.031535278126205143 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["cct.kind != 'complete+verified'", "cct.kind LIKE '%complete%'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword = 'computer-animation'", "kt.kind ='movie'", 't.production_year > 2005']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 45.346
+INFO:root:Postgres plan: 24.136
 INFO:root:11
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -457,11 +457,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 7.395958065422085 samples to be accurate, We have 50
-INFO:root:Nearest query is 2
+INFO:root:--- PQO: Need 0.24361649255076906 samples to be accurate, We have 50
+INFO:root:Nearest query is 15
 INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind != 'complete+verified'", "chn.name = 'Queen'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('tv series')", 't.production_year >2010']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 3: 155.904
+INFO:root:Postgres plan: 133.629
 INFO:root:12
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -496,11 +496,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 6.933697784898252 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 197.56365568476065 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind IN ('cast',\n                    'crew')", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword = 'computer-animation'", "kt.kind ='movie'", 't.production_year = 1998']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 15.1
+INFO:root:Robust plan is 4: 39.059
+INFO:root:Postgres plan: 14.668
 INFO:root:13
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -535,11 +535,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.3941718140164989 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.5437076919148219 samples to be accurate, We have 50
 INFO:root:Nearest query is 3
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')", "kt.kind IN ('movie', 'episode')", 't.production_year > 2000']
-INFO:root:Robust plan is 8: 2.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 5: 1784.877
+INFO:root:Postgres plan: 1949.239
 INFO:root:14
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -572,11 +572,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.33185563478257857 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.10563505802555623 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'crew'", "chn.name = 'Queen'", "k.keyword = 'computer-animation'", "kt.kind ='movie'", 't.production_year > 1990']
-INFO:root:Robust plan is 7: 0.1
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 3: 45.945
+INFO:root:Postgres plan: 40.177
 INFO:root:15
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -609,11 +609,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.08200535458610152 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.9999999999999997 samples to be accurate, We have 50
 INFO:root:Nearest query is 9
 INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind LIKE '%complete%'", "chn.name = 'Queen'", "k.keyword LIKE '%sequel%'", "kt.kind ='movie'", 't.production_year BETWEEN 2005 AND 2010']
-INFO:root:Robust plan is 6: 96.6
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 11: 138.006
+INFO:root:Postgres plan: 173.498
 INFO:root:16
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -648,11 +648,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 4.116328819131176 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 10.3337963995089 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind IN ('cast',\n                    'crew')", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='sequel'", "kt.kind ='movie'", 't.production_year = 2007']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 65.72
+INFO:root:Postgres plan: 55.879
 INFO:root:17
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -687,11 +687,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
-INFO:root:Nearest query is 11
+INFO:root:--- PQO: Need 0.7351857197376878 samples to be accurate, We have 50
+INFO:root:Nearest query is 12
 INFO:root:Current Query: ["cct.kind != 'complete+verified'", "cct.kind IN ('cast',\n                    'crew')", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword LIKE '%sequel%'", "kt.kind ='movie'", 't.production_year > 2014']
-INFO:root:Robust plan is 12: 90.0
-INFO:root:Postgres plan: 60.5
+INFO:root:Robust plan is 13: 89.298
+INFO:root:Postgres plan: 56.634
 INFO:root:18
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -726,11 +726,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.1444753345149683 samples to be accurate, We have 50
-INFO:root:Nearest query is 0
+INFO:root:--- PQO: Need 0.2803578656635196 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind LIKE '%complete%'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword ='character-name-in-title'", "kt.kind IN ('tv series')", 't.production_year >2010']
-INFO:root:Robust plan is 13: 338.7
-INFO:root:Postgres plan: 129.4
+INFO:root:Robust plan is 16: 108.824
+INFO:root:Postgres plan: 119.135
 INFO:root:19
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -763,11 +763,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.7974138912280401 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.8338971626766449 samples to be accurate, We have 50
 INFO:root:Nearest query is 9
 INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'complete'", "chn.name = 'Queen'", "k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')", "kt.kind IN ('movie')", 't.production_year > 1990']
-INFO:root:Robust plan is 6: 99.5
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 11: 117.563
+INFO:root:Postgres plan: 97.084
 INFO:root:20
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -803,11 +803,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.0000005795701734 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.0000000000000004 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword = 'marvel-cinematic-universe'", "kt.kind IN ('tv series',\n                   'episode')", 't.production_year > 2000']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 33.416
+INFO:root:Postgres plan: 20.84
 INFO:root:21
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -842,11 +842,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 12.24788572553951 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 2.2509689780560604 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
 INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('movie', 'episode')", 't.production_year BETWEEN 2005 AND 2008']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 5: 492.187
+INFO:root:Postgres plan: 587.689
 INFO:root:22
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -879,11 +879,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 93.51640101951769 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 3.6980684914376476 samples to be accurate, We have 50
 INFO:root:Nearest query is 9
 INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'cast'", "chn.name = 'Queen'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind ='movie'", 't.production_year BETWEEN 2000 AND 2010']
-INFO:root:Robust plan is 6: 99.6
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 11: 816.348
+INFO:root:Postgres plan: 1014.952
 INFO:root:23
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -918,11 +918,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 3.2930489497825164 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.7805692839493016 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='sequel'", "kt.kind IN ('movie')", 't.production_year BETWEEN 2008 AND 2014']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 73.074
+INFO:root:Postgres plan: 64.205
 INFO:root:24
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -957,11 +957,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.1860812211327307 samples to be accurate, We have 50
-INFO:root:Nearest query is 13
+INFO:root:--- PQO: Need 0.9406931449029413 samples to be accurate, We have 50
+INFO:root:Nearest query is 14
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IS NOT NULL AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('tv series')", "t.production_year = 1998 AND t.title LIKE '%Money%'"]
-INFO:root:Robust plan is 0: 155.7
-INFO:root:Postgres plan: 155.8
+INFO:root:Robust plan is 9: 135.62
+INFO:root:Postgres plan: 134.485
 INFO:root:25
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -994,11 +994,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.673764684175372 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.463307308754026 samples to be accurate, We have 50
 INFO:root:Nearest query is 9
 INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'crew'", "chn.name = 'Queen'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('movie', 'tv movie', 'video movie', 'video game')", 't.production_year BETWEEN 1950 AND 2000']
-INFO:root:Robust plan is 6: 96.6
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 11: 1475.497
+INFO:root:Postgres plan: 1666.356
 INFO:root:26
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1033,11 +1033,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.9190119481883926 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 2.9470026733607986 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind LIKE '%complete%'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='sequel'", "kt.kind IN ('tv series')", 't.production_year > 1950']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 54.623
+INFO:root:Postgres plan: 73.734
 INFO:root:27
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1073,11 +1073,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 2.3416370607136283 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.3005159933574629 samples to be accurate, We have 50
 INFO:root:Nearest query is 3
 INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')", "kt.kind IN ('tv series',\n                   'episode')", 't.production_year > 2000']
-INFO:root:Robust plan is 8: 0.6
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 5: 121.625
+INFO:root:Postgres plan: 178.637
 INFO:root:28
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1113,11 +1113,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.030534266832314003 samples to be accurate, We have 50
-INFO:root:Nearest query is 3
+INFO:root:--- PQO: Need 0.32549766503100025 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
 INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('murder', 'blood', 'gore', 'death', 'female-nudity')", "kt.kind IN ('tv series',\n                   'episode')", 't.production_year BETWEEN 1950 AND 2010']
-INFO:root:Robust plan is 8: 1.8
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 232.301
+INFO:root:Postgres plan: 505.505
 INFO:root:29
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1152,11 +1152,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 138.04186498868518 samples to be accurate, We have 50
-INFO:root:Nearest query is 3
+INFO:root:--- PQO: Need 6.262917650174809 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')", "kt.kind ='movie'", 't.production_year > 2008']
-INFO:root:Robust plan is 8: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 54.711
+INFO:root:Postgres plan: 53.5
 INFO:root:30
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1191,11 +1191,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.7255918792494516 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 1.4844878746831347 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
 INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='character-name-in-title'", "kt.kind ='movie'", 't.production_year > 1950']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 642.428
+INFO:root:Postgres plan: 761.662
 INFO:root:31
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1231,11 +1231,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.0000000000000004 samples to be accurate, We have 49
-INFO:root:Nearest query is 4
+INFO:root:--- PQO: Need 4.084747332559431 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind LIKE '%complete%'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword LIKE '%sequel%'", "kt.kind IN ('tv series',\n                   'episode')", 't.production_year > 2000']
-INFO:root:Robust plan is 31: 2.4
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 9: 79.861
+INFO:root:Postgres plan: 97.84
 INFO:root:32
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1270,11 +1270,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.34524773531719954 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.9295899995065317 samples to be accurate, We have 50
 INFO:root:Nearest query is 0
 INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind LIKE '%complete%'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword LIKE '%sequel%'", "kt.kind ='movie'", 't.production_year BETWEEN 2005 AND 2008']
-INFO:root:Robust plan is 13: 174.6
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 9: 128.257
+INFO:root:Postgres plan: 159.981
 INFO:root:33
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1309,11 +1309,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.9748822004852541 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind LIKE '%complete%'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='10,000-mile-club'", "kt.kind IN ('tv series')", 't.production_year > 2000']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 36.757
+INFO:root:Postgres plan: 13.401
 INFO:root:34
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1348,11 +1348,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 14.89690834798575 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.3852306256480362 samples to be accurate, We have 50
 INFO:root:Nearest query is 3
 INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')", "kt.kind ='movie'", 't.production_year >2010']
-INFO:root:Robust plan is 8: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 5: 131.366
+INFO:root:Postgres plan: 278.07
 INFO:root:35
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1387,11 +1387,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.0000000000000004 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.0000000000000007 samples to be accurate, We have 50
 INFO:root:Nearest query is 3
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword LIKE '%sequel%'", "kt.kind IN ('tv series')", 't.production_year > 2005']
-INFO:root:Robust plan is 8: 2.2
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 5: 80.165
+INFO:root:Postgres plan: 136.033
 INFO:root:36
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1426,11 +1426,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.40948133736625203 samples to be accurate, We have 50
-INFO:root:Nearest query is 3
+INFO:root:--- PQO: Need 12.028552212738573 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
 INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'crew'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IS NOT NULL AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind ='movie'", 't.production_year > 2009']
-INFO:root:Robust plan is 8: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 148.406
+INFO:root:Postgres plan: 195.293
 INFO:root:37
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1464,11 +1464,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.6877433417571718 samples to be accurate, We have 50
-INFO:root:Nearest query is 8
+INFO:root:--- PQO: Need 42.22388613639795 samples to be accurate, We have 50
+INFO:root:Nearest query is 10
 INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind IN ('cast',\n                    'crew')", "chn.name = 'Queen'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind ='movie'", "t.production_year BETWEEN 2007 AND 2008\n  AND t.title LIKE '%Kung%Fu%Panda%'"]
-INFO:root:Robust plan is 14: 236.0
-INFO:root:Postgres plan: 147.4
+INFO:root:Robust plan is 12: 129.651
+INFO:root:Postgres plan: 136.809
 INFO:root:38
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1503,11 +1503,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.007831425833218617 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 8.774906529893338 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='character-name-in-title'", "kt.kind ='movie'", 't.production_year >2010']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 88.604
+INFO:root:Postgres plan: 122.105
 INFO:root:39
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1542,11 +1542,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.092236555702913 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.6982718794324828 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='sequel'", "kt.kind IN ('movie')", 't.production_year > 2005']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 92.262
+INFO:root:Postgres plan: 83.728
 INFO:root:40
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1581,11 +1581,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.9999999999999994 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.9999999999999996 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='character-name-in-title'", "kt.kind ='movie'", 't.production_year > 2000']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 250.151
+INFO:root:Postgres plan: 324.611
 INFO:root:41
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1621,11 +1621,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.23875617674682442 samples to be accurate, We have 50
-INFO:root:Nearest query is 3
+INFO:root:--- PQO: Need 0.5489460310378983 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
 INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'complete'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')", "kt.kind IN ('tv series',\n                   'episode')", 't.production_year > 2000']
-INFO:root:Robust plan is 8: 0.7
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 106.781
+INFO:root:Postgres plan: 187.888
 INFO:root:42
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1660,11 +1660,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 27.456927491645622 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.9189339816772262 samples to be accurate, We have 50
 INFO:root:Nearest query is 3
 INFO:root:Current Query: ["cct.kind = 'crew'", "cct.kind LIKE '%complete%'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')", "kt.kind IN ('movie', 'episode')", 't.production_year BETWEEN 1950 AND 2010']
-INFO:root:Robust plan is 8: 1.8
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 5: 4303.108
+INFO:root:Postgres plan: 4708.076
 INFO:root:43
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1699,11 +1699,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.9612373640786823 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.5526580448992525 samples to be accurate, We have 50
 INFO:root:Nearest query is 3
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind LIKE '%complete%'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword LIKE '%sequel%'", "kt.kind ='movie'", 't.production_year BETWEEN 2000 AND 2010']
-INFO:root:Robust plan is 8: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 5: 197.699
+INFO:root:Postgres plan: 236.051
 INFO:root:44
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1736,11 +1736,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.0938064872435211 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 7.723468509241434 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete+verified'", "chn.name = 'Queen'", "k.keyword ='character-name-in-title'", "kt.kind IN ('movie')", 't.production_year >2010']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 3: 237.946
+INFO:root:Postgres plan: 119.709
 INFO:root:45
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1775,11 +1775,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.9678503883794964 samples to be accurate, We have 50
-INFO:root:Nearest query is 3
+INFO:root:--- PQO: Need 1.5872944730744027 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
 INFO:root:Current Query: ["cct.kind = 'crew'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('tv series')", 't.production_year > 2005']
-INFO:root:Robust plan is 8: 2.6
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 114.479
+INFO:root:Postgres plan: 269.365
 INFO:root:46
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1814,11 +1814,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.1173531286515666 samples to be accurate, We have 50
-INFO:root:Nearest query is 7
+INFO:root:--- PQO: Need 3.1636163105583206 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind = 'complete+verified'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword ='character-name-in-title'", "kt.kind IN ('movie', 'episode')", 't.production_year BETWEEN 2000 AND 2010']
-INFO:root:Robust plan is 8: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 16: 280.802
+INFO:root:Postgres plan: 351.418
 INFO:root:47
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1853,11 +1853,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.9565551023538857 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.7866985952470361 samples to be accurate, We have 50
 INFO:root:Nearest query is 3
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind LIKE '%complete%'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword LIKE '%sequel%'", "kt.kind ='movie'", 't.production_year BETWEEN 1950 AND 2000']
-INFO:root:Robust plan is 8: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 5: 356.28
+INFO:root:Postgres plan: 421.45
 INFO:root:48
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1892,11 +1892,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.974808903662447 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 2.550409510903236 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
 INFO:root:Current Query: ["cct.kind != 'complete+verified'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('hero', 'martial-arts', 'hand-to-hand-combat')", "kt.kind IN ('tv series')", 't.production_year > 2008']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 67.35
+INFO:root:Postgres plan: 49.056
 INFO:root:49
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1929,11 +1929,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.149180604496291 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.3415077951682009 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'cast'", "chn.name = 'Queen'", "k.keyword = 'computer-animation'", "kt.kind ='movie'", 't.production_year > 2005']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 3: 40.307
+INFO:root:Postgres plan: 23.274
 INFO:root:50
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -1971,11 +1971,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.41058596079597426 samples to be accurate, We have 50
-INFO:root:Nearest query is 5
+INFO:root:--- PQO: Need 1.2824676988187447 samples to be accurate, We have 50
+INFO:root:Nearest query is 6
 INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'crew'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IS NOT NULL AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('movie', 'episode')", "t.production_year > 2000\n  AND (t.title LIKE '%Freddy%'\n       OR t.title LIKE '%Jason%'\n       OR t.title LIKE 'Saw%')"]
-INFO:root:Robust plan is 11: 132.1
-INFO:root:Postgres plan: 197.8
+INFO:root:Robust plan is 15: 138.878
+INFO:root:Postgres plan: 150.24
 INFO:root:51
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2008,11 +2008,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 8.07762525399944 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 3.134613372570427 samples to be accurate, We have 50
 INFO:root:Nearest query is 9
 INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind = 'cast'", "chn.name = 'Queen'", "k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')", "kt.kind IN ('movie', 'episode')", 't.production_year BETWEEN 2000 AND 2010']
-INFO:root:Robust plan is 6: 100.9
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 11: 99.044
+INFO:root:Postgres plan: 79.052
 INFO:root:52
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2048,11 +2048,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.9143174783994686 samples to be accurate, We have 50
-INFO:root:Nearest query is 13
+INFO:root:--- PQO: Need 10.326328050525513 samples to be accurate, We have 50
+INFO:root:Nearest query is 14
 INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind LIKE '%complete%'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind ='movie'", "t.title = 'Shrek 2'\n  AND t.production_year BETWEEN 2000 AND 2005"]
-INFO:root:Robust plan is 0: 153.9
-INFO:root:Postgres plan: 150.4
+INFO:root:Robust plan is 9: 133.745
+INFO:root:Postgres plan: 139.601
 INFO:root:53
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2087,11 +2087,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.32980793227342375 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.5301091260665965 samples to be accurate, We have 50
 INFO:root:Nearest query is 0
 INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind LIKE '%complete%'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')", "kt.kind IN ('movie')", 't.production_year > 2000']
-INFO:root:Robust plan is 13: 174.4
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 9: 594.429
+INFO:root:Postgres plan: 795.042
 INFO:root:54
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2129,11 +2129,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.6986193339187243 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.24895699708031527 samples to be accurate, We have 50
 INFO:root:Nearest query is 5
 INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind LIKE '%complete%'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword LIKE '%sequel%'", "kt.kind ='movie'", "t.production_year > 2000\n  AND (t.title LIKE '%Freddy%'\n       OR t.title LIKE '%Jason%'\n       OR t.title LIKE 'Saw%')"]
-INFO:root:Robust plan is 11: 14.2
-INFO:root:Postgres plan: 61.7
+INFO:root:Robust plan is 7: 82.682
+INFO:root:Postgres plan: 64.572
 INFO:root:55
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2168,11 +2168,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.780201302830709 samples to be accurate, We have 50
-INFO:root:Nearest query is 7
+INFO:root:--- PQO: Need 58.34084283114202 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind = 'crew'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword ='sequel'", "kt.kind IN ('tv series')", 't.production_year > 2000']
-INFO:root:Robust plan is 8: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 16: 79.89
+INFO:root:Postgres plan: 44.324
 INFO:root:56
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2205,11 +2205,7 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.03945483447211175 samples to be accurate, We have 50
-INFO:root:Nearest query is 2
-INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'cast'", "chn.name = 'Queen'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind ='movie'", 't.production_year > 1990']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:--- PQO: Need 47580196.895008184 samples to be accurate, We have 50
 INFO:root:57
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2243,11 +2239,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 17.938601870535024 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.0306347018515065 samples to be accurate, We have 50
 INFO:root:Nearest query is 9
 INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind = 'cast'", "chn.name = 'Queen'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('tv series',\n                   'episode')", 't.production_year BETWEEN 2005 AND 2008']
-INFO:root:Robust plan is 6: 100.9
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 11: 142.453
+INFO:root:Postgres plan: 255.602
 INFO:root:58
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2282,11 +2278,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.05624137394360914 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.9561397773946846 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='sequel'", "kt.kind ='movie'", 't.production_year > 2005']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 90.446
+INFO:root:Postgres plan: 84.53
 INFO:root:59
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2321,11 +2317,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 2.04386087442665 samples to be accurate, We have 50
-INFO:root:Nearest query is 3
+INFO:root:--- PQO: Need 1.1331293607520019 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
 INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('tv series')", 't.production_year BETWEEN 1950 AND 2010']
-INFO:root:Robust plan is 8: 2.7
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 118.233
+INFO:root:Postgres plan: 251.563
 INFO:root:60
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2360,11 +2356,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.6540971277357139 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.0000000000000007 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='sequel'", "kt.kind IN ('movie', 'episode')", 't.production_year > 2000']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 135.753
+INFO:root:Postgres plan: 144.371
 INFO:root:61
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2398,11 +2394,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 37.048869905219355 samples to be accurate, We have 50
-INFO:root:Nearest query is 8
+INFO:root:--- PQO: Need 4.705344704326099 samples to be accurate, We have 50
+INFO:root:Nearest query is 10
 INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'cast'", "chn.name = 'Queen'", "k.keyword IN ('hero', 'martial-arts', 'hand-to-hand-combat', 'computer-animated-movie')", "kt.kind ='movie'", "t.production_year > 2010\n  AND t.title LIKE 'Vampire%'"]
-INFO:root:Robust plan is 14: 20.8
-INFO:root:Postgres plan: 55.9
+INFO:root:Robust plan is 12: 82.111
+INFO:root:Postgres plan: 52.802
 INFO:root:62
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2436,11 +2432,7 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 155.09958895093988 samples to be accurate, We have 50
-INFO:root:Nearest query is 10
-INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'cast'", "chn.name = 'Queen'", "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')", "kt.kind ='movie'", "t.title = 'Shrek 2'\n  AND t.production_year BETWEEN 2000 AND 2010"]
-INFO:root:Robust plan is 8: 98.5
-INFO:root:Postgres plan: 105.7
+INFO:root:--- PQO: Need 17804.2654531033 samples to be accurate, We have 50
 INFO:root:63
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2475,11 +2467,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 813.8395741559567 samples to be accurate, We have 50
-INFO:root:Nearest query is 0
+INFO:root:--- PQO: Need 1.6040339014076919 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
 INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('sequel', 'revenge', 'based-on-novel')", "kt.kind ='movie'", 't.production_year > 1950']
-INFO:root:Robust plan is 13: 172.5
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 1411.31
+INFO:root:Postgres plan: 1681.657
 INFO:root:64
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2515,11 +2507,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.0213634854323366 samples to be accurate, We have 50
-INFO:root:Nearest query is 13
+INFO:root:--- PQO: Need 0.7109924725692073 samples to be accurate, We have 50
+INFO:root:Nearest query is 14
 INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')", "kt.kind IN ('movie', 'tv movie', 'video movie', 'video game')", "t.title = 'Shrek 2'\n  AND t.production_year BETWEEN 2000 AND 2005"]
-INFO:root:Robust plan is 0: 149.1
-INFO:root:Postgres plan: 154.1
+INFO:root:Robust plan is 9: 128.669
+INFO:root:Postgres plan: 148.403
 INFO:root:65
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2554,11 +2546,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 4.5786344843029445 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 0.1770008507506966 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
 INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')", "kt.kind IN ('movie')", 't.production_year > 2000']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 5: 97.966
+INFO:root:Postgres plan: 111.733
 INFO:root:66
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2591,11 +2583,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.3545887474377512 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 4.765810894935787 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'cast'", "chn.name = 'Queen'", "k.keyword ='character-name-in-title'", "kt.kind ='movie'", 't.production_year = 2007']
-INFO:root:Robust plan is 7: 0.1
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 3: 268.417
+INFO:root:Postgres plan: 141.289
 INFO:root:67
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2630,11 +2622,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.08506019646548454 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.9205859575108147 samples to be accurate, We have 50
 INFO:root:Nearest query is 0
 INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'cast'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('tv series')", 't.production_year > 1950']
-INFO:root:Robust plan is 13: 435.3
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 9: 136.823
+INFO:root:Postgres plan: 246.375
 INFO:root:68
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2669,11 +2661,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 246.63758020228912 samples to be accurate, We have 50
-INFO:root:Nearest query is 13
+INFO:root:--- PQO: Need 1.610164523221565 samples to be accurate, We have 50
+INFO:root:Nearest query is 6
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind IN ('cast',\n                    'crew')", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword = 'computer-animation'", "kt.kind ='movie'", "t.production_year = 1998 AND t.title LIKE '%Money%'"]
-INFO:root:Robust plan is 0: 18.3
-INFO:root:Postgres plan: 14.7
+INFO:root:Robust plan is 15: 57.704
+INFO:root:Postgres plan: 14.594
 INFO:root:69
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2709,11 +2701,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 23.465351041132532 samples to be accurate, We have 50
-INFO:root:Nearest query is 3
+INFO:root:--- PQO: Need 0.6239842672752748 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
 INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('tv series',\n                   'episode')", 't.production_year > 1950']
-INFO:root:Robust plan is 8: 2.7
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 196.139
+INFO:root:Postgres plan: 350.392
 INFO:root:70
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2747,11 +2739,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.9999999999999993 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.9999999999999964 samples to be accurate, We have 50
 INFO:root:Nearest query is 8
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete+verified'", "chn.name = 'Queen'", "k.keyword ='sequel'", "kt.kind ='movie'", "t.production_year > 2010\n  AND t.title LIKE 'Vampire%'"]
-INFO:root:Robust plan is 14: 21.2
-INFO:root:Postgres plan: 47.9
+INFO:root:Robust plan is 13: 69.772
+INFO:root:Postgres plan: 43.754
 INFO:root:71
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2786,11 +2778,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.5151879392666807 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.1339702865850427 samples to be accurate, We have 50
 INFO:root:Nearest query is 3
 INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')", "kt.kind IN ('tv series')", 't.production_year BETWEEN 2007 AND 2010']
-INFO:root:Robust plan is 8: 0.6
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 5: 100.895
+INFO:root:Postgres plan: 188.867
 INFO:root:72
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2825,11 +2817,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 6.739490995729502 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.8355252046259858 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='sequel'", "kt.kind ='movie'", 't.production_year > 2009']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 58.571
+INFO:root:Postgres plan: 49.811
 INFO:root:73
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2864,11 +2856,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.22963644671765576 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 2.5396983283413173 samples to be accurate, We have 50
 INFO:root:Nearest query is 0
 INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind LIKE '%complete%'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')", "kt.kind IN ('movie', 'episode')", 't.production_year > 2005']
-INFO:root:Robust plan is 13: 669.4
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 9: 384.314
+INFO:root:Postgres plan: 481.399
 INFO:root:74
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2901,11 +2893,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.65087028064153 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.31898392098985423 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'cast'", "chn.name = 'Queen'", "k.keyword ='character-name-in-title'", "kt.kind IN ('tv series')", 't.production_year > 2000']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 3: 238.623
+INFO:root:Postgres plan: 119.922
 INFO:root:75
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2940,11 +2932,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.7752594652231264 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 0.04621798087001894 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword = 'marvel-cinematic-universe'", "kt.kind ='movie'", 't.production_year > 2005']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 36.677
+INFO:root:Postgres plan: 13.228
 INFO:root:76
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -2977,11 +2969,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 31.15435043154626 samples to be accurate, We have 50
-INFO:root:Nearest query is 2
+INFO:root:--- PQO: Need 6.628680566177859 samples to be accurate, We have 50
+INFO:root:Nearest query is 9
 INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'complete'", "chn.name = 'Queen'", "k.keyword IS NOT NULL AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('movie', 'episode')", 't.production_year > 2005']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 11: 493.525
+INFO:root:Postgres plan: 594.969
 INFO:root:77
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3016,11 +3008,7 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.2827175639053168 samples to be accurate, We have 50
-INFO:root:Nearest query is 7
-INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind = 'cast'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword ='character-name-in-title'", "kt.kind IN ('movie', 'episode')", 't.production_year BETWEEN 1950 AND 2010']
-INFO:root:Robust plan is 8: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:--- PQO: Need 2481.037048012558 samples to be accurate, We have 50
 INFO:root:78
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3054,11 +3042,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.4467606297720121 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 2.193727167995595 samples to be accurate, We have 50
 INFO:root:Nearest query is 9
 INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind IN ('cast',\n                    'crew')", "chn.name = 'Queen'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('tv series',\n                   'episode')", 't.production_year > 2000']
-INFO:root:Robust plan is 6: 98.2
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 11: 184.592
+INFO:root:Postgres plan: 300.853
 INFO:root:79
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3093,11 +3081,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.44799101940206654 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.010310447997223748 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind != 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword = 'marvel-cinematic-universe'", "kt.kind ='movie'", 't.production_year BETWEEN 2008 AND 2014']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 34.856
+INFO:root:Postgres plan: 13.402
 INFO:root:80
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3130,11 +3118,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.8627023531686482 samples to be accurate, We have 50
-INFO:root:Nearest query is 9
+INFO:root:--- PQO: Need 7.770369653875491 samples to be accurate, We have 50
+INFO:root:Nearest query is 2
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind IN ('cast',\n                    'crew')", "chn.name = 'Queen'", "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')", "kt.kind ='movie'", 't.production_year BETWEEN 1950 AND 2010']
-INFO:root:Robust plan is 6: 96.6
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 3: 1642.681
+INFO:root:Postgres plan: 1492.885
 INFO:root:81
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3169,11 +3157,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.00014384768211855842 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.6964370397872657 samples to be accurate, We have 50
 INFO:root:Nearest query is 3
 INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword LIKE '%sequel%'", "kt.kind IN ('movie', 'episode')", 't.production_year BETWEEN 2008 AND 2014']
-INFO:root:Robust plan is 8: 1.8
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 5: 109.358
+INFO:root:Postgres plan: 124.331
 INFO:root:82
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3208,11 +3196,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 9.02268404897095 samples to be accurate, We have 50
-INFO:root:Nearest query is 6
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 11
 INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword = 'computer-animation'", "kt.kind IN ('tv series')", "t.title != '' AND (t.title LIKE 'Champion%' OR t.title LIKE 'Loser%')"]
-INFO:root:Robust plan is 18: 116.5
-INFO:root:Postgres plan: 14.2
+INFO:root:Robust plan is 6: 55.705
+INFO:root:Postgres plan: 14.819
 INFO:root:83
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3247,11 +3235,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.1268705013470146 samples to be accurate, We have 50
-INFO:root:Nearest query is 3
+INFO:root:--- PQO: Need 1.5287115261030257 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
 INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('tv series')", 't.production_year BETWEEN 1950 AND 2000']
-INFO:root:Robust plan is 8: 2.5
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 120.91
+INFO:root:Postgres plan: 271.467
 INFO:root:84
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3287,11 +3275,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.26406812883452546 samples to be accurate, We have 50
-INFO:root:Nearest query is 12
+INFO:root:--- PQO: Need 0.07253934794276597 samples to be accurate, We have 50
+INFO:root:Nearest query is 13
 INFO:root:Current Query: ["cct.kind != 'complete+verified'", "cct.kind = 'complete+verified'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword ='sequel'", "kt.kind IN ('movie', 'episode')", "t.production_year > 2010\n  AND t.title LIKE 'Kung Fu Panda%'"]
-INFO:root:Robust plan is 17: 96.8
-INFO:root:Postgres plan: 46.3
+INFO:root:Robust plan is 3: 82.9
+INFO:root:Postgres plan: 44.014
 INFO:root:85
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3324,11 +3312,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 28.089778459144014 samples to be accurate, We have 50
-INFO:root:Nearest query is 2
+INFO:root:--- PQO: Need 0.7398251377375428 samples to be accurate, We have 50
+INFO:root:Nearest query is 15
 INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'complete'", "chn.name = 'Queen'", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind ='movie'", 't.production_year = 2007']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 3: 247.813
+INFO:root:Postgres plan: 222.562
 INFO:root:86
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3364,11 +3352,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 22.418661226813676 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 2.7874198349424324 samples to be accurate, We have 50
 INFO:root:Nearest query is 5
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind LIKE '%complete%'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')", "kt.kind ='movie'", "t.production_year BETWEEN 2007 AND 2008\n  AND t.title LIKE '%Kung%Fu%Panda%'"]
-INFO:root:Robust plan is 11: 234.1
-INFO:root:Postgres plan: 106.5
+INFO:root:Robust plan is 7: 104.791
+INFO:root:Postgres plan: 98.683
 INFO:root:87
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3403,11 +3391,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.018384333664175655 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.059963324625270945 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["cct.kind = 'complete+verified'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='character-name-in-title'", "kt.kind IN ('movie', 'episode')", 't.production_year > 1990']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 394.127
+INFO:root:Postgres plan: 509.771
 INFO:root:88
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3443,11 +3431,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.0000000000000022 samples to be accurate, We have 50
 INFO:root:Nearest query is 10
 INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind IN ('cast',\n                    'crew')", "chn.name = 'Queen'", "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')", "kt.kind IN ('movie', 'episode')", "t.production_year > 2000\n  AND (t.title LIKE '%Freddy%'\n       OR t.title LIKE '%Jason%'\n       OR t.title LIKE 'Saw%')"]
-INFO:root:Robust plan is 8: 99.1
-INFO:root:Postgres plan: 320.8
+INFO:root:Robust plan is 12: 209.321
+INFO:root:Postgres plan: 276.406
 INFO:root:89
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3482,11 +3470,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 31.754814300480124 samples to be accurate, We have 50
-INFO:root:Nearest query is 3
+INFO:root:--- PQO: Need 1.2319827154428034 samples to be accurate, We have 50
+INFO:root:Nearest query is 7
 INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('nerd', 'loner', 'alienation', 'dignity')", "kt.kind IN ('tv series')", 't.production_year > 2009']
-INFO:root:Robust plan is 8: 1.5
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 41.064
+INFO:root:Postgres plan: 25.165
 INFO:root:90
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3521,11 +3509,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 7.7770558423057805 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 5.391913665619769 samples to be accurate, We have 50
 INFO:root:Nearest query is 3
 INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')", "kt.kind IN ('movie', 'tv movie', 'video movie', 'video game')", 't.production_year >2010']
-INFO:root:Robust plan is 8: 2.3
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 5: 226.534
+INFO:root:Postgres plan: 491.574
 INFO:root:91
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3562,11 +3550,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 3.1655716415526323 samples to be accurate, We have 50
-INFO:root:Nearest query is 11
+INFO:root:--- PQO: Need 4.826526360396504 samples to be accurate, We have 50
+INFO:root:Nearest query is 12
 INFO:root:Current Query: ["cct.kind = 'crew'", "cct.kind LIKE '%complete%'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('tv series',\n                   'episode')", "t.production_year > 2010\n  AND t.title LIKE 'Kung Fu Panda%'"]
-INFO:root:Robust plan is 12: 95.1
-INFO:root:Postgres plan: 148.6
+INFO:root:Robust plan is 13: 138.036
+INFO:root:Postgres plan: 129.711
 INFO:root:92
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3601,11 +3589,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.35150257962042764 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.3514652708434737 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind LIKE '%complete%'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='character-name-in-title'", "kt.kind IN ('movie', 'episode')", 't.production_year > 2005']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 165.311
+INFO:root:Postgres plan: 264.6
 INFO:root:93
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3641,11 +3629,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 3.667605765898855 samples to be accurate, We have 50
-INFO:root:Nearest query is 13
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 14
 INFO:root:Current Query: ["cct.kind = 'crew'", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')", "kt.kind IN ('movie', 'episode')", "t.title = 'Shrek 2'\n  AND t.production_year BETWEEN 2000 AND 2010"]
-INFO:root:Robust plan is 0: 163.0
-INFO:root:Postgres plan: 150.1
+INFO:root:Robust plan is 9: 124.141
+INFO:root:Postgres plan: 147.894
 INFO:root:94
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3681,11 +3669,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.35091980686304547 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.9999999999999996 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind = 'cast'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword ='character-name-in-title'", "kt.kind IN ('tv series',\n                   'episode')", 't.production_year > 2000']
-INFO:root:Robust plan is 7: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 4: 95.595
+INFO:root:Postgres plan: 205.257
 INFO:root:95
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3720,11 +3708,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.4646397726574623 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.7576864603268183 samples to be accurate, We have 50
 INFO:root:Nearest query is 3
 INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'complete+verified'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword LIKE '%sequel%'", "kt.kind IN ('tv series')", 't.production_year BETWEEN 2005 AND 2010']
-INFO:root:Robust plan is 8: 2.4
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 5: 79.54
+INFO:root:Postgres plan: 106.169
 INFO:root:96
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3760,11 +3748,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 2.0533982485905455 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.043708676063404166 samples to be accurate, We have 50
 INFO:root:Nearest query is 3
 INFO:root:Current Query: ["cct.kind LIKE '%complete%'", "cct.kind = 'complete'", "chn.name IS NOT NULL\n  AND (chn.name LIKE '%man%'\n       OR chn.name LIKE '%Man%')", "k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')", "kt.kind IN ('tv series',\n                   'episode')", 't.production_year > 2000']
-INFO:root:Robust plan is 8: 2.6
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 5: 179.446
+INFO:root:Postgres plan: 295.815
 INFO:root:97
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3799,11 +3787,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.7605873254597718 samples to be accurate, We have 49
-INFO:root:Nearest query is 4
+INFO:root:--- PQO: Need 0.2696473898401918 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
 INFO:root:Current Query: ["cct.kind = 'cast'", "cct.kind IN ('cast',\n                    'crew')", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')", "kt.kind IN ('movie')", 't.production_year > 2000']
-INFO:root:Robust plan is 31: 0.0
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 9: 588.096
+INFO:root:Postgres plan: 794.81
 INFO:root:98
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3838,11 +3826,11 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 0.0637906441315477 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.8795317555541482 samples to be accurate, We have 50
 INFO:root:Nearest query is 0
 INFO:root:Current Query: ["cct.kind = 'complete'", "cct.kind = 'cast'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword IN ('murder', 'violence', 'blood', 'gore', 'death', 'female-nudity', 'hospital')", "kt.kind ='movie'", 't.production_year > 2005']
-INFO:root:Robust plan is 13: 171.5
-INFO:root:Postgres plan: 0.0
+INFO:root:Robust plan is 9: 852.486
+INFO:root:Postgres plan: 1287.574
 INFO:root:99
 INFO:root:
         SELECT MIN(t.title) AS complete_downey_ironman_movie
@@ -3877,8 +3865,8 @@ INFO:root:
         AND cct1.id = cc.subject_id
         AND cct2.id = cc.status_id;
     
-INFO:root:--- PQO: Need 2.2911771676153534 samples to be accurate, We have 50
-INFO:root:Nearest query is 11
+INFO:root:--- PQO: Need 0.024952251417361373 samples to be accurate, We have 50
+INFO:root:Nearest query is 12
 INFO:root:Current Query: ["cct.kind IN ('cast',\n                    'crew')", "cct.kind LIKE '%complete%'", "chn.name NOT LIKE '%Sherlock%'\n  AND (chn.name LIKE '%Tony%Stark%'\n       OR chn.name LIKE '%Iron%Man%')", "k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence', 'magnet', 'web', 'claw', 'laser')", "kt.kind IN ('tv series')", 't.production_year > 2014']
-INFO:root:Robust plan is 12: 97.9
-INFO:root:Postgres plan: 104.8
+INFO:root:Robust plan is 13: 100.062
+INFO:root:Postgres plan: 93.637

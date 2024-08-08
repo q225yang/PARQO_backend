@@ -54,6 +54,8 @@ def get_real_latency(db_name, sql, hint=None, times=5, inject=False, output_plan
             if return_json:
                 return query_plan
         except psycopg2.errors.QueryCanceled as e:
+            print(e)
+            input()
             # return float('inf')
             return 0.0
             pass

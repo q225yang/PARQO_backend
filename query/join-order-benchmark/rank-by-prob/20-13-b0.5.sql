@@ -12,13 +12,13 @@
             title AS t
         WHERE cct1.kind = 'cast'
         AND cct2.kind LIKE '%complete%'
-        AND chn.name IS NOT NULL
-  AND (chn.name LIKE '%man%'
-       OR chn.name LIKE '%Man%')
-        AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
-        AND kt.kind ='movie'
-        AND t.title = 'Shrek 2'
-  AND t.production_year BETWEEN 2000 AND 2005
+        AND chn.name NOT LIKE '%Sherlock%'
+  AND (chn.name LIKE '%Tony%Stark%'
+       OR chn.name LIKE '%Iron%Man%')
+        AND k.keyword ='sequel'
+        AND kt.kind IN ('movie', 'episode')
+        AND t.production_year > 2010
+  AND t.title LIKE 'Kung Fu Panda%'
         AND kt.id = t.kind_id
         AND t.id = mk.movie_id
         AND t.id = ci.movie_id

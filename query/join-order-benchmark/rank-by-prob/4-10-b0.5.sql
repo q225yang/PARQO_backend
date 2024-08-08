@@ -7,10 +7,12 @@
         movie_keyword AS mk,
         title AS t
     WHERE it.info = 'rating'
-    AND k.keyword = 'marvel-cinematic-universe'
-    AND mi_idx.info < '8.5'
-    AND t.production_year > 2010
-  AND t.title LIKE 'Vampire%'
+    AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+    AND  mi_idx.info < '7.0'
+    AND t.production_year > 2000
+  AND (t.title LIKE '%Freddy%'
+       OR t.title LIKE '%Jason%'
+       OR t.title LIKE 'Saw%')
     AND t.id = mi_idx.movie_id
     AND t.id = mk.movie_id
     AND mk.movie_id = mi_idx.movie_id

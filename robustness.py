@@ -39,7 +39,7 @@ parser.add_argument('--method', type=str, default='sobol', required=False, help=
 parser.add_argument('--div',type=int, default=2, help='I do not want to say.')
 parser.add_argument('--exe', action='store_true')
 parser.add_argument('--test_18', action='store_true')
-parser.add_argument("--b", type=float, default=1.0)
+parser.add_argument("--b", type=float, default=0.5)
 parser.add_argument("--inst_id", type=int, default=-2)
 parser.add_argument('--plot_err', action='store_true')
 parser.add_argument('--debug', action='store_true')
@@ -1004,7 +1004,7 @@ def pqo_query_subset(N=100):
 
     ### For PQO: store the basic info of all queries that has optimized by RQO
     if RANK_BY_PROB:
-        filename = f'reuse/rank-by-prob/{get_pure_q_id(query_id, db_name)}-optimized-queries-b{args.b}.json'
+        filename = f'reuse/rank-by-prob/anchors/{get_pure_q_id(query_id, db_name)}-optimized-queries-b{args.b}.json'
     else:
         filename = f'reuse/{get_pure_q_id(query_id, db_name)}-optimized-queries-b{args.b}.json'
     
@@ -1107,7 +1107,7 @@ def pqo(N=100):
         cached_samples_dict_list = []
         cached_plan_dict_list = []
         if RANK_BY_PROB:
-            filename = f'reuse/rank-by-prob/{get_pure_q_id(query_id, db_name)}-optimized-queries-b{args.b}.json'
+            filename = f'reuse/rank-by-prob/anchors/{get_pure_q_id(query_id, db_name)}-optimized-queries-b{args.b}.json'
         else:
             filename = f'reuse/{get_pure_q_id(query_id, db_name)}-optimized-queries-b{args.b}.json'
         if os.path.exists(filename):
@@ -1211,8 +1211,8 @@ def pqo(N=100):
                 rob_plan_id = plan_space[0]
             print(f"--- PQO: {sql_id}: most robust plan is {rob_plan_id}, nearest query is {nearest_query_id}")
 
-            pg_latency = round(get_real_latency(db_name, para_sql, hint=None, times=3, limit_time=1000000), 1)
-            rob_latency = round(get_real_latency(db_name, para_sql, hint=cur_plan_list[rob_plan_id], times=3, limit_time=100000), 1)
+            pg_latency = round(get_real_latency(db_name, para_sql, hint=None, times=3, limit_time=1000000), 5)
+            rob_latency = round(get_real_latency(db_name, para_sql, hint=cur_plan_list[rob_plan_id], times=3, limit_time=100000), 5)
             # test_latency = round(get_real_latency(db_name, para_sql, hint=cur_plan_list[plan_space[0]], times=3, limit_time=10000), 1)
             # test_latency_ = round(get_real_latency(db_name, para_sql, hint=cur_plan_list[plan_space[1]], times=3, limit_time=10000), 1)
             # test_latency__ = round(get_real_latency(db_name, para_sql, hint=cur_plan_list[plan_space[2]], times=3, limit_time=10000), 1)

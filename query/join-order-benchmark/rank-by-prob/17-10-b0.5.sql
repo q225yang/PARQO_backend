@@ -8,9 +8,11 @@
             movie_keyword AS mk,
             name AS n,
             title AS t
-        WHERE cn.country_code !='[pl]' AND (cn.name LIKE '20th Century Fox%' OR cn.name LIKE 'Twentieth Century Fox%')
-        AND k.keyword IN ('murder', 'murder-in-title', 'blood', 'violence')
-        AND n.name LIKE '%Downey%Robert%'
+        WHERE cn.country_code !='[pl]'
+  AND (cn.name LIKE '%Film%'
+       OR cn.name LIKE '%Warner%')
+        AND k.keyword LIKE '%sequel%'
+        AND n.name LIKE '%Bert%'
         AND n.id = ci.person_id
         AND ci.movie_id = t.id
         AND t.id = mk.movie_id

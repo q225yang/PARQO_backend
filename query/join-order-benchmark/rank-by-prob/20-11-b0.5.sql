@@ -12,12 +12,12 @@
             title AS t
         WHERE cct1.kind = 'cast'
         AND cct2.kind LIKE '%complete%'
-        AND chn.name NOT LIKE '%Sherlock%'
-  AND (chn.name LIKE '%Tony%Stark%'
-       OR chn.name LIKE '%Iron%Man%')
-        AND k.keyword LIKE '%sequel%'
-        AND kt.kind ='movie'
-        AND t.production_year > 2014
+        AND chn.name IS NOT NULL
+  AND (chn.name LIKE '%man%'
+       OR chn.name LIKE '%Man%')
+        AND k.keyword ='sequel'
+        AND kt.kind IN ('movie', 'episode')
+        AND t.title != '' AND (t.title LIKE 'Champion%' OR t.title LIKE 'Loser%')
         AND kt.id = t.kind_id
         AND t.id = mk.movie_id
         AND t.id = ci.movie_id

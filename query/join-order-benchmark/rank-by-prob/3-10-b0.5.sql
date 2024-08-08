@@ -4,10 +4,12 @@
         movie_info AS mi,
         movie_keyword AS mk,
         title AS t
-    WHERE k.keyword IN ('superhero', 'marvel-comics', 'based-on-comic', 'fight')
-    AND mi.info IN ('Sweden', 'Germany', 'Swedish', 'German')
-    AND t.title = 'Shrek 2'
-  AND t.production_year BETWEEN 2000 AND 2005
+    WHERE k.keyword ='sequel'
+    AND mi.info IN ('Drama', 'Horror')
+    AND t.production_year > 2000
+  AND (t.title LIKE '%Freddy%'
+       OR t.title LIKE '%Jason%'
+       OR t.title LIKE 'Saw%')
     AND t.id = mi.movie_id
     AND t.id = mk.movie_id
     AND mk.movie_id = mi.movie_id

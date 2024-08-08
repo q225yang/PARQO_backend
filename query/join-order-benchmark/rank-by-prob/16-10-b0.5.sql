@@ -9,9 +9,9 @@
         movie_keyword AS mk,
         name AS n,
         title AS t
-    WHERE cn.country_code ='[nl]'
-    AND k.keyword ='character-name-in-title'
-    AND t.production_year > 2014
+    WHERE cn.name LIKE 'Lionsgate%'
+    AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
+    AND t.production_year > 2000
     AND an.person_id = n.id
     AND n.id = ci.person_id
     AND ci.movie_id = t.id

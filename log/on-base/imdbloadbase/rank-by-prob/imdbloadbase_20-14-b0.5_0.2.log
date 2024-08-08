@@ -1,0 +1,96 @@
+INFO:root:
+########## Robust Query Optimization ############ 
+
+INFO:root:Sobol: Sample size N = 256, b = 0.5
+INFO:root:Recentered plan cost = 18991.28, plan is: /*+
+SeqScan(k)
+IndexScan(mk)
+SeqScan(cct1)
+IndexScan(cc)
+SeqScan(cct2)
+IndexScan(t)
+IndexScan(ci)
+IndexScan(chn)
+IndexOnlyScan(n)
+SeqScan(kt)
+NestLoop ( k mk )
+NestLoop ( cct1 cc )
+HashJoin ( cct1 cc cct2 )
+HashJoin ( k mk cct1 cc cct2 )
+NestLoop ( k mk cct1 cc cct2 t )
+NestLoop ( k mk cct1 cc cct2 t ci )
+NestLoop ( k mk cct1 cc cct2 t ci chn )
+NestLoop ( k mk cct1 cc cct2 t ci chn n )
+NestLoop ( k mk cct1 cc cct2 t ci chn n kt )
+Leading ( ( ( ( ( ( ( ( k mk ) ( ( cct1 cc ) cct2 ) ) t ) ci ) chn ) n ) kt ) ) */
+INFO:root:Sobols samples size: 9216
+INFO:root:[((5, 'k.txt'), 0.20789086849417052), ((10, 'cct_cc_1_l.txt'), 0.09926741960074308), ((1, 'cct.txt'), 0.04320619804264298), ((11, 'cct_cc_2_l.txt'), 0.030812493708015143), ((13, 'mk_cc__cct.txt'), 0.026195933326123307), ((19, 'mk_k_r.txt'), 0.020298554086896292), ((2, 'cct.txt'), -0.0051772436353709605), ((15, 'ci_chn_r.txt'), -0.0012312981537140446), ((3, 'chn.txt'), 0.00029653631597158355), ((12, 'ci_cc__cct.txt'), -0.0002659345852753464), ((14, 't_cc_l.txt'), -0.00021712791629333657), ((9, 't.txt'), 0.00019489668456341316), ((17, 'n_ci__chn.txt'), 0.0001886284295253961), ((20, 't_kt_both.txt'), 9.944782989054578e-06), ((16, 'mk_ci__chn.txt'), -1.376916803909958e-06), ((18, 't_ci_l.txt'), -9.036566588957776e-07), ((21, 't_mk_l.txt'), 2.2559995359230025e-08)]
+INFO:root:Max absolute value 1: (3, 5) - Value: -0.2535625093819986
+Max absolute value 2: (6, 8) - Value: 0.23585537466999706
+Max absolute value 3: (3, 4) - Value: -0.1368763874908503
+Max absolute value 4: (3, 15) - Value: -0.13672921061555654
+Max absolute value 5: (3, 7) - Value: -0.13670322813975344
+
+INFO:root:Sobols samples size: 4608
+INFO:root:[((5, 'k.txt'), 0.1576211698327765), ((13, 'mk_cc__cct.txt'), 0.058326612990039585), ((19, 'mk_k_r.txt'), 0.026066542759908193), ((1, 'cct.txt'), 0.02287052442526315), ((11, 'cct_cc_2_l.txt'), 0.00995958122411837), ((10, 'cct_cc_1_l.txt'), -0.009249183495073102), ((15, 'ci_chn_r.txt'), -0.0020874908841684477), ((9, 't.txt'), 0.0010384926787722158), ((2, 'cct.txt'), -0.0009066415999084607), ((3, 'chn.txt'), 0.0006328728139089025), ((14, 't_cc_l.txt'), -0.0005784124483891795), ((12, 'ci_cc__cct.txt'), -0.0005483201994004082), ((17, 'n_ci__chn.txt'), 0.00044173992111119423), ((20, 't_kt_both.txt'), -2.2120761268862772e-05), ((16, 'mk_ci__chn.txt'), -2.989364953533e-06), ((18, 't_ci_l.txt'), -1.9325041015011835e-06), ((21, 't_mk_l.txt'), 3.256407802104838e-07)]
+INFO:root:Max absolute value 1: (6, 8) - Value: 0.4455260185879455
+Max absolute value 2: (6, 9) - Value: 0.2765878480327732
+Max absolute value 3: (6, 16) - Value: 0.27230645749351645
+Max absolute value 4: (6, 11) - Value: 0.2723056869245114
+Max absolute value 5: (6, 13) - Value: 0.27229665227253164
+
+INFO:root:Sobols samples size: 2304
+INFO:root:[((5, 'k.txt'), 0.28761961821738186), ((13, 'mk_cc__cct.txt'), 0.129563783755054), ((2, 'cct.txt'), 0.037947931217940226), ((1, 'cct.txt'), 0.014229016967415983), ((15, 'ci_chn_r.txt'), -0.005911841266538268), ((11, 'cct_cc_2_l.txt'), -0.005893269018276812), ((10, 'cct_cc_1_l.txt'), 0.005360919421871539), ((19, 'mk_k_r.txt'), 0.004027009080454459), ((17, 'n_ci__chn.txt'), 0.0004925471763972487), ((12, 'ci_cc__cct.txt'), -0.0002474490706004254), ((3, 'chn.txt'), -0.00017977694068491915), ((9, 't.txt'), -9.41663590178927e-05), ((14, 't_cc_l.txt'), 2.5865983603960796e-05), ((20, 't_kt_both.txt'), -1.4057720481378745e-05), ((21, 't_mk_l.txt'), -1.1043695790376733e-06), ((18, 't_ci_l.txt'), -6.778575165525893e-07), ((16, 'mk_ci__chn.txt'), 0.0)]
+INFO:root:Max absolute value 1: (6, 8) - Value: 0.7870416809303236
+Max absolute value 2: (6, 10) - Value: 0.43596186617394217
+Max absolute value 3: (6, 7) - Value: 0.4358499272861642
+Max absolute value 4: (6, 9) - Value: 0.4357876424125453
+Max absolute value 5: (6, 15) - Value: 0.4357311771404382
+
+INFO:root:Sobols samples size: 1152
+INFO:root:[((11, 'cct_cc_2_l.txt'), 0.14400365045025823), ((5, 'k.txt'), 0.09855615158215908), ((13, 'mk_cc__cct.txt'), 0.07453417875803589), ((19, 'mk_k_r.txt'), 0.07219146531458985), ((2, 'cct.txt'), 0.05756280309716156), ((10, 'cct_cc_1_l.txt'), 0.05318020758227556), ((1, 'cct.txt'), 0.0145621207110649), ((15, 'ci_chn_r.txt'), -0.008994464341484822), ((17, 'n_ci__chn.txt'), 0.0007231368236757862), ((12, 'ci_cc__cct.txt'), -0.00035992118608980315), ((3, 'chn.txt'), -0.0002542079260532993), ((9, 't.txt'), -8.794186132760038e-05), ((14, 't_cc_l.txt'), -2.369917906284539e-05), ((20, 't_kt_both.txt'), -1.9090516115893853e-05), ((18, 't_ci_l.txt'), -1.0357089017992102e-06), ((21, 't_mk_l.txt'), 2.603421283123809e-07), ((16, 'mk_ci__chn.txt'), 0.0)]
+INFO:root:Max absolute value 1: (0, 6) - Value: 0.5330370632842327
+Max absolute value 2: (0, 8) - Value: 0.25825251874078003
+Max absolute value 3: (0, 14) - Value: 0.2024483642693336
+Max absolute value 4: (6, 8) - Value: -0.19357739105877014
+Max absolute value 5: (6, 14) - Value: -0.18191432569572896
+
+INFO:root:Sobols samples size: 576
+INFO:root:[((5, 'k.txt'), 0.1107286253656992), ((11, 'cct_cc_2_l.txt'), 0.1046973543597422), ((1, 'cct.txt'), 0.07605448895226344), ((2, 'cct.txt'), 0.07464567243848637), ((13, 'mk_cc__cct.txt'), 0.07201411766253234), ((10, 'cct_cc_1_l.txt'), 0.07150297123681046), ((19, 'mk_k_r.txt'), 0.06671246080771932), ((9, 't.txt'), -7.186667077498606e-05), ((12, 'ci_cc__cct.txt'), 4.1010814356393316e-05), ((15, 'ci_chn_r.txt'), 3.4957442602357424e-05), ((14, 't_cc_l.txt'), 2.657250974491219e-05), ((3, 'chn.txt'), 1.7285587860390224e-05), ((17, 'n_ci__chn.txt'), 1.690649855847543e-05), ((20, 't_kt_both.txt'), -1.1988314199020972e-05), ((18, 't_ci_l.txt'), -1.631654699713861e-06), ((21, 't_mk_l.txt'), 4.1014271140093794e-07), ((16, 'mk_ci__chn.txt'), 0.0)]
+INFO:root:Max absolute value 1: (14, 16) - Value: -0.13390509565096048
+Max absolute value 2: (14, 15) - Value: -0.13387586802000992
+Max absolute value 3: (0, 6) - Value: -0.08001173427281155
+Max absolute value 4: (0, 8) - Value: -0.07236561839647503
+Max absolute value 5: (0, 14) - Value: -0.06848887233920117
+
+INFO:root:Sobols samples size: 288
+INFO:root:[((1, 'cct.txt'), 1.7789604419801983), ((5, 'k.txt'), 1.5260620038250137), ((13, 'mk_cc__cct.txt'), 0.47148816108095803), ((11, 'cct_cc_2_l.txt'), 0.44651769654208473), ((2, 'cct.txt'), 0.43666204347571674), ((10, 'cct_cc_1_l.txt'), 0.2938788424265983), ((19, 'mk_k_r.txt'), 0.014395811037244275), ((9, 't.txt'), 0.01051490374645835), ((14, 't_cc_l.txt'), 0.00033684608514819277), ((15, 'ci_chn_r.txt'), -0.00033053102396146244), ((20, 't_kt_both.txt'), 0.00018125186858635315), ((17, 'n_ci__chn.txt'), 5.0541154848614464e-05), ((12, 'ci_cc__cct.txt'), -4.2864524621354485e-05), ((3, 'chn.txt'), 0.0), ((16, 'mk_ci__chn.txt'), 0.0), ((18, 't_ci_l.txt'), 0.0), ((21, 't_mk_l.txt'), 0.0)]
+INFO:root:Max absolute value 1: (0, 3) - Value: -3.1859854303040502
+Max absolute value 2: (14, 16) - Value: -2.5580358780873045
+Max absolute value 3: (14, 15) - Value: -2.555383448682744
+Max absolute value 4: (3, 6) - Value: -1.6943249716424884
+Max absolute value 5: (3, 4) - Value: -1.6524610774568271
+
+INFO:root:Sobols samples size: 144
+INFO:root:[((11, 'cct_cc_2_l.txt'), 0.30574877383920335), ((5, 'k.txt'), 0.2954502556227002), ((2, 'cct.txt'), 0.24893202167902334), ((1, 'cct.txt'), 0.1777991786921916), ((10, 'cct_cc_1_l.txt'), -0.034057906771358164), ((19, 'mk_k_r.txt'), 0.009304710623859387), ((13, 'mk_cc__cct.txt'), -0.00467653068032432), ((14, 't_cc_l.txt'), 0.0004303022451579305), ((15, 'ci_chn_r.txt'), -0.00012660934158665173), ((9, 't.txt'), 6.189300873401115e-05), ((12, 'ci_cc__cct.txt'), -4.540261331992949e-05), ((3, 'chn.txt'), 0.0), ((16, 'mk_ci__chn.txt'), 0.0), ((17, 'n_ci__chn.txt'), 0.0), ((18, 't_ci_l.txt'), 0.0), ((20, 't_kt_both.txt'), 0.0), ((21, 't_mk_l.txt'), 0.0)]
+INFO:root:Max absolute value 1: (0, 14) - Value: 1.6926187458876853
+Max absolute value 2: (0, 5) - Value: 1.4495133157466884
+Max absolute value 3: (0, 8) - Value: 1.4230002189828055
+Max absolute value 4: (0, 10) - Value: 1.4014674867513133
+Max absolute value 5: (0, 7) - Value: 1.401136035753253
+
+INFO:root:Sobol's solving time: 831.4620072841644(s)
+INFO:root:
+########## Robust Query Optimization ############ 
+
+INFO:root:Original optimal plan id is 4
+INFO:root:Instance id = None, Error div = 2, bandwidth = 0.5, tolerance = 0.2, have 50 samples.
+INFO:root:Cost of 11 plan: 	[(0, 16482.48), (1, 16783.25), (2, 17763.9), (3, 17763.9), (4, 13288.66), (5, 16556.47), (6, 16556.47), (7, 16522.33), (8, 16522.33), (9, 15933.04), (10, 15933.04)]
+INFO:root:Sensitive predicates: [5, 10]
+INFO:root:The number of samples to calculate expected penalty = 50.
+INFO:root:### Best plan by exp penalty: [9, 10], overhead 50.35126614570618s
+INFO:root:exp_penalty_w_tol: 	[(0, 1336), (1, 2820), (2, 22343), (3, 22342), (4, 17709), (5, 1386), (6, 1386), (7, 1142), (8, 1142), (9, 1122), (10, 1122)]
+INFO:root:### Best plan by std penalty: [10], overhead 50.35126614570618s
+INFO:root:std_penalty: 	[(0, 6200.35216052472), (1, 8101.871484208829), (2, 18231.693595723857), (3, 18231.355646621934), (4, 23138.807990224148), (5, 5745.24894399996), (6, 5744.862320743792), (7, 5311.9315800551085), (8, 5311.534343002956), (9, 5281.085646286969), (10, 5280.685624101097)]
+INFO:root:### Best plan by prob of penalized: [0, 7, 8, 9, 10], overhead 50.35126614570618s
+INFO:root:std_penalty: 	[(0, 0.06), (1, 0.34), (2, 0.82), (3, 0.82), (4, 0.94), (5, 0.08), (6, 0.08), (7, 0.06), (8, 0.06), (9, 0.06), (10, 0.06)]

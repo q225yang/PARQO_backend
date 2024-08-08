@@ -8,9 +8,9 @@
             movie_keyword AS mk,
             name AS n,
             title AS t
-        WHERE cn.name LIKE 'Lionsgate%'
-        AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
-        AND n.gender ='f' AND n.name LIKE '%An%'
+        WHERE cn.country_code ='[nl]'
+        AND k.keyword ='character-name-in-title'
+        AND n.gender ='f' AND n.name LIKE '%Angel%'
         AND n.id = ci.person_id
         AND ci.movie_id = t.id
         AND t.id = mk.movie_id

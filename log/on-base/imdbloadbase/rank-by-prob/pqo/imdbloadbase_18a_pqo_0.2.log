@@ -24,11 +24,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 4.451298353805462 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 3.735085806070694 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note LIKE '%(producer)%'", 'genres', 'rating', "n.gender = 'm'"]
-INFO:root:Robust plan is 7: 2233.9
-INFO:root:Postgres plan: 7568.3
+INFO:root:Robust plan is 7: 2075.209
+INFO:root:Postgres plan: 6490.344
 INFO:root:1
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -55,11 +55,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 3.699137160072002 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 2.6601720861990485 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'release dates', 'rating', "n.gender ='f' AND n.name LIKE '%An%'"]
-INFO:root:Robust plan is 7: 2154.8
-INFO:root:Postgres plan: 13661.3
+INFO:root:Robust plan is 1: 990.738
+INFO:root:Postgres plan: 12554.365
 INFO:root:2
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -86,11 +86,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.6877783129149758 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.7135239664082933 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'release dates', 'rating', "n.name LIKE '%Downey%Robert%'"]
-INFO:root:Robust plan is 9: 152.5
-INFO:root:Postgres plan: 13742.9
+INFO:root:Robust plan is 9: 153.444
+INFO:root:Postgres plan: 12576.861
 INFO:root:3
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -117,11 +117,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.12464756648059121 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.18664467711677463 samples to be accurate, We have 50
 INFO:root:Nearest query is 3
 INFO:root:Current Query: ["ci.note ='(voice: English version)'", 'countries', 'rating', "n.gender ='f' AND n.name LIKE '%An%'"]
-INFO:root:Robust plan is 8: 250.9
-INFO:root:Postgres plan: 6399.7
+INFO:root:Robust plan is 8: 251.379
+INFO:root:Postgres plan: 5245.959
 INFO:root:4
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -148,11 +148,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.39504676545871176 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.4192016695147806 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'release dates', 'rating', "n.name LIKE '%Downey%Robert%'"]
-INFO:root:Robust plan is 9: 152.0
-INFO:root:Postgres plan: 13859.9
+INFO:root:Robust plan is 9: 153.17
+INFO:root:Postgres plan: 13467.139
 INFO:root:5
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -179,11 +179,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 198.46359539688132 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 17.753877339350154 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'countries', 'votes', "n.name_pcode_cf BETWEEN 'A' AND 'F' AND (n.gender='m' OR (n.gender = 'f' AND n.name LIKE 'A%'))"]
-INFO:root:Robust plan is 7: 2114.3
-INFO:root:Postgres plan: 7008.3
+INFO:root:Robust plan is 3: 1387.183
+INFO:root:Postgres plan: 5793.903
 INFO:root:6
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -210,11 +210,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 128.18626168996718 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 19.200507434652486 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'release dates', 'votes', "n.name_pcode_cf BETWEEN 'A' AND 'F' AND (n.gender='m' OR (n.gender = 'f' AND n.name LIKE 'A%'))"]
-INFO:root:Robust plan is 7: 2214.5
-INFO:root:Postgres plan: 13801.6
+INFO:root:Robust plan is 3: 1484.321
+INFO:root:Postgres plan: 13104.039
 INFO:root:7
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -241,11 +241,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 2.242419081155562 samples to be accurate, We have 50
-INFO:root:Nearest query is 2
+INFO:root:--- PQO: Need 1.0000000000000004 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'release dates', 'votes', "n.name_pcode_cf LIKE 'D%' AND n.gender='m'"]
-INFO:root:Robust plan is 9: 343.6
-INFO:root:Postgres plan: 13729.8
+INFO:root:Robust plan is 3: 1290.594
+INFO:root:Postgres plan: 12582.264
 INFO:root:8
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -272,11 +272,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 4.63034524941881 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 5.108589672389718 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note = '(voice)'", 'release dates', 'votes', "n.gender ='f' AND n.name LIKE '%Angel%'"]
-INFO:root:Robust plan is 9: 185.2
-INFO:root:Postgres plan: 12767.1
+INFO:root:Robust plan is 9: 184.401
+INFO:root:Postgres plan: 11543.582
 INFO:root:9
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -303,11 +303,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 1.8212399333764668 samples to be accurate, We have 50
-INFO:root:Nearest query is 2
+INFO:root:--- PQO: Need 0.8774949875110076 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'release dates', 'votes', "n.name_pcode_cf LIKE 'D%' AND n.gender='m'"]
-INFO:root:Robust plan is 9: 364.5
-INFO:root:Postgres plan: 13774.0
+INFO:root:Robust plan is 3: 1061.024
+INFO:root:Postgres plan: 12656.141
 INFO:root:10
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -334,11 +334,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.8719486282006457 samples to be accurate, We have 50
-INFO:root:Nearest query is 4
+INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
 INFO:root:Current Query: ["ci.note ='(voice: English version)'", 'release dates', 'rating', "n.name LIKE '%Downey%Robert%'"]
-INFO:root:Robust plan is 1: 667.3
-INFO:root:Postgres plan: 11936.6
+INFO:root:Robust plan is 8: 154.228
+INFO:root:Postgres plan: 10849.864
 INFO:root:11
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -365,11 +365,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 5.153725611841623 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 0.43092139476623575 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'release dates', 'votes', "n.name LIKE '%Yo%' AND n.name NOT LIKE '%Yu%'"]
-INFO:root:Robust plan is 7: 2181.1
-INFO:root:Postgres plan: 13948.0
+INFO:root:Robust plan is 3: 1244.143
+INFO:root:Postgres plan: 13482.512
 INFO:root:12
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -396,11 +396,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.9295997724253197 samples to be accurate, We have 50
-INFO:root:Nearest query is 0
+INFO:root:--- PQO: Need 0.02393955460647827 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["ci.note IN ('(producer)', '(executive producer)')", 'release dates', 'rating', "n.gender ='f' AND n.name LIKE '%An%'"]
-INFO:root:Robust plan is 0: 1273.1
-INFO:root:Postgres plan: 14772.2
+INFO:root:Robust plan is 3: 1588.048
+INFO:root:Postgres plan: 14768.57
 INFO:root:13
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -427,11 +427,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 5.857583356641544 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 4.3142419713060765 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice) (uncredited)', '(voice: English version)')", 'release dates', 'bottom 10 rank', "n.name LIKE '%Yo%' AND n.name NOT LIKE '%Yu%'"]
-INFO:root:Robust plan is 7: 923.9
-INFO:root:Postgres plan: 96.7
+INFO:root:Robust plan is 3: 945.994
+INFO:root:Postgres plan: 89.234
 INFO:root:14
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -458,11 +458,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 1.451681439859897 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.360554673326608 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'genres', 'votes', "n.gender = 'm'"]
-INFO:root:Robust plan is 7: 2168.2
-INFO:root:Postgres plan: 7159.1
+INFO:root:Robust plan is 7: 2029.779
+INFO:root:Postgres plan: 6011.098
 INFO:root:15
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -489,11 +489,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 1.000000000000001 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.0000000000000004 samples to be accurate, We have 50
 INFO:root:Nearest query is 0
 INFO:root:Current Query: ["ci.note IN ('(producer)', '(executive producer)')", 'genres', 'rating', "n.gender = 'm' AND n.name LIKE '%Tim%'"]
-INFO:root:Robust plan is 0: 1287.5
-INFO:root:Postgres plan: 7972.1
+INFO:root:Robust plan is 1: 1160.94
+INFO:root:Postgres plan: 6390.707
 INFO:root:16
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -520,11 +520,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 5.8892553910313294 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 3.7616620102664884 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'genres', 'votes', "n.name LIKE '%Yo%' AND n.name NOT LIKE '%Yu%'"]
-INFO:root:Robust plan is 7: 2193.7
-INFO:root:Postgres plan: 6999.8
+INFO:root:Robust plan is 3: 986.943
+INFO:root:Postgres plan: 6263.972
 INFO:root:17
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -551,11 +551,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.9999999999999994 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.9999999999999992 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'countries', 'rating', "n.gender = 'm'"]
-INFO:root:Robust plan is 7: 2176.2
-INFO:root:Postgres plan: 7023.1
+INFO:root:Robust plan is 7: 1963.498
+INFO:root:Postgres plan: 5889.489
 INFO:root:18
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -582,11 +582,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 2.337459487625569 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 2.4371785850450776 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'genres', 'rating', "n.name LIKE '%Yo%' AND n.name NOT LIKE '%Yu%'"]
-INFO:root:Robust plan is 7: 2123.7
-INFO:root:Postgres plan: 6895.3
+INFO:root:Robust plan is 7: 1927.871
+INFO:root:Postgres plan: 5930.558
 INFO:root:19
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -613,11 +613,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.5161786946689184 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.4996254572420991 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'genres', 'rating', "n.gender ='f' AND n.name LIKE '%Ang%'"]
-INFO:root:Robust plan is 9: 183.3
-INFO:root:Postgres plan: 6979.1
+INFO:root:Robust plan is 9: 184.501
+INFO:root:Postgres plan: 5858.509
 INFO:root:20
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -644,11 +644,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 4.795934150432763 samples to be accurate, We have 50
-INFO:root:Nearest query is 2
+INFO:root:--- PQO: Need 3.4961445688596395 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'countries', 'rating', "n.gender = 'm' AND n.name LIKE '%Tim%'"]
-INFO:root:Robust plan is 9: 208.2
-INFO:root:Postgres plan: 6928.8
+INFO:root:Robust plan is 3: 977.23
+INFO:root:Postgres plan: 5671.723
 INFO:root:21
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -675,11 +675,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.4013492203681973 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.37938291812217867 samples to be accurate, We have 50
 INFO:root:Nearest query is 0
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'release dates', 'rating', "n.name_pcode_cf BETWEEN 'A' AND 'F' AND (n.gender='m' OR (n.gender = 'f' AND n.name LIKE 'A%'))"]
-INFO:root:Robust plan is 0: 1466.1
-INFO:root:Postgres plan: 13978.4
+INFO:root:Robust plan is 1: 1295.226
+INFO:root:Postgres plan: 12842.407
 INFO:root:22
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -706,11 +706,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.8026722608519758 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.7730699182977235 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice) (uncredited)', '(voice: English version)')", 'genres', 'votes', "n.gender ='f' AND n.name LIKE '%Angel%'"]
-INFO:root:Robust plan is 9: 182.6
-INFO:root:Postgres plan: 7125.2
+INFO:root:Robust plan is 9: 180.357
+INFO:root:Postgres plan: 5944.197
 INFO:root:23
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -737,11 +737,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 48.10466428402662 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 9.907922239728265 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'budget', 'rating', "n.name_pcode_cf BETWEEN 'A' AND 'F' AND (n.gender='m' OR (n.gender = 'f' AND n.name LIKE 'B%'))"]
-INFO:root:Robust plan is 7: 2078.8
-INFO:root:Postgres plan: 3025.6
+INFO:root:Robust plan is 3: 1416.034
+INFO:root:Postgres plan: 2652.234
 INFO:root:24
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -768,11 +768,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.25704399877502 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.25904130139545156 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'countries', 'rating', "n.gender ='f'"]
-INFO:root:Robust plan is 7: 2140.9
-INFO:root:Postgres plan: 6998.5
+INFO:root:Robust plan is 7: 1953.283
+INFO:root:Postgres plan: 5831.817
 INFO:root:25
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -799,11 +799,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.7463224451703283 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.7180416057154808 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'release dates', 'rating', "n.gender IS NOT NULL AND n.gender = 'f'"]
-INFO:root:Robust plan is 7: 2303.3
-INFO:root:Postgres plan: 13997.2
+INFO:root:Robust plan is 7: 2182.264
+INFO:root:Postgres plan: 12624.614
 INFO:root:26
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -830,11 +830,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 21.854760694538236 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 4.484745859712933 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'release dates', 'votes', "n.gender ='f' AND n.name LIKE '%An%'"]
-INFO:root:Robust plan is 7: 2126.4
-INFO:root:Postgres plan: 13679.6
+INFO:root:Robust plan is 1: 1029.376
+INFO:root:Postgres plan: 12533.726
 INFO:root:27
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -861,11 +861,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.8072078645572711 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.8001884488087455 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note LIKE '%(producer)%'", 'release dates', 'votes', "n.gender ='f'"]
-INFO:root:Robust plan is 7: 2367.0
-INFO:root:Postgres plan: 14268.1
+INFO:root:Robust plan is 7: 2140.279
+INFO:root:Postgres plan: 13193.992
 INFO:root:28
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -892,11 +892,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 1.2438154260535546 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.127556723382003 samples to be accurate, We have 50
 INFO:root:Nearest query is 0
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'genres', 'rating', "n.gender = 'm' AND n.name LIKE '%Tim%'"]
-INFO:root:Robust plan is 0: 1080.6
-INFO:root:Postgres plan: 7110.8
+INFO:root:Robust plan is 1: 974.873
+INFO:root:Postgres plan: 5991.884
 INFO:root:29
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -923,11 +923,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 6.733542459402028 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.2083896326541748 samples to be accurate, We have 50
 INFO:root:Nearest query is 0
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'budget', 'bottom 10 rank', "n.gender ='f' AND n.name LIKE '%An%'"]
-INFO:root:Robust plan is 0: 833.7
-INFO:root:Postgres plan: 93.7
+INFO:root:Robust plan is 1: 739.11
+INFO:root:Postgres plan: 90.853
 INFO:root:30
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -954,11 +954,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 7.237345150863817 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 7.081169917224427 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'genres', 'votes', "n.gender ='f'"]
-INFO:root:Robust plan is 7: 2134.5
-INFO:root:Postgres plan: 7243.4
+INFO:root:Robust plan is 7: 1989.162
+INFO:root:Postgres plan: 6105.997
 INFO:root:31
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -988,8 +988,8 @@ INFO:root:
 INFO:root:--- PQO: Need 0.9999999999999999 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'genres', 'rating', "n.name LIKE '%Bert%'"]
-INFO:root:Robust plan is 9: 172.3
-INFO:root:Postgres plan: 7012.9
+INFO:root:Robust plan is 9: 173.045
+INFO:root:Postgres plan: 6122.366
 INFO:root:32
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1016,11 +1016,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 7.08166274118275 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 0.7543503207103718 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'countries', 'rating', "n.gender ='f' AND n.name LIKE '%An%'"]
-INFO:root:Robust plan is 7: 2573.5
-INFO:root:Postgres plan: 6894.6
+INFO:root:Robust plan is 1: 997.625
+INFO:root:Postgres plan: 5657.09
 INFO:root:33
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1047,11 +1047,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 926.2989697219376 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 15.784402016170345 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'genres', 'rating', "n.name LIKE 'B%'"]
-INFO:root:Robust plan is 7: 2106.3
-INFO:root:Postgres plan: 7104.1
+INFO:root:Robust plan is 3: 1187.842
+INFO:root:Postgres plan: 6062.324
 INFO:root:34
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1078,11 +1078,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.10223738409299402 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.0005608925021654 samples to be accurate, We have 50
 INFO:root:Nearest query is 0
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'budget', 'top 250 rank', "n.gender ='f' AND n.name LIKE '%An%'"]
-INFO:root:Robust plan is 0: 864.5
-INFO:root:Postgres plan: 217.8
+INFO:root:Robust plan is 1: 765.067
+INFO:root:Postgres plan: 201.251
 INFO:root:35
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1109,11 +1109,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 2.009680903700379 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.40233149466076057 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'release dates', 'rating', "n.gender ='f' AND n.name LIKE '%An%'"]
-INFO:root:Robust plan is 9: 291.1
-INFO:root:Postgres plan: 13727.9
+INFO:root:Robust plan is 9: 294.785
+INFO:root:Postgres plan: 12619.159
 INFO:root:36
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1140,11 +1140,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 1.8514806189493778 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.6928557440725018 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'release dates', 'votes', "n.gender = 'm'"]
-INFO:root:Robust plan is 7: 2252.9
-INFO:root:Postgres plan: 14328.4
+INFO:root:Robust plan is 7: 2040.131
+INFO:root:Postgres plan: 12988.479
 INFO:root:37
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1171,11 +1171,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.4637195841036746 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.4881112722823206 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'genres', 'rating', "n.gender = 'm'"]
-INFO:root:Robust plan is 7: 2181.4
-INFO:root:Postgres plan: 7152.5
+INFO:root:Robust plan is 7: 2000.612
+INFO:root:Postgres plan: 5996.699
 INFO:root:38
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1202,11 +1202,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 1.3442126302426514 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.278042611660032 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'release dates', 'rating', "n.name LIKE '%Downey%Robert%'"]
-INFO:root:Robust plan is 9: 153.7
-INFO:root:Postgres plan: 13753.2
+INFO:root:Robust plan is 9: 151.847
+INFO:root:Postgres plan: 12627.287
 INFO:root:39
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1233,11 +1233,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 68.55196014040276 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 28.719608944760516 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'release dates', 'votes', "n.gender IS NOT NULL AND n.gender = 'f'"]
-INFO:root:Robust plan is 7: 2209.3
-INFO:root:Postgres plan: 14084.1
+INFO:root:Robust plan is 3: 1581.513
+INFO:root:Postgres plan: 12949.589
 INFO:root:40
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1264,11 +1264,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 1.173522208257551 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.1028557400173724 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'countries', 'bottom 10 rank', "n.name LIKE '%Downey%Robert%'"]
-INFO:root:Robust plan is 9: 154.0
-INFO:root:Postgres plan: 95.2
+INFO:root:Robust plan is 9: 150.95
+INFO:root:Postgres plan: 97.067
 INFO:root:41
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1295,11 +1295,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 11.287107433088028 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 1.0505889111869344 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'release dates', 'votes', "n.gender ='f' AND n.name LIKE '%An%'"]
-INFO:root:Robust plan is 7: 2588.9
-INFO:root:Postgres plan: 13750.9
+INFO:root:Robust plan is 3: 1014.941
+INFO:root:Postgres plan: 12710.376
 INFO:root:42
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1326,11 +1326,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 1.7929095844234495 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.7752680222252897 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note LIKE '%(producer)%'", 'release dates', 'votes', "n.gender ='f' AND n.name LIKE '%Ang%'"]
-INFO:root:Robust plan is 9: 182.5
-INFO:root:Postgres plan: 14029.9
+INFO:root:Robust plan is 9: 187.12
+INFO:root:Postgres plan: 13142.737
 INFO:root:43
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1357,11 +1357,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 2.268867654342223 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 2.2300411420451804 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'release dates', 'rating', "n.gender ='f' AND n.name LIKE '%Ang%'"]
-INFO:root:Robust plan is 9: 183.8
-INFO:root:Postgres plan: 13836.7
+INFO:root:Robust plan is 9: 180.359
+INFO:root:Postgres plan: 12493.526
 INFO:root:44
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1388,11 +1388,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.9999999999999998 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.0000000000000004 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'genres', 'votes', "n.name LIKE 'X%'"]
-INFO:root:Robust plan is 9: 138.2
-INFO:root:Postgres plan: 7000.2
+INFO:root:Robust plan is 9: 137.096
+INFO:root:Postgres plan: 5892.292
 INFO:root:45
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1419,11 +1419,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.3695798062988302 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.3867645693385296 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'genres', 'rating', "n.gender ='f' AND n.name LIKE '%Angel%'"]
-INFO:root:Robust plan is 9: 185.9
-INFO:root:Postgres plan: 7145.3
+INFO:root:Robust plan is 9: 183.059
+INFO:root:Postgres plan: 6534.987
 INFO:root:46
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1450,11 +1450,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 11.626746745540133 samples to be accurate, We have 50
-INFO:root:Nearest query is 2
+INFO:root:--- PQO: Need 4.582215773287202 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["ci.note = '(voice)'", 'release dates', 'rating', "n.name LIKE 'Z%'"]
-INFO:root:Robust plan is 9: 183.5
-INFO:root:Postgres plan: 12732.2
+INFO:root:Robust plan is 3: 779.839
+INFO:root:Postgres plan: 11556.675
 INFO:root:47
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1481,11 +1481,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 1.0000000000000004 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.9999999999999991 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'genres', 'rating', "n.name LIKE '%Bert%'"]
-INFO:root:Robust plan is 9: 171.4
-INFO:root:Postgres plan: 6979.5
+INFO:root:Robust plan is 9: 175.931
+INFO:root:Postgres plan: 6113.287
 INFO:root:48
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1512,11 +1512,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 2.3320611734668755 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 2.0962578076048253 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'genres', 'rating', "n.name LIKE '%Downey%Robert%'"]
-INFO:root:Robust plan is 9: 151.8
-INFO:root:Postgres plan: 7122.4
+INFO:root:Robust plan is 9: 154.22
+INFO:root:Postgres plan: 6001.779
 INFO:root:49
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1543,11 +1543,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 56.121799192712935 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 44.61165461538438 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'countries', 'top 250 rank', "n.name_pcode_cf BETWEEN 'A' AND 'F' AND (n.gender='m' OR (n.gender = 'f' AND n.name LIKE 'A%'))"]
-INFO:root:Robust plan is 7: 1536.8
-INFO:root:Postgres plan: 226.9
+INFO:root:Robust plan is 7: 1406.589
+INFO:root:Postgres plan: 209.917
 INFO:root:50
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1574,11 +1574,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
-INFO:root:Nearest query is 4
+INFO:root:--- PQO: Need 62.95257452351217 samples to be accurate, We have 50
+INFO:root:Nearest query is 5
 INFO:root:Current Query: ["ci.note ='(voice: English version)'", 'release dates', 'bottom 10 rank', "n.gender ='f' AND n.name LIKE '%An%'"]
-INFO:root:Robust plan is 1: 638.1
-INFO:root:Postgres plan: 96.1
+INFO:root:Robust plan is 4: 557.766
+INFO:root:Postgres plan: 98.624
 INFO:root:51
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1605,11 +1605,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.16369101950417922 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.14343638293753855 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note LIKE '%(producer)%'", 'genres', 'rating', "n.name LIKE 'B%'"]
-INFO:root:Robust plan is 7: 2181.5
-INFO:root:Postgres plan: 7285.4
+INFO:root:Robust plan is 7: 1949.658
+INFO:root:Postgres plan: 6557.938
 INFO:root:52
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1636,11 +1636,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 1.0000000000000007 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.000000000000001 samples to be accurate, We have 50
 INFO:root:Nearest query is 5
 INFO:root:Current Query: ["ci.note LIKE '%(voice)%' AND ci.note LIKE '%(uncredited)%'", 'genres', 'votes', "n.gender = 'm'"]
-INFO:root:Robust plan is 6: 861.0
-INFO:root:Postgres plan: 6596.2
+INFO:root:Robust plan is 4: 747.524
+INFO:root:Postgres plan: 5584.061
 INFO:root:53
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1667,11 +1667,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.9201554640091503 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.9043731790931252 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'budget', 'rating', "n.gender = 'm'"]
-INFO:root:Robust plan is 7: 2117.8
-INFO:root:Postgres plan: 3062.7
+INFO:root:Robust plan is 7: 1962.696
+INFO:root:Postgres plan: 2581.538
 INFO:root:54
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1698,11 +1698,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 7.535446871981982 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 6.9047974578673665 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'release dates', 'top 250 rank', "n.gender ='f' AND n.name LIKE '%Ang%'"]
-INFO:root:Robust plan is 9: 182.8
-INFO:root:Postgres plan: 644.2
+INFO:root:Robust plan is 9: 182.692
+INFO:root:Postgres plan: 617.711
 INFO:root:55
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1729,11 +1729,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 1.3484534668794919 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.2793033655990218 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'countries', 'top 250 rank', "n.name LIKE '%Downey%Robert%'"]
-INFO:root:Robust plan is 9: 149.3
-INFO:root:Postgres plan: 228.6
+INFO:root:Robust plan is 9: 153.072
+INFO:root:Postgres plan: 215.717
 INFO:root:56
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1760,11 +1760,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 1.1457867562384394 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.1328891620200736 samples to be accurate, We have 50
 INFO:root:Nearest query is 0
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'countries', 'votes', "n.gender = 'm' AND n.name LIKE '%Tim%'"]
-INFO:root:Robust plan is 0: 1100.2
-INFO:root:Postgres plan: 6983.3
+INFO:root:Robust plan is 1: 1017.773
+INFO:root:Postgres plan: 5709.199
 INFO:root:57
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1794,8 +1794,8 @@ INFO:root:
 INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'release dates', 'votes', "n.name LIKE '%Downey%Robert%'"]
-INFO:root:Robust plan is 9: 154.0
-INFO:root:Postgres plan: 13946.5
+INFO:root:Robust plan is 9: 154.292
+INFO:root:Postgres plan: 12809.28
 INFO:root:58
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1822,11 +1822,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 9.674340334048315 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 8.75252930659738 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'release dates', 'votes', "n.gender ='f' AND n.name LIKE '%Ang%'"]
-INFO:root:Robust plan is 9: 187.6
-INFO:root:Postgres plan: 13863.2
+INFO:root:Robust plan is 9: 186.222
+INFO:root:Postgres plan: 12576.35
 INFO:root:59
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1853,11 +1853,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 1.0519501097560857 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.0525113468486669 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice) (uncredited)', '(voice: English version)')", 'release dates', 'rating', "n.gender = 'm'"]
-INFO:root:Robust plan is 7: 2203.2
-INFO:root:Postgres plan: 14197.0
+INFO:root:Robust plan is 7: 2038.91
+INFO:root:Postgres plan: 13191.02
 INFO:root:60
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1884,11 +1884,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 2.0474513765595814 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 1.331344589286064 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'release dates', 'votes', "n.name LIKE '%Yo%' AND n.name NOT LIKE '%Yu%'"]
-INFO:root:Robust plan is 7: 2303.3
-INFO:root:Postgres plan: 13732.1
+INFO:root:Robust plan is 3: 1008.802
+INFO:root:Postgres plan: 12617.56
 INFO:root:61
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1915,11 +1915,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 5.241162822914317 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 3.206407616636453 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'genres', 'rating', "n.name LIKE 'Z%'"]
-INFO:root:Robust plan is 7: 2051.7
-INFO:root:Postgres plan: 7102.2
+INFO:root:Robust plan is 3: 1027.013
+INFO:root:Postgres plan: 6348.246
 INFO:root:62
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1946,11 +1946,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 1.304588437794895 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.1990887091967863 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'release dates', 'rating', "n.gender IS NOT NULL AND n.gender = 'f'"]
-INFO:root:Robust plan is 7: 2261.6
-INFO:root:Postgres plan: 13632.1
+INFO:root:Robust plan is 7: 2097.74
+INFO:root:Postgres plan: 12657.635
 INFO:root:63
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -1977,11 +1977,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.476267641614466 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.48299572807424 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'release dates', 'rating', "n.gender = 'm' AND n.name LIKE '%Tim%'"]
-INFO:root:Robust plan is 9: 217.1
-INFO:root:Postgres plan: 13222.4
+INFO:root:Robust plan is 9: 209.058
+INFO:root:Postgres plan: 13041.63
 INFO:root:64
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2008,11 +2008,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.999999999999999 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.9999999999999998 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'countries', 'rating', "n.name LIKE 'X%'"]
-INFO:root:Robust plan is 9: 153.8
-INFO:root:Postgres plan: 6234.9
+INFO:root:Robust plan is 9: 136.454
+INFO:root:Postgres plan: 5678.076
 INFO:root:65
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2042,8 +2042,8 @@ INFO:root:
 INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
 INFO:root:Nearest query is 3
 INFO:root:Current Query: ["ci.note ='(voice: English version)'", 'release dates', 'rating', "n.name LIKE '%Downey%Robert%'"]
-INFO:root:Robust plan is 8: 168.5
-INFO:root:Postgres plan: 11885.7
+INFO:root:Robust plan is 8: 151.237
+INFO:root:Postgres plan: 10822.404
 INFO:root:66
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2070,11 +2070,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.6418703457335263 samples to be accurate, We have 50
-INFO:root:Nearest query is 2
+INFO:root:--- PQO: Need 0.5489280192336556 samples to be accurate, We have 50
+INFO:root:Nearest query is 3
 INFO:root:Current Query: ["ci.note LIKE '%(producer)%'", 'genres', 'bottom 10 rank', "n.name LIKE '%Downey%Robert%'"]
-INFO:root:Robust plan is 9: 164.3
-INFO:root:Postgres plan: 95.8
+INFO:root:Robust plan is 8: 148.64
+INFO:root:Postgres plan: 101.661
 INFO:root:67
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2101,11 +2101,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 3.416296195707619 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 3.411154499677655 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'release dates', 'rating', "n.gender ='f' AND n.name LIKE '%Angel%'"]
-INFO:root:Robust plan is 9: 192.2
-INFO:root:Postgres plan: 13670.8
+INFO:root:Robust plan is 9: 179.876
+INFO:root:Postgres plan: 12748.272
 INFO:root:68
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2132,11 +2132,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.9082309452200431 samples to be accurate, We have 50
-INFO:root:Nearest query is 2
+INFO:root:--- PQO: Need 0.47392158734784734 samples to be accurate, We have 50
+INFO:root:Nearest query is 0
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'genres', 'votes', "n.gender ='f' AND n.name LIKE '%An%'"]
-INFO:root:Robust plan is 9: 274.0
-INFO:root:Postgres plan: 6563.9
+INFO:root:Robust plan is 1: 997.939
+INFO:root:Postgres plan: 5932.901
 INFO:root:69
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2166,8 +2166,8 @@ INFO:root:
 INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'release dates', 'rating', "n.gender = 'm'"]
-INFO:root:Robust plan is 7: 2213.4
-INFO:root:Postgres plan: 14608.3
+INFO:root:Robust plan is 7: 2055.89
+INFO:root:Postgres plan: 13525.74
 INFO:root:70
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2194,11 +2194,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 1.5919071245461072 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.2500655549708832 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note = '(voice)'", 'genres', 'top 250 rank', "n.gender ='f'"]
-INFO:root:Robust plan is 7: 1237.3
-INFO:root:Postgres plan: 224.9
+INFO:root:Robust plan is 7: 1179.186
+INFO:root:Postgres plan: 223.054
 INFO:root:71
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2225,11 +2225,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 3.2217337987279984 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 3.148742465269802 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'release dates', 'votes', "n.gender ='f'"]
-INFO:root:Robust plan is 7: 2217.7
-INFO:root:Postgres plan: 12997.3
+INFO:root:Robust plan is 7: 2126.308
+INFO:root:Postgres plan: 12762.293
 INFO:root:72
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2256,11 +2256,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 2.0547864562715956 samples to be accurate, We have 50
-INFO:root:Nearest query is 0
+INFO:root:--- PQO: Need 4.301775122151811 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'release dates', 'rating', "n.gender ='f' AND n.name LIKE '%An%'"]
-INFO:root:Robust plan is 0: 1045.3
-INFO:root:Postgres plan: 13394.7
+INFO:root:Robust plan is 3: 1037.589
+INFO:root:Postgres plan: 12638.271
 INFO:root:73
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2287,11 +2287,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.5072019183519643 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.5091030329871977 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'release dates', 'rating', "n.gender = 'm' AND n.name LIKE '%Tim%'"]
-INFO:root:Robust plan is 9: 215.7
-INFO:root:Postgres plan: 12768.6
+INFO:root:Robust plan is 9: 206.19
+INFO:root:Postgres plan: 12554.485
 INFO:root:74
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2318,11 +2318,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.18640904374037207 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.18498497227474217 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'release dates', 'rating', "n.name_pcode_cf BETWEEN 'A' AND 'F' AND (n.gender='m' OR (n.gender = 'f' AND n.name LIKE 'A%'))"]
-INFO:root:Robust plan is 7: 2169.1
-INFO:root:Postgres plan: 13646.7
+INFO:root:Robust plan is 7: 2057.665
+INFO:root:Postgres plan: 13615.327
 INFO:root:75
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2349,11 +2349,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.6112920399163453 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.6256121974299352 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'genres', 'votes', "n.gender = 'm'"]
-INFO:root:Robust plan is 7: 2189.1
-INFO:root:Postgres plan: 7108.4
+INFO:root:Robust plan is 7: 2008.295
+INFO:root:Postgres plan: 6006.415
 INFO:root:76
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2380,11 +2380,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.08878755930136586 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.2326266115229993 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'release dates', 'rating', "n.gender ='f' AND n.name LIKE '%An%'"]
-INFO:root:Robust plan is 9: 292.6
-INFO:root:Postgres plan: 13748.4
+INFO:root:Robust plan is 9: 285.711
+INFO:root:Postgres plan: 12583.161
 INFO:root:77
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2411,11 +2411,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.4492168226848385 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.4642838329924325 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note LIKE '%(producer)%'", 'genres', 'rating', "n.gender = 'm'"]
-INFO:root:Robust plan is 7: 2234.0
-INFO:root:Postgres plan: 7601.1
+INFO:root:Robust plan is 7: 2037.923
+INFO:root:Postgres plan: 6449.956
 INFO:root:78
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2442,11 +2442,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.7720914791371304 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.7484003351485133 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'countries', 'votes', "n.gender ='f'"]
-INFO:root:Robust plan is 7: 2249.1
-INFO:root:Postgres plan: 7002.2
+INFO:root:Robust plan is 7: 2073.62
+INFO:root:Postgres plan: 5724.258
 INFO:root:79
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2473,11 +2473,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 1.0 samples to be accurate, We have 50
-INFO:root:Nearest query is 2
+INFO:root:--- PQO: Need 0.7486365686894044 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'genres', 'rating', "n.name LIKE 'X%'"]
-INFO:root:Robust plan is 9: 138.7
-INFO:root:Postgres plan: 6986.4
+INFO:root:Robust plan is 3: 1207.433
+INFO:root:Postgres plan: 5831.425
 INFO:root:80
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2504,11 +2504,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 170.5799135029075 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 122.80480365203562 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["ci.note = '(voice)'", 'release dates', 'rating', "n.gender IS NOT NULL AND n.gender = 'f'"]
-INFO:root:Robust plan is 7: 1880.1
-INFO:root:Postgres plan: 12977.0
+INFO:root:Robust plan is 3: 1248.708
+INFO:root:Postgres plan: 11813.235
 INFO:root:81
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2535,11 +2535,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 2.5388144940875117 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.6386579890176549 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'countries', 'bottom 10 rank', "n.gender ='f' AND n.name LIKE '%An%'"]
-INFO:root:Robust plan is 9: 255.7
-INFO:root:Postgres plan: 95.3
+INFO:root:Robust plan is 9: 254.599
+INFO:root:Postgres plan: 96.488
 INFO:root:82
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2569,8 +2569,8 @@ INFO:root:
 INFO:root:--- PQO: Need 1.000000000000001 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'release dates', 'rating', "n.name LIKE '%Downey%Robert%'"]
-INFO:root:Robust plan is 9: 151.6
-INFO:root:Postgres plan: 13714.3
+INFO:root:Robust plan is 9: 150.538
+INFO:root:Postgres plan: 12516.006
 INFO:root:83
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2597,11 +2597,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 3.1841831484499608 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 2.7842829931266313 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'release dates', 'rating', "n.name LIKE '%Downey%Robert%'"]
-INFO:root:Robust plan is 9: 149.9
-INFO:root:Postgres plan: 13772.6
+INFO:root:Robust plan is 9: 151.193
+INFO:root:Postgres plan: 13463.207
 INFO:root:84
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2628,11 +2628,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 2.373782261718722 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 2.421997860282962 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note LIKE '%(producer)%'", 'release dates', 'rating', "n.gender ='f' AND n.name LIKE '%Ang%'"]
-INFO:root:Robust plan is 9: 183.5
-INFO:root:Postgres plan: 14028.0
+INFO:root:Robust plan is 9: 182.971
+INFO:root:Postgres plan: 12722.844
 INFO:root:85
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2659,11 +2659,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 1.3998999291628418 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.3031201512505959 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'release dates', 'rating', "n.name LIKE '%Bert%'"]
-INFO:root:Robust plan is 9: 170.6
-INFO:root:Postgres plan: 13766.4
+INFO:root:Robust plan is 9: 168.606
+INFO:root:Postgres plan: 12647.153
 INFO:root:86
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2690,11 +2690,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.035664318380628605 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.03381388792040386 samples to be accurate, We have 50
 INFO:root:Nearest query is 0
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'genres', 'rating', "n.name_pcode_cf BETWEEN 'A' AND 'F' AND (n.gender='m' OR (n.gender = 'f' AND n.name LIKE 'A%'))"]
-INFO:root:Robust plan is 0: 1419.9
-INFO:root:Postgres plan: 7209.1
+INFO:root:Robust plan is 1: 1331.228
+INFO:root:Postgres plan: 6119.518
 INFO:root:87
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2721,7 +2721,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 1450.291604324682 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 17.570098806558512 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
+INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'genres', 'rating', "n.name LIKE 'B%'"]
+INFO:root:Robust plan is 3: 1207.694
+INFO:root:Postgres plan: 6056.663
 INFO:root:88
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2748,11 +2752,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.6502892305279402 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.6895083165822153 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'countries', 'rating', "n.name LIKE '%B%'"]
-INFO:root:Robust plan is 7: 2200.7
-INFO:root:Postgres plan: 7088.1
+INFO:root:Robust plan is 7: 2014.782
+INFO:root:Postgres plan: 5789.354
 INFO:root:89
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2779,11 +2783,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 4.552280874569072 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 1.2026926607019954 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'countries', 'votes', "n.name_pcode_cf LIKE 'D%' AND n.gender='m'"]
-INFO:root:Robust plan is 7: 2078.7
-INFO:root:Postgres plan: 6892.9
+INFO:root:Robust plan is 3: 1066.375
+INFO:root:Postgres plan: 5856.724
 INFO:root:90
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2810,11 +2814,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.9999999999999997 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.9999999999999994 samples to be accurate, We have 50
 INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'release dates', 'votes', "n.gender = 'm'"]
-INFO:root:Robust plan is 7: 2248.1
-INFO:root:Postgres plan: 14461.6
+INFO:root:Robust plan is 7: 2086.581
+INFO:root:Postgres plan: 13411.155
 INFO:root:91
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2841,11 +2845,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 2.5556974082633452 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 0.9999999999999997 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'release dates', 'rating', "n.name_pcode_cf LIKE 'D%' AND n.gender='m'"]
-INFO:root:Robust plan is 7: 3001.7
-INFO:root:Postgres plan: 13756.0
+INFO:root:Robust plan is 3: 1257.083
+INFO:root:Postgres plan: 12523.719
 INFO:root:92
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2872,11 +2876,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 3.2440833545742005 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.6356754036982418 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'release dates', 'rating', "n.gender ='f' AND n.name LIKE '%An%'"]
-INFO:root:Robust plan is 9: 268.0
-INFO:root:Postgres plan: 13769.0
+INFO:root:Robust plan is 9: 262.397
+INFO:root:Postgres plan: 12587.229
 INFO:root:93
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2903,11 +2907,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.8829721480304844 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.8742944568723793 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'genres', 'votes', "n.name LIKE '%Downey%Robert%'"]
-INFO:root:Robust plan is 9: 152.5
-INFO:root:Postgres plan: 7113.5
+INFO:root:Robust plan is 9: 148.713
+INFO:root:Postgres plan: 6039.126
 INFO:root:94
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2934,11 +2938,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.6776548780069114 samples to be accurate, We have 50
-INFO:root:Nearest query is 2
+INFO:root:--- PQO: Need 3.865800624777899 samples to be accurate, We have 50
+INFO:root:Nearest query is 1
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'release dates', 'rating', "n.gender ='f' AND n.name LIKE '%An%'"]
-INFO:root:Robust plan is 9: 293.3
-INFO:root:Postgres plan: 13792.8
+INFO:root:Robust plan is 7: 2366.954
+INFO:root:Postgres plan: 13529.733
 INFO:root:95
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2965,11 +2969,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 9.039229467900523 samples to be accurate, We have 50
-INFO:root:Nearest query is 1
+INFO:root:--- PQO: Need 2.4696134280970257 samples to be accurate, We have 50
+INFO:root:Nearest query is 4
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'countries', 'rating', "n.name LIKE 'Z%'"]
-INFO:root:Robust plan is 7: 2230.4
-INFO:root:Postgres plan: 6923.2
+INFO:root:Robust plan is 3: 1213.325
+INFO:root:Postgres plan: 5940.034
 INFO:root:96
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -2996,11 +3000,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 1.0000000000000004 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 0.9999999999999998 samples to be accurate, We have 50
 INFO:root:Nearest query is 2
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'release dates', 'votes', "n.name LIKE '%Downey%Robert%'"]
-INFO:root:Robust plan is 9: 150.6
-INFO:root:Postgres plan: 13815.4
+INFO:root:Robust plan is 9: 151.375
+INFO:root:Postgres plan: 13197.447
 INFO:root:97
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -3027,11 +3031,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 0.7182431417433923 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 4.116986497044095 samples to be accurate, We have 50
 INFO:root:Nearest query is 0
 INFO:root:Current Query: ["ci.note LIKE '%(producer)%'", 'release dates', 'rating', "n.gender = 'm' AND n.name LIKE '%Tim%'"]
-INFO:root:Robust plan is 0: 1045.9
-INFO:root:Postgres plan: 13966.8
+INFO:root:Robust plan is 1: 934.418
+INFO:root:Postgres plan: 12843.8
 INFO:root:98
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -3058,11 +3062,11 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 2.131006523216162 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 4.451044887873922 samples to be accurate, We have 50
 INFO:root:Nearest query is 0
 INFO:root:Current Query: ["ci.note IN ('(writer)', '(head writer)', '(written by)', '(story)', '(story editor)')", 'release dates', 'rating', "n.gender ='f' AND n.name LIKE '%An%'"]
-INFO:root:Robust plan is 0: 1108.8
-INFO:root:Postgres plan: 13687.0
+INFO:root:Robust plan is 1: 984.24
+INFO:root:Postgres plan: 12515.522
 INFO:root:99
 INFO:root:
     SELECT MIN(mi.info) AS movie_budget,
@@ -3089,8 +3093,8 @@ INFO:root:
     AND it1.id = mi.info_type_id
     AND it2.id = mi_idx.info_type_id;
     
-INFO:root:--- PQO: Need 4.580787954696591 samples to be accurate, We have 50
+INFO:root:--- PQO: Need 1.982249434008226 samples to be accurate, We have 50
 INFO:root:Nearest query is 0
 INFO:root:Current Query: ["ci.note IN ('(voice)', '(voice: Japanese version)', '(voice) (uncredited)', '(voice: English version)')", 'genres', 'top 250 rank', "n.gender ='f' AND n.name LIKE '%An%'"]
-INFO:root:Robust plan is 0: 838.7
-INFO:root:Postgres plan: 241.3
+INFO:root:Robust plan is 1: 735.715
+INFO:root:Postgres plan: 229.635

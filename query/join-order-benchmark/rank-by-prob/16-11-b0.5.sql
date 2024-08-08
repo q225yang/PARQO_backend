@@ -9,9 +9,9 @@
         movie_keyword AS mk,
         name AS n,
         title AS t
-    WHERE cn.name LIKE 'Lionsgate%'
-    AND k.keyword IN ('hero', 'martial-arts', 'hand-to-hand-combat')
-    AND t.production_year > 2005
+    WHERE cn.country_code ='[nl]'
+    AND k.keyword ='character-name-in-title'
+    AND t.production_year > 2014
     AND an.person_id = n.id
     AND n.id = ci.person_id
     AND ci.movie_id = t.id

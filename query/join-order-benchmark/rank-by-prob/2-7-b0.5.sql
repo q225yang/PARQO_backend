@@ -5,8 +5,8 @@
         movie_companies AS mc,
         movie_keyword AS mk,
         title AS t
-    WHERE cn.country_code !='[pl]' AND (cn.name LIKE '20th Century Fox%' OR cn.name LIKE 'Twentieth Century Fox%')
-    AND k.keyword ='sequel'
+    WHERE cn.country_code !='[pl]' AND (cn.name LIKE '%Film%' OR cn.name LIKE '%Warner%')
+    AND k.keyword IN ('superhero', 'sequel', 'second-part', 'marvel-comics', 'based-on-comic', 'tv-special', 'fight', 'violence')
     AND cn.id = mc.company_id
     AND mc.movie_id = t.id
     AND t.id = mk.movie_id
